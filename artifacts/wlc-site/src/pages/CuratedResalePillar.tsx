@@ -48,10 +48,10 @@ export default function CuratedResalePillar() {
               Curated Resale<br />&amp; Consignment
             </h1>
             <p style={{ fontSize: "1.1rem", fontWeight: 300, color: "rgba(248,244,227,0.75)", lineHeight: 1.8, marginBottom: "0.75rem" }}>
-              Your good things deserve a good second life.
+              Thoughtful resale support for the things you no longer want to manage.
             </p>
             <p style={{ fontSize: "1rem", fontWeight: 300, color: "rgba(248,244,227,0.6)", lineHeight: 1.8, marginBottom: "2.5rem" }}>
-              For the things that still have value, story, or second-market potential — without asking you to become a part-time reseller.
+              Not everything belongs in a donation pile — but not everyone has the time, energy, or knowledge to research, photograph, list, ship, and coordinate resale themselves.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               <Link href="/contact" className="btn btn-sage">Schedule a Resale Pickup</Link>
@@ -67,12 +67,15 @@ export default function CuratedResalePillar() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "5rem", alignItems: "start" }}>
             <FadeUp>
               <span className="eyebrow eyebrow-sage">What This Is</span>
-              <h2 className="display-md" style={{ color: "var(--ink)", marginBottom: "2rem" }}>Best for items that deserve thoughtful placement.</h2>
+              <h2 className="display-md" style={{ color: "var(--ink)", marginBottom: "2rem" }}>For the things that still have value — but not your time.</h2>
               <p className="body-lg" style={{ marginBottom: "1.5rem" }}>
-                This service is best for items that have been well cared for, still hold real market interest, or deserve thoughtful placement through story-led resale. It is built for clothing, designer accessories, jewelry, home decor, furniture, art, rare textiles, and story-rich vintage.
+                I help clients sort through belongings, identify value, and route items through the resale channels that make the most sense for their category, condition, and potential. From clothing and accessories to collections, decor, storage units, and inherited belongings.
+              </p>
+              <p className="body-lg" style={{ marginBottom: "1.5rem" }}>
+                The goal is simple: recover value where it still exists and help things move to their next place responsibly.
               </p>
               <p className="body-lg">
-                The point is not volume. The point is thoughtful curation that creates the best next life for the item and the most realistic return for you.
+                No marketplace burnout. No figuring it all out alone. No piles sitting in limbo for another two years. Just practical help getting things moving again.
               </p>
             </FadeUp>
 

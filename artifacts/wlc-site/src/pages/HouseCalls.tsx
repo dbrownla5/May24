@@ -35,10 +35,10 @@ export default function HouseCalls() {
             </div>
             <h1 className="display-lg" style={{ color: "var(--parchment)", marginBottom: "1.5rem" }}>The 2-Hour House Call</h1>
             <p style={{ fontSize: "1.15rem", fontWeight: 300, color: "rgba(248,244,227,0.75)", lineHeight: 1.75, marginBottom: "1.5rem" }}>
-              There's a whole category of home tasks that pile up not because you can't handle them, but because life moved faster than the list. The setup that never got finished. The thing that's been on the mental to-do since the move. The appointment that requires someone to actually be home.
+              House Calls are designed for the operational side of life — the tasks, logistics, fixes, resets, and follow-through that tend to sit unfinished because they fall somewhere between categories.
             </p>
             <p style={{ fontSize: "1.15rem", fontWeight: 300, color: "rgba(248,244,227,0.75)", lineHeight: 1.75, marginBottom: "2.5rem" }}>
-              House Calls are for exactly that. Not a crisis. Not caregiving. Just practical, hands-on help with the everyday things — from someone who actually enjoys figuring it out.
+              This is not caregiving, cleaning, or "luxury concierge" theater. It's practical, real-world household support from someone observant, resourceful, and capable of helping life move forward again.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center" }}>
               <Link href="/contact" className="btn btn-sage">Schedule a House Call</Link>
@@ -55,10 +55,10 @@ export default function HouseCalls() {
             <FadeUp>
               <span className="eyebrow eyebrow-sage">What It Is</span>
               <h2 className="display-md" style={{ color: "var(--ink)", marginBottom: "2rem" }}>
-                Practical help for the things life accumulates faster than anyone has time to address.
+                Practical support for the things nobody really has a person for.
               </h2>
               <p className="body-lg" style={{ marginBottom: "1.5rem" }}>
-                House Calls are flexible, hourly sessions for the things that don't fit in one neat category. Setting up a new TV. Walking through the house to check what needs fixing. Coordinating with a vendor. Unpacking after a move. Helping during or after a big life change.
+                That might mean changing a smoke detector on a high ceiling, troubleshooting household technology, coordinating vendors, reorganizing a space that stopped functioning well, setting up a room after a move, preparing items for resale, handling donation drop-offs, helping a parent reset their home after a transition, or checking in on a storage unit that's gotten out of control.
               </p>
               <p className="body-lg" style={{ marginBottom: "1.5rem" }}>
                 There's no discovery call required. You tell me what needs attention, I show up and handle it. Two-hour minimum, billed hourly after that.

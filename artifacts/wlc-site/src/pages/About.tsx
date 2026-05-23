@@ -49,22 +49,29 @@ export default function About() {
                 <span className="eyebrow eyebrow-sage">Dayna Brown · Founder</span>
 
                 <p className="body-lg" style={{ marginBottom: "2rem" }}>
-                  Some of my earliest memories are of sitting on the floor with records spread around me, replaying Lionel Richie, Billy Joel, and Aerosmith until the stories behind the music felt as important as the songs themselves. I always felt the lyrics were telling stories so personal that I wanted to know the people behind them. The mystery of the music — and the lives we couldn't hear through the turntable — always felt like part of the journey.
+                  My background wasn't in "home organization." It was in learning how entire systems function — from warehouse operations and product development to executive support, client services, logistics, and real-world problem solving.
                 </p>
 
                 <p className="body-lg" style={{ marginBottom: "2rem" }}>
-                  Years later, standing in Seattle looking through museum glass at Steven Tyler's scarves, I felt that same truth again: the profound human residue objects can hold. And more recently, watching Stevie Nicks pull her iconic capes from decades-old performances back onto the stage — she said she hadn't seen some of them since the original songs were recorded, and that wearing them changed her for those few minutes. I watched memory alter the way she moved, turned, and became the person from those moments again in real time.
+                  Over time, I realized the same skill kept showing up across every role: seeing where friction exists before it becomes a bigger problem, and figuring out how to make things work more smoothly in practical, grounded ways.
                 </p>
 
                 <p className="body-lg" style={{ marginBottom: "2rem" }}>
-                  That is the heart of this work.
+                  The Well Lived Citizen grew out of that instinct. I help people navigate the operational side of life — the moves, belongings, resale decisions, storage units, unfinished projects, technology issues, vendor coordination, household resets, and all the small logistical realities that quietly shape how a home functions day to day.
                 </p>
 
                 <p className="body-lg" style={{ marginBottom: "2rem" }}>
-                  I don't believe people simply need help getting rid of things. I believe they need help understanding what those things mean, what they are worth, what they still have left to do, and where the next chapter of those belongings belongs.
+                  Sometimes that means organizing a room. Sometimes it means coordinating a move. Sometimes it means evaluating what's worth reselling. Sometimes it means helping an adult child manage things for a parent from another state.
                 </p>
 
-                <p style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--ink)", borderLeft: "3px solid var(--sage)", paddingLeft: "1.25rem", lineHeight: 1.5, marginTop: "2.5rem" }}>
+                <p className="body-lg" style={{ marginBottom: "2rem" }}>
+                  The common thread is simple: helping people get things handled with competence, follow-through, and good judgment. Because often, what people actually need is not a luxury concierge or a generic organizer.
+                </p>
+
+                <p style={{ fontSize: "1.15rem", fontWeight: 700, color: "var(--ink)", borderLeft: "3px solid var(--sage)", paddingLeft: "1.25rem", lineHeight: 1.5, marginTop: "2.5rem", marginBottom: "0.5rem" }}>
+                  They need another capable person.
+                </p>
+                <p style={{ fontSize: "0.8rem", fontWeight: 600, color: "var(--ink)", opacity: 0.55, paddingLeft: "1.55rem", letterSpacing: "0.08em" }}>
                   — Dayna Brown, Founder
                 </p>
               </div>

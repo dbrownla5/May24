@@ -95,10 +95,10 @@ export default function Home() {
       <section style={{ backgroundColor: "var(--parchment-mid)", padding: "6rem 0" }}>
         <div className="container">
           <FadeUp>
-            <span className="eyebrow eyebrow-sage">Where Most People Begin</span>
-            <h2 className="display-md" style={{ color: "var(--ink)", maxWidth: 560, marginBottom: "0.75rem" }}>What I actually do.</h2>
+            <span className="eyebrow eyebrow-sage">Where Most People Start</span>
+            <h2 className="display-md" style={{ color: "var(--ink)", maxWidth: 560, marginBottom: "0.75rem" }}>Three ways in.</h2>
             <p style={{ fontSize: "1rem", fontWeight: 300, color: "var(--sage-dark)", maxWidth: 640, lineHeight: 1.85, marginBottom: "3.5rem" }}>
-              Want to get started right now but not sure where to dig in? These are the three things clients book most.
+              Book the one that matches what's actually in front of you.
             </p>
           </FadeUp>
 
@@ -108,7 +108,7 @@ export default function Home() {
                 <div className="underlay-tag underlay-tag-sage" style={{ marginBottom: "1.5rem" }}>01 — The Reset</div>
                 <h3 className="display-sm" style={{ color: "var(--ink)", marginBottom: "1rem" }}>The 4-Hour Reset</h3>
                 <p style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.8, color: "var(--ink-soft)", marginBottom: "2rem" }}>
-                  A focused four-hour session for the one space you keep meaning to fix. Closets, kitchens, overflow rooms, post-move unpacking — whatever's been on the list longest. I show up and get it done.
+                  One space, four hours, done. The closet you stop opening. The kitchen drawer everyone gave up on. The room that became a staging area eighteen months ago. I show up with a plan and leave it functional.
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
                   <Link href="/the-reset" className="btn btn-ink">Book a Reset</Link>
@@ -119,28 +119,28 @@ export default function Home() {
 
             <FadeUp delay={60}>
               <div style={{ backgroundColor: "var(--parchment)", padding: "2.5rem", height: "100%" }}>
-                <div className="underlay-tag" style={{ marginBottom: "1.5rem" }}>02 — Curated Resale</div>
-                <h3 className="display-sm" style={{ color: "var(--ink)", marginBottom: "1rem" }}>Fast Bag Fill</h3>
+                <div className="underlay-tag" style={{ marginBottom: "1.5rem" }}>02 — House Calls</div>
+                <h3 className="display-sm" style={{ color: "var(--ink)", marginBottom: "1rem" }}>The 2-Hour House Call</h3>
                 <p style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.8, color: "var(--ink-soft)", marginBottom: "2rem" }}>
-                  A simple way to start letting things leave the house. Fill a bag or pickup pile with items you no longer want to manage. Pickup is complimentary within my service area — I handle the evaluation, routing, and resale from there.
+                  The short list of things that keep getting pushed: the smoke detector, the printer that hates everyone, the donation pile, the vendor who needs to be let in. Two-hour minimum, hourly after that.
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
-                  <Link href="/fast-bag-fill" className="btn btn-ink">Schedule a Pickup</Link>
-                  <span style={{ fontSize: "0.8rem", color: "var(--sage-dark)", fontWeight: 500 }}>Commission-based</span>
+                  <Link href="/house-calls" className="btn btn-ink">Book a House Call</Link>
+                  <span style={{ fontSize: "0.8rem", color: "var(--sage-dark)", fontWeight: 500 }}>$175/hr · 2-hr min</span>
                 </div>
               </div>
             </FadeUp>
 
             <FadeUp delay={120}>
               <div style={{ backgroundColor: "var(--parchment)", padding: "2.5rem", height: "100%" }}>
-                <div className="underlay-tag" style={{ marginBottom: "1.5rem" }}>03 — House Calls</div>
-                <h3 className="display-sm" style={{ color: "var(--ink)", marginBottom: "1rem" }}>The 2-Hour House Call</h3>
+                <div className="underlay-tag" style={{ marginBottom: "1.5rem" }}>03 — Curated Resale</div>
+                <h3 className="display-sm" style={{ color: "var(--ink)", marginBottom: "1rem" }}>Fast Bag Fill</h3>
                 <p style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.8, color: "var(--ink-soft)", marginBottom: "2rem" }}>
-                  Practical, hourly help with the everyday running of a household — tech setup, vendor oversight, donation routing, safety checks, remote family check-ins. The things that keep getting pushed to the bottom of the list until they don't.
+                  Fill a bag — or a pile — with things you're done managing. I pick up, evaluate, route, and list. You stop tripping over it. Free pickup in the service area.
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
-                  <Link href="/house-calls" className="btn btn-ink">Book a House Call</Link>
-                  <span style={{ fontSize: "0.8rem", color: "var(--sage-dark)", fontWeight: 500 }}>$175/hr · 2-hr min</span>
+                  <Link href="/fast-bag-fill" className="btn btn-ink">Schedule a Pickup</Link>
+                  <span style={{ fontSize: "0.8rem", color: "var(--sage-dark)", fontWeight: 500 }}>Commission-based</span>
                 </div>
               </div>
             </FadeUp>
@@ -155,13 +155,13 @@ export default function Home() {
             <FadeUp>
               <span className="eyebrow eyebrow-sage">House Calls</span>
               <h2 className="display-md" style={{ color: "var(--parchment)", marginBottom: "1.25rem", lineHeight: 1.15 }}>
-                Quietly taking the things you've been meaning to do off your plate.
+                The list you keep meaning to get to.
               </h2>
               <p style={{ fontSize: "1rem", fontWeight: 300, color: "rgba(248,244,227,0.72)", lineHeight: 1.8, marginBottom: "1.25rem" }}>
-                Technology that has stopped working. Home safety items that have been on the list for months. The room that has slowly become harder to move through. The things that accumulate in the space between "not urgent enough" and "I really need to address this."
+                The technology that stopped working. The safety items that have been on the list for months. The room that's slowly become harder to move through. The vendor who needs supervising. The donation drop nobody's making.
               </p>
               <p style={{ fontSize: "1rem", fontWeight: 300, color: "rgba(248,244,227,0.72)", lineHeight: 1.8, marginBottom: "2.5rem" }}>
-                Life accumulates faster than most people have time to address. House Calls are for exactly that — not crisis, not caregiving. Just thoughtful, hands-on help with the everyday things, from someone who actually enjoys figuring them out.
+                Not crisis. Not caregiving. Just the practical, unglamorous work of keeping a household running — handled by someone who actually likes figuring it out.
               </p>
               <Link href="/house-calls" className="btn btn-sage">Learn About House Calls</Link>
             </FadeUp>
@@ -194,18 +194,18 @@ export default function Home() {
       <section style={{ backgroundColor: "var(--parchment)", padding: "6rem 0" }}>
         <div className="container">
           <FadeUp>
-            <span className="eyebrow eyebrow-sage">Four Areas of Service</span>
-            <h2 className="display-md" style={{ color: "var(--ink)", maxWidth: 520, marginBottom: "1rem" }}>One consistent approach.</h2>
+            <span className="eyebrow eyebrow-sage">Four Pillars</span>
+            <h2 className="display-md" style={{ color: "var(--ink)", maxWidth: 520, marginBottom: "1rem" }}>One person.</h2>
             <p style={{ fontSize: "0.95rem", fontWeight: 300, color: "var(--sage-dark)", maxWidth: 600, lineHeight: 1.8, marginBottom: "3.5rem" }}>
-              Each pillar addresses a distinct dimension of household life — the reset after accumulation, the trusted ongoing presence, the resale and dispersal of what no longer belongs, the preservation of what should never be lost.
+              The work splits cleanly into four categories. Most clients use two or three of them at once.
             </p>
           </FadeUp>
           <div style={{ display: "grid", gap: "1px", backgroundColor: "var(--warm-gray-lt)" }}>
             {[
-              { num: "01", name: "Home Reset & Move Support", desc: "Organization, unpacking, room functionality, and post-move support. The 4-Hour Reset lives here.", href: "/the-reset" },
-              { num: "02", name: "Legacy Planning & Inventory", desc: "Creating clarity around the belongings and stories families should not lose track of — before urgency forces the decisions.", href: "/legacy-planning" },
-              { num: "03", name: "House Calls", desc: "Practical household help for busy professionals, independent adults, and families managing life from a distance.", href: "/house-calls" },
-              { num: "04", name: "Curated Resale & Consignment", desc: "Pickup or send your items. I identify the best resale route, manage listings, and recover value from the things you no longer need.", href: "/fast-bag-fill" },
+              { num: "01", name: "Home Reset & Move Support", desc: "Organization, unpacking, room functionality, post-move setup. The 4-Hour Reset lives here. Ongoing support billed hourly when projects run longer.", href: "/home-reset-move-support" },
+              { num: "02", name: "Legacy Planning & Inventory Catalog", desc: "Inventory and documentation of the belongings and stories families don't want to lose track of — before a move, a downsize, or a transition forces the decisions in a hurry.", href: "/legacy-planning" },
+              { num: "03", name: "House Calls", desc: "Hourly household support for busy professionals, independent older adults, and families managing a parent's home from a distance. The 2-Hour House Call lives here.", href: "/house-calls-pillar" },
+              { num: "04", name: "Curated Resale & Consignment", desc: "Drop off or schedule a pickup. I sort, evaluate, route, list, and ship. You recover value from things you no longer want to manage. The Fast Bag Fill lives here.", href: "/curated-resale-consignment" },
             ].map((s, i) => (
               <FadeUp key={s.num} delay={i * 40}>
                 <Link href={s.href}>
@@ -266,10 +266,10 @@ export default function Home() {
             <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
               <span className="eyebrow" style={{ color: "rgba(248,244,227,0.45)" }}>Ready to start?</span>
               <h2 className="display-md" style={{ color: "var(--parchment)", marginBottom: "1.25rem" }}>
-                Someone thoughtful is finally paying attention.
+                Tell me what's been quietly weighing on you.
               </h2>
               <p style={{ fontSize: "1rem", fontWeight: 300, color: "rgba(248,244,227,0.65)", lineHeight: 1.75, marginBottom: "2.5rem" }}>
-                Reach out. Tell me what's been quietly weighing on you. I'll take it from there.
+                I'll take it from there.
               </p>
               <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
                 <Link href="/contact" className="btn btn-sage">Schedule a Call</Link>
