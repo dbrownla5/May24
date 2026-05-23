@@ -30,11 +30,8 @@ export default function About() {
           <div style={{ maxWidth: 680 }}>
             <span className="eyebrow eyebrow-light">About</span>
             <h1 className="display-lg" style={{ color: "var(--parchment)", marginBottom: "2rem" }}>
-              I'm Dayna. I'm the person you call when life's gotten ahead of the house.
+              About Dayna.
             </h1>
-            <p style={{ fontSize: "1.1rem", fontWeight: 300, color: "rgba(248,244,227,0.7)", lineHeight: 1.8 }}>
-              I help people in Los Angeles take care of the practical, behind-the-scenes parts of running a household — the things that quietly pile up when life is moving fast.
-            </p>
           </div>
         </div>
       </section>
