@@ -233,7 +233,7 @@ export default function Pricing() {
               },
               {
                 title: "Rescheduling",
-                body: "I'd rather you tell me you're overwhelmed and reschedule than push through something that isn't working. Rescheduling is always an option — just give me as much notice as possible.",
+                body: "I'd rather you tell me you're overwhelmed and we reschedule than ghost the appointment — I genuinely won't be weird about it. Just let me know.",
               },
             ].map((item, i) => (
               <FadeUp key={i} delay={i * 50}>

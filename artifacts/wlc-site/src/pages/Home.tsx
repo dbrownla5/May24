@@ -90,7 +90,7 @@ export default function Home() {
                 <div className="underlay-tag" style={{ marginBottom: "1.5rem" }}>03 — House Calls</div>
                 <h3 className="display-sm" style={{ color: "var(--ink)", marginBottom: "1rem" }}>The 2-Hour House Call</h3>
                 <p style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.8, color: "var(--ink-soft)", marginBottom: "2rem" }}>
-                  For the capable individual who simply needs a trusted hand with life's small, persistent tasks. Discreet, practical support — the kind of observant help a neighbor once offered, designed to resolve minor friction before it grows.
+                  Practical, hourly help with the everyday running of a household — tech setup, vendor oversight, donation routing, safety checks, remote family check-ins. The things that keep getting pushed to the bottom of the list until they don't.
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
                   <Link href="/house-calls" className="btn btn-ink">Book a House Call</Link>

@@ -74,7 +74,7 @@ export default function LegacyPillar() {
                 The china set in the dining room hutch. The jewelry box in the bedroom. The art on the walls that someone once mentioned was valuable. The documents in the filing cabinet no one has opened in years.
               </p>
               <p className="body-lg" style={{ marginBottom: "1.5rem" }}>
-                When a home transitions — through a move, a health change, a death, or simply a decision to downsize — the people left to sort through it often have no record of what anything is, what it's worth, or what the person who owned it would have wanted done with it.
+                When a home transitions — through a move, a change in health, or simply a decision to downsize — the people left to sort through it often have no record of what anything is, what it's worth, or what the person who owned it would have wanted done with it.
               </p>
               <p className="body-lg">
                 Legacy Planning & Inventory Catalog is the work of creating that record while there is still time to do it thoughtfully.
@@ -90,7 +90,7 @@ export default function LegacyPillar() {
                   "Jewelry and personal accessories",
                   "Collectibles, antiques, and story-rich objects",
                   "Documents, photographs, and archival materials",
-                  "Financial and estate paperwork routing",
+                  "Important documents, financial records, and routing decisions",
                   "Sentimental items with family attribution notes",
                 ].map((item, i) => (
                   <div key={i} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", padding: "0.7rem 0", borderBottom: "1px solid var(--warm-gray-lt)" }}>

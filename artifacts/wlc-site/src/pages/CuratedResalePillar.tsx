@@ -48,7 +48,7 @@ export default function CuratedResalePillar() {
               Curated Resale<br />&amp; Consignment
             </h1>
             <p style={{ fontSize: "1.1rem", fontWeight: 300, color: "rgba(248,244,227,0.75)", lineHeight: 1.8, marginBottom: "0.75rem" }}>
-              Trust-forward thoughtful curation.
+              Your good things deserve a good second life.
             </p>
             <p style={{ fontSize: "1rem", fontWeight: 300, color: "rgba(248,244,227,0.6)", lineHeight: 1.8, marginBottom: "2.5rem" }}>
               For the things that still have value, story, or second-market potential — without asking you to become a part-time reseller.
