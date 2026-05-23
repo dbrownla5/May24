@@ -131,20 +131,25 @@ export default function LegacyPillar() {
       </section>
 
       {/* ── WHO THIS IS FOR ── */}
-      <section style={{ backgroundColor: "var(--sage)", padding: "5rem 0" }}>
+      <section style={{ backgroundColor: "var(--sage)", padding: "6rem 0" }}>
         <div className="container">
           <FadeUp>
-            <div style={{ maxWidth: 680 }}>
-              <span className="eyebrow" style={{ color: "var(--sage-dark)" }}>Who This Is For</span>
-              <h2 className="display-md" style={{ color: "var(--ink)", marginBottom: "2rem" }}>Before the conversation becomes urgent.</h2>
-              <p style={{ fontSize: "1rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.8, marginBottom: "1.5rem", opacity: 0.85 }}>
-                This work is for adults who want to get ahead of the conversation — not wait until a health event or a death forces the family to sort through a lifetime of belongings without a map.
+            <div style={{ maxWidth: 700 }}>
+              <span className="eyebrow" style={{ color: "var(--sage-dark)" }}>Why People Call</span>
+              <h2 className="display-md" style={{ color: "var(--ink)", marginBottom: "2rem" }}>
+                The china came out at a family dinner. And you realized.
+              </h2>
+              <p style={{ fontSize: "1rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.85, marginBottom: "1.5rem", opacity: 0.88 }}>
+                The set has missing pieces. Some things are chipped. Your kids have their own china now — nobody's inheriting a broken set. But you can't sell it as-is, and it doesn't feel right to just put it in a donation bag. So it stays in the hutch.
               </p>
-              <p style={{ fontSize: "1rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.8, marginBottom: "1.5rem", opacity: 0.85 }}>
-                It is for adult children who want to help a parent create that record while they can still tell the story of every piece. It is for anyone who has watched a family go through an estate without documentation and knows exactly how painful that is.
+              <p style={{ fontSize: "1rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.85, marginBottom: "1.5rem", opacity: 0.88 }}>
+                I'm not an estate planner. I don't do wills or estate law. What I do is come in and look at what's actually in the drawers. The extra bedsheets, still in plastic. The unopened china that hasn't been touched in 30 years. The pieces that can be sold individually on eBay — because the right buyer is out there for each one, even when the set is gone. Your kids don't want it. You've already decided it isn't going to anyone specific. So let's make sure it goes somewhere, and that it means something on the way out.
               </p>
-              <p style={{ fontSize: "1.05rem", fontWeight: 500, color: "var(--ink)", lineHeight: 1.75, fontStyle: "italic" }}>
-                "The most valuable thing I can do is show up before anyone has to."
+              <p style={{ fontSize: "1rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.85, marginBottom: "2rem", opacity: 0.88 }}>
+                That's what this work is. A thoughtful process, a partner who cares about the details, and the time to do it right — while you can still tell me what everything is and why it mattered.
+              </p>
+              <p style={{ fontSize: "1.05rem", fontWeight: 600, color: "var(--ink)", lineHeight: 1.65, fontStyle: "italic" }}>
+                "Let's make sure your life has value and meaning. And that you get a real partner in the process."
               </p>
               <p style={{ fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink)", opacity: 0.55, marginTop: "0.75rem" }}>— Dayna Brown, Founder</p>
             </div>

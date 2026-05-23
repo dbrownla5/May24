@@ -168,6 +168,116 @@ export default function Pricing() {
         </div>
       </section>
 
+      {/* ── HOW A RESET WORKS ── */}
+      <section style={{ backgroundColor: "var(--parchment-mid)", padding: "5rem 0" }}>
+        <div className="container">
+          <FadeUp>
+            <span className="eyebrow eyebrow-sage">The Reset · How It Works</span>
+            <h2 className="display-md" style={{ color: "var(--ink)", marginBottom: "0.75rem", maxWidth: 520 }}>
+              Solo, side by side, or you go first.
+            </h2>
+            <p style={{ fontSize: "0.95rem", fontWeight: 300, color: "var(--sage-dark)", lineHeight: 1.8, marginBottom: "3rem", maxWidth: 560 }}>
+              Most clients don't realize they have options here. These are the three ways a Reset can go — pick what works for you.
+            </p>
+          </FadeUp>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1.5rem" }}>
+            {[
+              {
+                mode: "You go, I work",
+                tag: "Most common",
+                body: "You leave. I come in, work through the space, and lock up when I'm done. You come back to a finished room. No hovering, no decisions you didn't sign up for. Works for closets, kitchens, overflow rooms, and post-move unpacking.",
+              },
+              {
+                mode: "Side by side",
+                tag: "For sentimental or complex spaces",
+                body: "You stay. You make the calls — I handle the physical execution. Good for spaces where every item needs your eye on it: inherited things, items with history, anything where you need to be part of the decision.",
+              },
+              {
+                mode: "The Closeout",
+                tag: "For whole-home transitions",
+                body: "You go through once and flag what stays. Everything else — donations, resale prep, packing, routing — gets handled after you leave. You don't have to be there for the hard part.",
+              },
+            ].map((item, i) => (
+              <FadeUp key={i} delay={i * 60}>
+                <div style={{ backgroundColor: "var(--parchment)", padding: "2.5rem", borderTop: "3px solid var(--sage)" }}>
+                  <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--sage)", marginBottom: "0.5rem" }}>{item.tag}</p>
+                  <h3 style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--ink)", marginBottom: "1rem" }}>{item.mode}</h3>
+                  <p style={{ fontSize: "0.88rem", fontWeight: 300, color: "var(--ink-soft)", lineHeight: 1.75 }}>{item.body}</p>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+          <FadeUp delay={200}>
+            <p style={{ fontSize: "0.85rem", fontWeight: 300, color: "var(--sage-dark)", marginTop: "2rem", lineHeight: 1.7 }}>
+              All three options are $495 flat for 4 hours. Additional time at $125/hr, always disclosed before I run over.
+            </p>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* ── WHAT'S NOT INCLUDED ── */}
+      <section style={{ backgroundColor: "var(--parchment)", padding: "5rem 0" }}>
+        <div className="container">
+          <FadeUp>
+            <span className="eyebrow eyebrow-sage">What's Not Included</span>
+            <h2 className="display-md" style={{ color: "var(--ink)", marginBottom: "0.75rem", maxWidth: 520 }}>
+              I want you to know exactly what you're getting.
+            </h2>
+            <p style={{ fontSize: "0.95rem", fontWeight: 300, color: "var(--sage-dark)", lineHeight: 1.8, marginBottom: "3rem", maxWidth: 560 }}>
+              No surprises after the session. Here's what each service covers — and what it doesn't.
+            </p>
+          </FadeUp>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1px", backgroundColor: "var(--warm-gray-lt)" }}>
+            {[
+              {
+                service: "The Reset",
+                included: ["Sorting, editing, and placement", "Donation routing and bag preparation", "Resale identification and routing", "Post-session written summary"],
+                notIncluded: ["Cleaning or deep cleaning", "Painting, repairs, or handyman work", "Furniture removal or hauling", "Shopping or purchasing new items"],
+              },
+              {
+                service: "House Calls",
+                included: ["Technology setup and troubleshooting", "Vendor coordination and oversight", "Donation and return routing", "Home safety and accessibility updates"],
+                notIncluded: ["Electrical or plumbing work", "Caregiving or medical support", "Cleaning services", "Same-day service (2-hr notice minimum)"],
+              },
+              {
+                service: "Legacy Planning",
+                included: ["Photographed inventory of significant items", "Written notes on provenance and history", "Valuation routing to trusted appraisers", "Distribution planning and strategy"],
+                notIncluded: ["Estate law, wills, or legal documents", "Financial or tax advice", "Physical removal or hauling of items", "Insurance appraisals (referrals available)"],
+              },
+              {
+                service: "Curated Resale",
+                included: ["Pickup within service area (complimentary)", "Platform matching and listing", "Buyer communication", "Monthly summary and payout by the 5th"],
+                notIncluded: ["Guaranteed sale or timeline", "Items outside category/condition threshold", "Junk removal or disposal", "Same-week payouts (monthly cycle)"],
+              },
+            ].map((item, i) => (
+              <FadeUp key={i} delay={i * 50}>
+                <div style={{ backgroundColor: "var(--parchment)", padding: "2.5rem" }}>
+                  <h3 style={{ fontSize: "1rem", fontWeight: 700, color: "var(--ink)", marginBottom: "1.5rem", paddingBottom: "0.75rem", borderBottom: "2px solid var(--sage)" }}>
+                    {item.service}
+                  </h3>
+                  <div style={{ marginBottom: "1.25rem" }}>
+                    <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--sage)", marginBottom: "0.75rem" }}>Included</p>
+                    {item.included.map((line, j) => (
+                      <div key={j} style={{ display: "flex", gap: "0.6rem", padding: "0.35rem 0", fontSize: "0.82rem", fontWeight: 300, color: "var(--ink-soft)" }}>
+                        <span style={{ color: "var(--sage)", flexShrink: 0 }}>✓</span>{line}
+                      </div>
+                    ))}
+                  </div>
+                  <div>
+                    <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--warm-gray-md)", marginBottom: "0.75rem" }}>Not included</p>
+                    {item.notIncluded.map((line, j) => (
+                      <div key={j} style={{ display: "flex", gap: "0.6rem", padding: "0.35rem 0", fontSize: "0.82rem", fontWeight: 300, color: "var(--sage-dark)" }}>
+                        <span style={{ color: "var(--warm-gray-md)", flexShrink: 0 }}>—</span>{line}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── MONTHLY RETAINER ── */}
       <section style={{ backgroundColor: "var(--sage)", padding: "5rem 0" }}>
         <div className="container">

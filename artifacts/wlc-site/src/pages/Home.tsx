@@ -121,17 +121,19 @@ export default function Home() {
             </FadeUp>
             <FadeUp delay={100}>
               <div style={{ backgroundColor: "var(--sage)", padding: "3rem", boxShadow: "6px 6px 0px rgba(248,244,227,0.15)" }}>
-                <p className="pull-quote" style={{ color: "var(--ink)", fontSize: "1.15rem", marginBottom: "2rem" }}>
-                  "Often, the things creating the most stress in a household are the ones no one has had time to properly address."
+                <p style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--ink)", opacity: 0.55, marginBottom: "1.5rem" }}>Client · House Calls</p>
+                <p style={{ fontSize: "1.2rem", fontWeight: 700, color: "var(--ink)", lineHeight: 1.4, marginBottom: "1.5rem" }}>
+                  "You made my TV work better, and my clicker is right there next to the bed, and all my lights turn on. It's great. It's amazing. I love you."
                 </p>
-                <div style={{ borderTop: "1px solid rgba(56,48,46,0.2)", paddingTop: "1.5rem" }}>
-                  <p style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink)", opacity: 0.7, marginBottom: "1rem" }}>
+                <p style={{ fontSize: "0.8rem", fontWeight: 600, color: "var(--ink)", opacity: 0.6, letterSpacing: "0.08em" }}>— Gayle · Los Angeles</p>
+                <div style={{ borderTop: "1px solid rgba(56,48,46,0.2)", paddingTop: "1.5rem", marginTop: "2rem" }}>
+                  <p style={{ fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink)", opacity: 0.65, marginBottom: "1rem" }}>
                     A House Call might include
                   </p>
-                  <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                    {["Technology setup & troubleshooting", "Home safety updates", "Reorganizing for easier access", "Resale & donation preparation", "Post-move settling", "Support after loss or transition"].map(item => (
-                      <li key={item} style={{ fontSize: "0.9rem", fontWeight: 300, color: "var(--ink)", display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
-                        <span style={{ color: "var(--ink)", opacity: 0.5, flexShrink: 0, marginTop: "0.15rem" }}>—</span>{item}
+                  <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+                    {["Technology setup & troubleshooting", "Home safety updates", "Reorganizing for easier access", "Resale & donation preparation", "Remote family check-ins", "Post-move settling"].map(item => (
+                      <li key={item} style={{ fontSize: "0.85rem", fontWeight: 300, color: "var(--ink)", display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
+                        <span style={{ color: "var(--ink)", opacity: 0.4, flexShrink: 0, marginTop: "0.15rem" }}>—</span>{item}
                       </li>
                     ))}
                   </ul>

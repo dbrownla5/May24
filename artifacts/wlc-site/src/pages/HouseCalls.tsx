@@ -192,6 +192,24 @@ export default function HouseCalls() {
         </div>
       </section>
 
+      {/* ── TESTIMONIAL ── */}
+      <section style={{ backgroundColor: "var(--sage)", padding: "5rem 0" }}>
+        <div className="container">
+          <FadeUp>
+            <div style={{ maxWidth: 640 }}>
+              <p style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--sage-dark)", marginBottom: "1.5rem" }}>Client Story</p>
+              <p style={{ fontSize: "clamp(1.2rem, 3vw, 1.6rem)", fontWeight: 700, color: "var(--ink)", lineHeight: 1.4, marginBottom: "1.5rem" }}>
+                "You made my TV work better, and my clicker is right there next to the bed, and all my lights turn on. It's great. It's amazing. I love you."
+              </p>
+              <p style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--ink)", opacity: 0.65, letterSpacing: "0.08em", marginBottom: "2.5rem" }}>— Gayle · Los Angeles</p>
+              <p style={{ fontSize: "0.95rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.8, opacity: 0.8 }}>
+                This is what House Calls looks like in real life. Not a transformation, not a project — just someone who came in, figured out the TV remote situation, got the lights set up properly, and made the bedroom easier to live in. The small stuff matters.
+              </p>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
