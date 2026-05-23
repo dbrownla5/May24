@@ -9,9 +9,11 @@ import {
   UpdatePostBody,
   DeletePostParams,
 } from "@workspace/api-zod";
-import { eq, and, desc, gte, sql } from "drizzle-orm";
+import { eq, and, desc, sql } from "drizzle-orm";
+import { requireStudioKey } from "./middleware/requireStudioKey";
 
 const router: IRouter = Router();
+router.use(requireStudioKey);
 
 // GET /posts
 router.get("/posts", async (req: Request, res: Response) => {

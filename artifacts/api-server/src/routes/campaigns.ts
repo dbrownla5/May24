@@ -2,8 +2,10 @@ import { Router, type IRouter, type Request, type Response } from "express";
 import { db, campaignsTable } from "@workspace/db";
 import { CreateCampaignBody } from "@workspace/api-zod";
 import { desc } from "drizzle-orm";
+import { requireStudioKey } from "./middleware/requireStudioKey";
 
 const router: IRouter = Router();
+router.use(requireStudioKey);
 
 // GET /campaigns
 router.get("/campaigns", async (req: Request, res: Response) => {

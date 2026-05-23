@@ -37,3 +37,9 @@ externalPort = 3000
 
 [nix]
 channel = "stable-25_05"
+
+[userenv]
+
+[userenv.shared]
+CONTENT_STUDIO_API_KEY = "db68f768779e1c26e98f0b6fa093f34b0a9261f7d7e91fefa81442c4f62ff7ef"
+VITE_CONTENT_STUDIO_API_KEY = "db68f768779e1c26e98f0b6fa093f34b0a9261f7d7e91fefa81442c4f62ff7ef"

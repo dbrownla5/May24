@@ -1,8 +1,10 @@
 import { Router, type IRouter, type Request, type Response } from "express";
 import { GenerateContentBody } from "@workspace/api-zod";
 import { openai } from "@workspace/integrations-openai-ai-server";
+import { requireStudioKey } from "./middleware/requireStudioKey";
 
 const router: IRouter = Router();
+router.use(requireStudioKey);
 
 const BRAND_VOICE = `You are a copywriter for The Well Lived Citizen, a premium household stewardship service in Los Angeles run by Dayna Brown. The brand voice is: warm, confident, and intentional. Never salesy, never frantic. The client is a thoughtful adult — often a homeowner going through a major life transition (downsizing, estate, new home). Copy feels considered and personal, never generic. Services include: The Reset (home organization reset), House Calls (ongoing household management), Legacy Planning (estate/senior transitions), Curated Resale & Consignment, and Fast Bag Fill (closet purge).`;
 
