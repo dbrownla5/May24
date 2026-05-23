@@ -2,9 +2,14 @@ import { Router, type IRouter, type Request, type Response } from "express";
 import { Resend } from "resend";
 
 const router: IRouter = Router();
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 router.post("/contact", async (req: Request, res: Response) => {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    res.status(503).json({ ok: false, error: "Email service not configured." });
+    return;
+  }
+  const resend = new Resend(apiKey);
   const { name, email, phone, neighborhood, clientType, summary, situation } = req.body as {
     name?: string;
     email?: string;
