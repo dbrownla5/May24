@@ -32,15 +32,15 @@ export default function FastBagFill() {
             <span className="eyebrow" style={{ color: "var(--sage-dark)" }}>Service 04</span>
             <div style={{ display: "inline-block", backgroundColor: "var(--ink)", padding: "0.3rem 0.8rem", marginBottom: "1.5rem" }}>
               <span style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--parchment)" }}>
-                Entry Point · Low Friction
+                Pickup Service · No Appointment Needed
               </span>
             </div>
             <h1 className="display-lg" style={{ color: "var(--ink)", marginBottom: "1.5rem" }}>Fast Bag Fill</h1>
             <p style={{ fontSize: "1.15rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.75, marginBottom: "1.5rem", opacity: 0.85 }}>
-              The lowest-friction way to start letting things leave the house. Fill a bag, box, or pickup pile with what you no longer want to manage.
+              Fill a bag with what you're ready to let go of. I come pick it up and handle the rest — resell what's worth selling, donate what isn't, and send you a summary of where everything went.
             </p>
             <p style={{ fontSize: "1.15rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.75, marginBottom: "2.5rem", opacity: 0.85 }}>
-              Complimentary pickup within my service area. I evaluate, route, and handle everything from there — resale, donation, or dispersal.
+              Complimentary pickup within my LA service area. No appointment, no prep work, no decisions to make before I arrive.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center" }}>
               <Link href="/contact" className="btn btn-ink">Schedule a Pickup</Link>

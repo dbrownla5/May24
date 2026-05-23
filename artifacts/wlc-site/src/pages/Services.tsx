@@ -42,7 +42,7 @@ const pillars = [
     num: "03",
     name: "House Calls",
     tagline: "For the things life leaves unfinished.",
-    description: "Practical, flexible household support for the operational side of everyday life. Technology setup, home safety, vendor coordination, donation routing, post-move settling — whatever the household needs, handled by someone who genuinely enjoys figuring it out.",
+    description: "Hourly help for the everyday things that keep getting pushed to the bottom of the list. Setting up new tech. Coordinating vendors. Returns, donations, post-move settling. Whatever needs doing — by someone who actually enjoys figuring it out.",
     includes: ["Technology setup and troubleshooting", "Home safety updates", "Vendor oversight and access days", "Donation and return routing", "Remote family check-ins and updates", "Event prep and post-event breakdown"],
     quickBook: { label: "The 2-Hour House Call", href: "/house-calls" },
     pillarHref: "/house-calls-pillar",
@@ -84,12 +84,12 @@ export default function Services() {
             <span className="eyebrow eyebrow-sage">Where Most People Start</span>
             <h2 className="display-md" style={{ color: "var(--ink)", marginBottom: "0.75rem" }}>Quick Books</h2>
             <p style={{ fontSize: "0.95rem", fontWeight: 300, color: "var(--sage-dark)", lineHeight: 1.8, marginBottom: "2.5rem", maxWidth: 560 }}>
-              These are the three most-booked entry points. Straightforward to book, designed to deliver immediate results.
+              These are the three things clients book most. Easy to schedule, easy to see results.
             </p>
           </FadeUp>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1px", backgroundColor: "var(--warm-gray-lt)" }}>
             {[
-              { href: "/the-reset", num: "QB01", name: "The 4-Hour Reset", price: "$150/hr · 3-hr min", desc: "A focused working session for the space that has quietly accumulated the most friction. Four hours of real, practical momentum." },
+              { href: "/the-reset", num: "QB01", name: "The 4-Hour Reset", price: "$495 flat rate", desc: "Four focused hours in the one space you keep meaning to fix. I show up, we get it done." },
               { href: "/house-calls", num: "QB02", name: "The 2-Hour House Call", price: "$175/hr · 2-hr min", desc: "Practical help for the things life accumulates faster than anyone has time to address. Technology, safety, organization, transitions." },
               { href: "/fast-bag-fill", num: "QB03", name: "The Fast Bag Fill", price: "Complimentary pickup", desc: "Fill a bag with clothing and accessories you're ready to part with. Pickup is complimentary — we handle evaluation, routing, and resale." },
             ].map((qb, i) => (

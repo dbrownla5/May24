@@ -233,7 +233,7 @@ export default function CuratedResalePillar() {
           </FadeUp>
           <div style={{ maxWidth: 720 }}>
             {[
-              { q: "What's the difference between Fast Bag Fill and full resale consignment?", a: "Fast Bag Fill is the low-friction entry point — fill a bag with what you're ready to let go of, I pick it up, I handle everything. Full resale consignment is a more deliberate process for items with significant value — designer pieces, collections, estate items." },
+              { q: "What's the difference between Fast Bag Fill and full resale consignment?", a: "Fast Bag Fill is the easy way in — fill a bag with what you're ready to let go of, I come pick it up, I handle everything from there. Full resale consignment is a more deliberate process for items with significant value — designer pieces, collections, estate items." },
               { q: "What happens to items that don't sell?", a: "Items that don't sell within the consignment window are returned to you or donated at your direction. I'll flag anything that hasn't moved at the 180-day mark so nothing sits indefinitely without your knowledge." },
               { q: "Do you accept furniture?", a: "Yes — furniture, art, and significant home pieces are accepted through a local consultation, not the Fast Bag Fill. I'll evaluate the items in person and discuss routing." },
               { q: "How do I get paid?", a: "Payouts are sent by the 5th of each month via Venmo, Zelle, or check. You'll receive a report by the 1st with everything that sold, the platform, and the net proceeds." },

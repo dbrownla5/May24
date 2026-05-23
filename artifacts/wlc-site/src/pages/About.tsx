@@ -30,10 +30,10 @@ export default function About() {
           <div style={{ maxWidth: 680 }}>
             <span className="eyebrow eyebrow-light">About</span>
             <h1 className="display-lg" style={{ color: "var(--parchment)", marginBottom: "2rem" }}>
-              The trusted bridge between memory, value, function, and next steps.
+              I'm Dayna. I'm the person you call when life's gotten ahead of the house.
             </h1>
             <p style={{ fontSize: "1.1rem", fontWeight: 300, color: "rgba(248,244,227,0.7)", lineHeight: 1.8 }}>
-              A private household stewardship company helping people navigate the emotional and operational realities of modern life — before they become overwhelming.
+              I help people in Los Angeles take care of the practical, behind-the-scenes parts of running a household — the things that quietly pile up when life is moving fast.
             </p>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function About() {
                 Families need someone they trust to translate life, belongings, logistics, memory, and safety into a clear path forward. The Well Lived Citizen was built to be that presence — the person who observes the signals before they become emergencies, and acts on them with care.
               </p>
               <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.75)", lineHeight: 1.8 }}>
-                Making invisible household realities visible again.
+                Bringing real attention back to the parts of the household that keep getting put off.
               </p>
             </div>
           </FadeUp>
@@ -180,7 +180,7 @@ export default function About() {
                 "Someone thoughtful is finally paying attention to the things that quietly matter."
               </p>
               <p style={{ fontSize: "0.9rem", fontWeight: 300, color: "var(--ink)", opacity: 0.75, lineHeight: 1.75, marginBottom: "2.5rem" }}>
-                That is the promise. The transition is from invisible overwhelm to thoughtful continuity. That is the work.
+                That's the promise. The shift is from quietly overwhelmed to genuinely taken care of. That's the work.
               </p>
               <Link href="/contact" className="btn btn-ink">Schedule a Call</Link>
             </div>

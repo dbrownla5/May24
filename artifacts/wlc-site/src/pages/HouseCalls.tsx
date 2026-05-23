@@ -38,7 +38,7 @@ export default function HouseCalls() {
               There's a whole category of home tasks that pile up not because you can't handle them, but because life moved faster than the list. The setup that never got finished. The thing that's been on the mental to-do since the move. The appointment that requires someone to actually be home.
             </p>
             <p style={{ fontSize: "1.15rem", fontWeight: 300, color: "rgba(248,244,227,0.75)", lineHeight: 1.75, marginBottom: "2.5rem" }}>
-              House Calls are for that. Not a crisis. Not caregiving. Practical, capable help for the operational side of everyday life — by someone who genuinely enjoys figuring it out.
+              House Calls are for exactly that. Not a crisis. Not caregiving. Just practical, hands-on help with the everyday things — from someone who actually enjoys figuring it out.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center" }}>
               <Link href="/contact" className="btn btn-sage">Schedule a House Call</Link>
@@ -58,7 +58,7 @@ export default function HouseCalls() {
                 Practical help for the things life accumulates faster than anyone has time to address.
               </h2>
               <p className="body-lg" style={{ marginBottom: "1.5rem" }}>
-                House Calls are flexible, hourly sessions for the operational side of household life — the things that don't fit neatly into a single category. Technology setup, home safety, vendor coordination, post-move settling, support during or after a transition.
+                House Calls are flexible, hourly sessions for the things that don't fit in one neat category. Setting up a new TV. Walking through the house to check what needs fixing. Coordinating with a vendor. Unpacking after a move. Helping during or after a big life change.
               </p>
               <p className="body-lg" style={{ marginBottom: "1.5rem" }}>
                 There's no discovery call required. You tell me what needs attention, I show up and handle it. Two-hour minimum, billed hourly after that.
@@ -163,7 +163,7 @@ export default function HouseCalls() {
           </FadeUp>
           <div style={{ maxWidth: 720 }}>
             {[
-              { q: "What's the difference between a House Call and The Reset?", a: "The Reset is a focused session for a single space. House Calls are flexible, hourly sessions for the broader operational side of household life — technology, safety, organization, transitions. House Calls have a 2-hour minimum." },
+              { q: "What's the difference between a House Call and The Reset?", a: "The Reset is a focused session for a single space. House Calls are flexible, hourly sessions for the broader running-the-household stuff — technology, home safety, errands, vendor coordination, transitions. House Calls have a 2-hour minimum." },
               { q: "Can I book recurring House Calls?", a: "Yes. Monthly retainer packages are available for clients who want consistent, scheduled support. These are priced individually based on frequency and scope. Ask about them during your call." },
               { q: "Do you work with older adults?", a: "Yes, and I'm particularly thoughtful about this. I work with older adults who want support maintaining their homes and their autonomy. The pace and approach always match the person and the situation." },
               { q: "What if the task takes less than 2 hours?", a: "The 2-hour minimum is the booking unit. If I finish early, I'll use the remaining time on whatever else would be useful — a quick tech check, a donation sort, whatever makes sense." },

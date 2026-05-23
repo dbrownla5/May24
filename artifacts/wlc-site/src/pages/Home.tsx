@@ -33,10 +33,10 @@ export default function Home() {
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
           <span className="eyebrow eyebrow-light" style={{ marginBottom: "1.25rem" }}>The Well Lived Citizen · Los Angeles</span>
           <h1 className="display-xl" style={{ color: "var(--parchment)", maxWidth: 720, marginBottom: "1.5rem" }}>
-            Thoughtful stewardship<br />for your household.
+            Practical help for the parts of life that quietly pile up.
           </h1>
           <p style={{ fontSize: "1.1rem", fontWeight: 300, color: "rgba(248,244,227,0.82)", maxWidth: 580, lineHeight: 1.8, marginBottom: "2.5rem" }}>
-            We address the invisible friction and deferred decisions that accumulate over time — restoring clarity and functional calm to your home.
+            Organization, resale, inventory, transitions, and thoughtful household support — handled with care and real follow-through.
           </p>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <Link href="/contact" className="btn btn-ink" style={{ backgroundColor: "var(--parchment)", color: "var(--ink)", borderColor: "var(--parchment)" }}>Schedule a Call</Link>
@@ -50,7 +50,7 @@ export default function Home() {
         <div className="container">
           <FadeUp>
             <span className="eyebrow eyebrow-sage">Where Most People Begin</span>
-            <h2 className="display-md" style={{ color: "var(--ink)", maxWidth: 560, marginBottom: "0.75rem" }}>Practical household stewardship.</h2>
+            <h2 className="display-md" style={{ color: "var(--ink)", maxWidth: 560, marginBottom: "0.75rem" }}>What I actually do.</h2>
             <p style={{ fontSize: "1rem", fontWeight: 300, color: "var(--sage-dark)", maxWidth: 640, lineHeight: 1.85, marginBottom: "3.5rem" }}>
               Want to get started right now but not sure where to dig in? These are the three things clients book most.
             </p>
@@ -62,7 +62,7 @@ export default function Home() {
                 <div className="underlay-tag underlay-tag-sage" style={{ marginBottom: "1.5rem" }}>01 — The Reset</div>
                 <h3 className="display-sm" style={{ color: "var(--ink)", marginBottom: "1rem" }}>The 4-Hour Reset</h3>
                 <p style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.8, color: "var(--ink-soft)", marginBottom: "2rem" }}>
-                  A focused working session for the space that has quietly accumulated friction. Closets, kitchens, overflow rooms, post-move unpacking — whatever has been deferred longest. Four hours of real, practical momentum.
+                  A focused four-hour session for the one space you keep meaning to fix. Closets, kitchens, overflow rooms, post-move unpacking — whatever's been on the list longest. I show up, we get it done.
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
                   <Link href="/the-reset" className="btn btn-ink">Book a Reset</Link>
@@ -109,13 +109,13 @@ export default function Home() {
             <FadeUp>
               <span className="eyebrow eyebrow-sage">House Calls</span>
               <h2 className="display-md" style={{ color: "var(--parchment)", marginBottom: "1.25rem", lineHeight: 1.15 }}>
-                Resolving the invisible friction of everyday life.
+                Quietly taking the things you've been meaning to do off your plate.
               </h2>
               <p style={{ fontSize: "1rem", fontWeight: 300, color: "rgba(248,244,227,0.72)", lineHeight: 1.8, marginBottom: "1.25rem" }}>
                 Technology that has stopped working. Home safety items that have been on the list for months. The room that has slowly become harder to move through. The things that accumulate in the space between "not urgent enough" and "I really need to address this."
               </p>
               <p style={{ fontSize: "1rem", fontWeight: 300, color: "rgba(248,244,227,0.72)", lineHeight: 1.8, marginBottom: "2.5rem" }}>
-                Life accumulates faster than most people have time to address. House Calls are for exactly that space — not crisis, not caregiving, but thoughtful, capable support for the operational side of a well-lived life.
+                Life accumulates faster than most people have time to address. House Calls are for exactly that — not crisis, not caregiving. Just thoughtful, hands-on help with the everyday things, from someone who actually enjoys figuring them out.
               </p>
               <Link href="/house-calls" className="btn btn-sage">Learn About House Calls</Link>
             </FadeUp>

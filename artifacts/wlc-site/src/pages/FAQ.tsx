@@ -43,7 +43,7 @@ const faqSections = [
   {
     title: "House Calls",
     items: [
-      { q: "What's the difference between a House Call and The Reset?", a: "The Reset is a focused session for a single space or problem area. House Calls are flexible, hourly sessions for the broader operational side of household life — technology, safety, organization, transitions, and whatever else needs attention. House Calls have a 2-hour minimum." },
+      { q: "What's the difference between a House Call and The Reset?", a: "The Reset is a focused session for a single space or problem area. House Calls are flexible, hourly sessions for the broader running-the-household stuff — technology, home safety, errands, vendor coordination, transitions, and whatever else needs attention. House Calls have a 2-hour minimum." },
       { q: "Can I book recurring House Calls?", a: "Yes. Monthly retainer packages are available for clients who want consistent, scheduled support. These are priced individually based on frequency and scope. Ask about them during your call." },
       { q: "Do you work with older adults?", a: "Yes, and I'm particularly thoughtful about this. I work with older adults who want support maintaining their homes and their autonomy. The pace and approach always match the person and the situation." },
     ]
@@ -51,7 +51,7 @@ const faqSections = [
   {
     title: "Resale & Fast Bag Fill",
     items: [
-      { q: "What's the difference between Fast Bag Fill and full resale consignment?", a: "Fast Bag Fill is the low-friction entry point — fill a bag with what you're ready to let go of, I pick it up, I handle everything. Full resale consignment is a more deliberate process for items with significant value — designer pieces, collections, estate items. Both can result in resale proceeds for you." },
+      { q: "What's the difference between Fast Bag Fill and full resale consignment?", a: "Fast Bag Fill is the easy way in — fill a bag with what you're ready to let go of, I come pick it up, I handle everything from there. Full resale consignment is a more deliberate process for items with significant value — designer pieces, collections, estate items. Both can result in resale proceeds for you." },
       { q: "How quickly can items start selling?", a: "For standard items, listings can go live within 5–7 days of pickup. You could see items start selling within 10 days. Timelines vary by item and platform." },
       { q: "What if something doesn't sell?", a: "Items that don't sell within an agreed timeframe are returned to you or donated at your direction. I discuss this before I accept items so there are no surprises." },
       { q: "Do I need to clean or prep items before pickup?", a: "No. I handle the prep. Items should be in the condition they're in — I'll assess and handle what's needed." },

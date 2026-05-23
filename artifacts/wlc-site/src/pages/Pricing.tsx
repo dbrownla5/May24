@@ -87,7 +87,7 @@ export default function Pricing() {
                 href: "/house-calls",
                 price: "$175",
                 unit: "per hour",
-                description: "Flexible hourly support for the operational side of household life. 2-hour minimum.",
+                description: "Flexible hourly help with the everyday running of a household. 2-hour minimum.",
                 details: [
                   "2-hour minimum booking",
                   "Billed in full hours",
@@ -105,7 +105,7 @@ export default function Pricing() {
                 href: "/fast-bag-fill",
                 price: "Free",
                 unit: "pickup",
-                description: "Complimentary pickup within my service area. Resale proceeds shared when items sell. Fast Bag Fill is the quick-book entry point.",
+                description: "Complimentary pickup within my service area. Resale proceeds shared when items sell. Fast Bag Fill is the easiest way to start.",
                 details: [
                   "Clothing, accessories, decor, collectibles",
                   "Fill what you have — I make the call on what sells",
