@@ -433,7 +433,7 @@ export default function Pricing() {
               },
               {
                 title: "Payment",
-                body: "Payment is due at the time of service unless otherwise arranged. I accept Venmo, Zelle, Cash App, check, and major credit cards (via Square). Retainer clients are invoiced and billed monthly. I'll always confirm the method that works best for you before I arrive.",
+                body: "Payment is due at booking. I accept Venmo, Zelle, Cash App, check, and major credit cards (via Square). For larger accounts, a 50/50 split is available — ask during your consultation. Retainer clients are invoiced monthly. Payment handles will be provided at time of booking.",
               },
               {
                 title: "Travel",

@@ -133,6 +133,9 @@ export default function HouseCalls() {
                   Monthly retainer packages available for clients who want consistent, scheduled support.
                 </p>
                 <Link href="/contact" className="btn btn-ink">Schedule a House Call</Link>
+                <p style={{ fontSize: "0.78rem", fontWeight: 300, color: "var(--sage-dark)", lineHeight: 1.65, marginTop: "1.25rem" }}>
+                  Payment is due at booking. For larger accounts, a 50/50 split is available — ask during your consultation. Payment handles provided at time of booking.
+                </p>
               </div>
               <div>
                 {[
@@ -142,6 +145,8 @@ export default function HouseCalls() {
                   { label: "Retainer", value: "Available — ask on call" },
                   { label: "Travel", value: "Included within LA" },
                   { label: "Quick Book entry", value: "The 2-Hour House Call" },
+                  { label: "Payment due", value: "At booking" },
+                  { label: "Accepted methods", value: "Venmo · Zelle · Check · Card" },
                 ].map((row, i) => (
                   <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "0.85rem 0", borderBottom: "1px solid var(--warm-gray-lt)", fontSize: "0.9rem" }}>
                     <span style={{ fontWeight: 300, color: "var(--sage-dark)" }}>{row.label}</span>

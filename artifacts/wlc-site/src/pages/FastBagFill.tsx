@@ -184,12 +184,16 @@ export default function FastBagFill() {
                 </p>
               </div>
               <div>
+                <p style={{ fontSize: "0.78rem", fontWeight: 300, color: "var(--ink-soft)", lineHeight: 1.65, marginBottom: "1rem" }}>
+                  Payment is due at booking. For larger accounts, a 50/50 split is available — ask during your consultation. Payout handles (Venmo/Zelle) provided at time of booking.
+                </p>
                 {[
                   { label: "Clothing & Accessories", value: "45% to you / 55% WLC", note: "Standard resale items" },
                   { label: "Designer & Luxury", value: "50% to you / 50% WLC", note: "Designer handbags, luxury clothing" },
                   { label: "Pickup fee", value: "Complimentary", note: "Within service area" },
                   { label: "Monthly report", value: "By the 1st", note: "Every month" },
                   { label: "Payout", value: "By the 5th", note: "Venmo, Zelle, or check" },
+                  { label: "Payment due", value: "At booking", note: "For paid services" },
                 ].map((row, i) => (
                   <div key={i} style={{ padding: "1rem 0", borderBottom: "1px solid var(--warm-gray-lt)" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem", marginBottom: "0.2rem" }}>

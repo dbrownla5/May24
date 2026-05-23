@@ -19,11 +19,41 @@ function PoshmarkIcon() {
   );
 }
 
+function EbayIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="6" width="20" height="12" rx="2"/>
+      <path d="M7 12h10M12 9v6"/>
+    </svg>
+  );
+}
+
+function FacebookIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    </svg>
+  );
+}
+
+function YelpIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M12 8v4l3 3"/>
+    </svg>
+  );
+}
+
 const SOCIALS = [
   { href: "https://www.instagram.com/thewelllivedcitizen", label: "@thewelllivedcitizen", icon: <InstagramIcon /> },
   { href: "https://www.instagram.com/thewelllivedcloset", label: "@thewelllivedcloset", icon: <InstagramIcon />, closetLogo: true },
   { href: "https://posh.mk/wUAQhT0Qj3b", label: "Poshmark Closet", icon: <PoshmarkIcon /> },
-] as { href: string; label: string; icon: React.ReactNode; closetLogo?: boolean }[];
+  { href: "https://www.ebay.com/usr/thewelllivedcitizencocloset", label: "eBay Store", icon: <EbayIcon /> },
+  { href: "https://www.facebook.com/share/18TrVmjopK/?mibextid=wwXIfr", label: "Facebook", icon: <FacebookIcon /> },
+  // TODO: Dayna to confirm exact Yelp business URL and replace placeholder below
+  { href: "https://www.yelp.com/biz/the-well-lived-citizen", label: "Yelp", icon: <YelpIcon />, placeholder: true },
+] as { href: string; label: string; icon: React.ReactNode; closetLogo?: boolean; placeholder?: boolean }[];
 
 export default function Footer() {
   return (
