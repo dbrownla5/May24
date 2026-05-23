@@ -86,6 +86,8 @@ export default function Contact() {
   const [serviceChoice, setServiceChoice] = useState<ServiceChoice>("");
   const [returningNeed, setReturningNeed] = useState<ReturningNeed>("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [form, setForm] = useState({ name: "", email: "", phone: "", neighborhood: "", situation: "" });
 
   function pick<T>(setter: (v: T) => void, val: T, next: 0 | 1 | 2 | 3) {
@@ -131,15 +133,37 @@ export default function Contact() {
     return "What's going on? What do you need help with?";
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setSubmitting(true);
+    setSubmitError("");
     const summary = buildSummary();
-    const subject = encodeURIComponent(`New Inquiry — ${summary || "General"}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nNeighborhood: ${form.neighborhood}\n\nClient type: ${clientType === "returning" ? "Returning" : "New"}\nInterest: ${summary}\n\nSituation:\n${form.situation}`
-    );
-    window.location.href = `mailto:dayna@thewelllivedcitizen.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    try {
+      const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+      const res = await fetch(`${base}/api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          neighborhood: form.neighborhood,
+          clientType,
+          summary: summary || "General",
+          situation: form.situation,
+        }),
+      });
+      const data = await res.json() as { ok: boolean; error?: string };
+      if (!res.ok || !data.ok) {
+        setSubmitError(data.error ?? "Something went wrong. Please try again.");
+      } else {
+        setSubmitted(true);
+      }
+    } catch {
+      setSubmitError("Unable to send. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   const progressPct = step === 0 ? 10 : step === 1 ? 40 : step === 2 ? 75 : 100;
@@ -192,11 +216,8 @@ export default function Contact() {
               <span className="eyebrow eyebrow-sage">Message Sent</span>
               <h2 className="display-md" style={{ color: "var(--ink)", marginBottom: "1.5rem" }}>Thank you — I'll be in touch.</h2>
               <p style={{ fontSize: "1rem", fontWeight: 300, color: "var(--ink-soft)", lineHeight: 1.8, marginBottom: "1rem" }}>
-                Your email app should have opened with the message ready to send. If it didn't, reach me directly at{" "}
-                <a href="mailto:dayna@thewelllivedcitizen.com" style={{ color: "var(--ink)", fontWeight: 500 }}>dayna@thewelllivedcitizen.com</a>{" "}
-                or call <a href="tel:3234331350" style={{ color: "var(--ink)", fontWeight: 500 }}>(323) 433-1350</a>.
+                Got it — I'll be in touch within 24 hours.
               </p>
-              <p style={{ fontSize: "0.9rem", fontWeight: 300, color: "var(--sage-dark)" }}>I'll be in touch within 24 hours.</p>
             </div>
           </div>
         </section>
@@ -387,12 +408,14 @@ export default function Contact() {
                             onBlur={e => (e.target as HTMLInputElement).style.borderColor = "var(--warm-gray-lt)"} />
                         </div>
                       </div>
-                      <button type="submit" className="btn btn-ink" style={{ width: "100%", justifyContent: "center", padding: "1rem" }}>
-                        Send Message
+                      {submitError && (
+                        <p style={{ fontSize: "0.85rem", color: "#b94a48", marginBottom: "1rem", lineHeight: 1.5 }}>
+                          {submitError}
+                        </p>
+                      )}
+                      <button type="submit" disabled={submitting} className="btn btn-ink" style={{ width: "100%", justifyContent: "center", padding: "1rem", opacity: submitting ? 0.65 : 1, cursor: submitting ? "not-allowed" : "pointer" }}>
+                        {submitting ? "Sending…" : "Send Message"}
                       </button>
-                      <p style={{ fontSize: "0.75rem", color: "var(--sage-dark)", marginTop: "0.75rem", lineHeight: 1.6 }}>
-                        This opens your email app with your message ready to send. Or call directly: (323) 433-1350.
-                      </p>
                     </form>
                   )}
 
