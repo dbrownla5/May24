@@ -1,6 +1,5 @@
 openapi: 3.1.0
 info:
-  # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
   description: API specification
@@ -10,13 +9,18 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: posts
+    description: Content post operations
+  - name: campaigns
+    description: Launch campaign operations
+  - name: content
+    description: AI content generation
 paths:
   /healthz:
     get:
       operationId: healthCheck
       tags: [health]
       summary: Health check
-      description: Returns server health status
       responses:
         "200":
           description: Healthy
@@ -24,6 +28,199 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+
+  /posts:
+    get:
+      operationId: listPosts
+      tags: [posts]
+      summary: List all saved posts
+      parameters:
+        - name: platform
+          in: query
+          schema:
+            type: string
+        - name: status
+          in: query
+          schema:
+            type: string
+        - name: campaign_id
+          in: query
+          schema:
+            type: ["integer", "null"]
+      responses:
+        "200":
+          description: List of posts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Post"
+    post:
+      operationId: createPost
+      tags: [posts]
+      summary: Save a new post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PostInput"
+      responses:
+        "201":
+          description: Created post
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Post"
+
+  /posts/calendar:
+    get:
+      operationId: getCalendarPosts
+      tags: [posts]
+      summary: Posts grouped by scheduled date for calendar view
+      parameters:
+        - name: year
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: month
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Calendar data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CalendarData"
+
+  /posts/stats:
+    get:
+      operationId: getPostStats
+      tags: [posts]
+      summary: Summary stats — total by platform, status breakdown, upcoming count
+      responses:
+        "200":
+          description: Stats
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PostStats"
+
+  /posts/{id}:
+    get:
+      operationId: getPost
+      tags: [posts]
+      summary: Get a single post
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Post
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Post"
+        "404":
+          description: Not found
+    patch:
+      operationId: updatePost
+      tags: [posts]
+      summary: Update a post
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PostUpdate"
+      responses:
+        "200":
+          description: Updated post
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Post"
+    delete:
+      operationId: deletePost
+      tags: [posts]
+      summary: Delete a post
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Deleted
+
+  /campaigns:
+    get:
+      operationId: listCampaigns
+      tags: [campaigns]
+      summary: List launch campaign templates and user campaigns
+      responses:
+        "200":
+          description: Campaigns
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Campaign"
+    post:
+      operationId: createCampaign
+      tags: [campaigns]
+      summary: Create a new campaign
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CampaignInput"
+      responses:
+        "201":
+          description: Created campaign
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Campaign"
+
+  /content/generate:
+    post:
+      operationId: generateContent
+      tags: [content]
+      summary: Generate a caption using AI for a given platform and post type
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GenerateInput"
+      responses:
+        "200":
+          description: Generated caption
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GeneratedContent"
+        "503":
+          description: AI not configured
+
 components:
   schemas:
     HealthStatus:
@@ -34,3 +231,158 @@ components:
       required:
         - status
 
+    Post:
+      type: object
+      required: [id, platform, caption, postType, status, createdAt]
+      properties:
+        id:
+          type: integer
+        platform:
+          type: string
+        caption:
+          type: string
+        postType:
+          type: string
+        status:
+          type: string
+        hashtags:
+          type: ["string", "null"]
+        notes:
+          type: ["string", "null"]
+        scheduledDate:
+          type: ["string", "null"]
+        campaignId:
+          type: ["integer", "null"]
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+
+    PostInput:
+      type: object
+      required: [platform, caption, postType]
+      properties:
+        platform:
+          type: string
+        caption:
+          type: string
+        postType:
+          type: string
+        hashtags:
+          type: string
+        notes:
+          type: string
+        scheduledDate:
+          type: string
+        campaignId:
+          type: integer
+        status:
+          type: string
+
+    PostUpdate:
+      type: object
+      properties:
+        platform:
+          type: string
+        caption:
+          type: string
+        postType:
+          type: string
+        hashtags:
+          type: string
+        notes:
+          type: string
+        scheduledDate:
+          type: ["string", "null"]
+        campaignId:
+          type: ["integer", "null"]
+        status:
+          type: string
+
+    CalendarData:
+      type: object
+      required: [year, month, days]
+      properties:
+        year:
+          type: integer
+        month:
+          type: integer
+        days:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              $ref: "#/components/schemas/Post"
+
+    PostStats:
+      type: object
+      required: [total, byPlatform, byStatus, upcomingCount]
+      properties:
+        total:
+          type: integer
+        byPlatform:
+          type: object
+          additionalProperties:
+            type: integer
+        byStatus:
+          type: object
+          additionalProperties:
+            type: integer
+        upcomingCount:
+          type: integer
+
+    Campaign:
+      type: object
+      required: [id, name, description, isTemplate, createdAt]
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        isTemplate:
+          type: boolean
+        launchDate:
+          type: ["string", "null"]
+        createdAt:
+          type: string
+
+    CampaignInput:
+      type: object
+      required: [name, description]
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        launchDate:
+          type: string
+        isTemplate:
+          type: boolean
+
+    GenerateInput:
+      type: object
+      required: [platform, postType]
+      properties:
+        platform:
+          type: string
+        postType:
+          type: string
+        context:
+          type: string
+        tone:
+          type: string
+
+    GeneratedContent:
+      type: object
+      required: [caption, hashtags]
+      properties:
+        caption:
+          type: string
+        hashtags:
+          type: string
+        alternates:
+          type: array
+          items:
+            type: string
