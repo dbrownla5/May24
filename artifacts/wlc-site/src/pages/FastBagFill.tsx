@@ -63,7 +63,7 @@ export default function FastBagFill() {
                 Not everything belongs in a donation pile — but not everyone has the time, energy, or knowledge to research, photograph, list, ship, and coordinate resale themselves. Fast Bag Fill is the entry point.
               </p>
               <p style={{ fontSize: "1rem", fontWeight: 300, color: "var(--ink-soft)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
-                Fill a bag — or a pile — with things you're done managing. I pick up, evaluate, route, and list. Items are reviewed by category, condition, and resale potential. You could see things start selling within 10 days.
+                Fill a bag — or a pile — with things you're done managing. I pick up, evaluate, route, and list. Items are reviewed thoughtfully based on category, condition, resale potential, and overall fit. You could see things start selling within 10 days.
               </p>
               <p style={{ fontSize: "1rem", fontWeight: 300, color: "var(--ink-soft)", lineHeight: 1.8 }}>
                 No marketplace burnout. No figuring it all out alone. No piles sitting in limbo for another two years. Just practical help getting things moving again.

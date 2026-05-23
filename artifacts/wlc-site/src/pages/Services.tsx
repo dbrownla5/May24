@@ -71,7 +71,7 @@ export default function Services() {
               Four pillars. One consistent practice.
             </h1>
             <p style={{ fontSize: "1.1rem", fontWeight: 300, color: "rgba(248,244,227,0.7)", lineHeight: 1.8 }}>
-              Each area addresses a distinct dimension of household life — the reset after accumulation, the trusted ongoing presence, the resale and dispersal of what no longer belongs, and the preservation of what should never be lost.
+              The work splits cleanly into four categories. Most clients use two or three of them at once.
             </p>
           </div>
         </div>
