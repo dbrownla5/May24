@@ -34,24 +34,25 @@ export default function Home() {
               <span className="eyebrow eyebrow-light" style={{ marginBottom: "2rem" }}>The Well Lived Citizen · Los Angeles</span>
               <h1 style={{
                 color: "var(--parchment)",
-                fontSize: "clamp(2.6rem, 6vw, 5rem)",
+                fontSize: "clamp(2.2rem, 5vw, 4.2rem)",
                 fontWeight: 800,
-                lineHeight: 1.08,
+                lineHeight: 1.1,
                 letterSpacing: "-0.02em",
-                marginBottom: "2.5rem",
+                marginBottom: "2rem",
               }}>
-                The closet<br />
-                you keep meaning<br />
-                to tackle.<br />
-                <br />
-                The parent<br />
-                in another city.<br />
-                <br />
-                The move that<br />
-                technically happened.<br />
-                <br />
-                <span style={{ color: "var(--sage)" }}>I handle this.</span>
+                One person for the move, the resale, the storage unit, and the other thing currently ruining your week.
               </h1>
+              <p style={{
+                fontSize: "clamp(0.95rem, 1.8vw, 1.15rem)",
+                fontWeight: 300,
+                color: "rgba(248,244,227,0.65)",
+                lineHeight: 1.75,
+                marginBottom: "2.5rem",
+                maxWidth: 520,
+              }}>
+                Home resets, moves, legacy inventory, house calls, resale.<br />
+                One number, one person, one invoice.
+              </p>
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
                 <Link href="/contact" className="btn btn-sage">Schedule a Call</Link>
                 <Link href="/services" className="btn btn-outline-light">See All Services</Link>
