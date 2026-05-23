@@ -30,8 +30,11 @@ export default function About() {
           <div style={{ maxWidth: 680 }}>
             <span className="eyebrow eyebrow-light">About</span>
             <h1 className="display-lg" style={{ color: "var(--parchment)", marginBottom: "2rem" }}>
-              About Dayna.
+              There isn't really a service for this. That's exactly what I do.
             </h1>
+            <p style={{ fontSize: "1.1rem", fontWeight: 300, color: "rgba(248,244,227,0.75)", lineHeight: 1.8 }}>
+              My background is retail, operations, and resale. My skill is people, problem-solving, and knowing where things go. The Well Lived Citizen is built for the parts of life that don't fit neatly into one job description — the closet you can't face, the inherited furniture you don't know what to do with, the parent across the country who needs someone local to actually show up.
+            </p>
           </div>
         </div>
       </section>
@@ -43,16 +46,16 @@ export default function About() {
             <FadeUp>
               <span className="eyebrow eyebrow-sage">Dayna Brown · Founder</span>
               <h2 className="display-md" style={{ color: "var(--ink)", marginBottom: "2rem" }}>
-                My career was built seeing the whole picture, from the warehouse floor to the executive suite.
+                My skill is operations, efficiency, and people. This is just how I see the world.
               </h2>
               <p className="body-lg" style={{ marginBottom: "1.5rem" }}>
-                I've always believed the most meaningful work is helping people feel truly taken care of. Across retail, product development, legacy craft, and now household stewardship, my work has always centered on creating experiences that leave people feeling more confident, more capable, and more at ease in their lives.
+                I spent 15+ years in retail — luxury, outdoor, men's, mass-market. I've designed and built product lines. I ran operations across categories. But the through-line in all of it is resale and the human side of how things actually move through a household. I know where to send things. I know what they're worth. I know who's buying. My apartment is set up to receive, photograph, list, and ship. I've been doing this for clients for years.
               </p>
               <p className="body-lg" style={{ marginBottom: "1.5rem" }}>
-                My background spans executive operations, luxury client services, and founder-led product development — including designing, prototyping, and building a turnkey drop-ship product solution for the outdoor industry. That experience sharpened my ability to identify overlooked friction points, build practical solutions, and translate complex needs into clear, repeatable systems for real people.
+                I built The Well Lived Citizen because there's a category of help nobody offers cleanly. When you're moving in a hurry and not ready to make decisions, you need someone to hold things, sell what you want sold, and ship the rest once you have a place to put it. When your closet has become something you can't face alone, you need a person you actually trust to be in there with you. When your mom is in LA and you're in Ohio for work, you need someone local who'll change the smoke detector batteries, fix the Wi-Fi, take the donations, and tell you honestly whether she should still be driving.
               </p>
               <p className="body-lg" style={{ marginBottom: "1.5rem" }}>
-                This taught me to build elegant, real-world solutions for the operational friction people learn to accept. I approach every household with that same capable, observant perspective — ready to tend to the practical realities of a life in motion.
+                Everyone's talking about the wealth transfer. Nobody's talking about the lifestyle transfer happening alongside it. We don't all live in big houses. We live in apartments. We're divorced, single, blended. We don't always want the chandelier or the three sets of china. The inheritance can feel more like an inconvenience than a gift. It doesn't have to. The gift is one person who can handle all of it — who knows the value, the platforms, the timing, and what's actually worth keeping. That's the work.
               </p>
               <p style={{
                 fontSize: "1rem", fontWeight: 600, color: "var(--ink)", lineHeight: 1.5,
@@ -89,18 +92,18 @@ export default function About() {
         <div className="container">
           <FadeUp>
             <div style={{ maxWidth: 720 }}>
-              <span className="eyebrow eyebrow-light">The Work</span>
+              <span className="eyebrow eyebrow-light">How It Actually Shows Up</span>
               <h2 className="display-md" style={{ color: "var(--parchment)", marginBottom: "2rem" }}>
-                Noticing what quietly stops working before it becomes a problem.
+                The kinds of calls I get.
               </h2>
-              <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.75)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
-                Most services address the surface — the clutter, the move, the checklist. This practice addresses the friction underneath.
+              <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.78)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                The person who's tried to clean out the closet four times. They know there's value sitting there — the handbags, the clothes, the gifts that never got used. They don't know where to send it, who to send it to, or how to deal with the people. I do. I have the eye, the apartment set up for intake, and accounts on every platform that matters.
               </p>
-              <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.75)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
-                Families need someone they trust to translate life, belongings, logistics, memory, and safety into a clear path forward. The Well Lived Citizen was built to be that presence — the person who observes the signals before they become emergencies, and acts on them with care.
+              <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.78)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                The family in a hurried move who isn't ready to make decisions about everything. The adult child in another city whose parent in LA needs someone to actually show up — to fix the smoke detectors, handle the donations, flag the things nobody else will. The kinds of problems that don't fit a single service category.
               </p>
-              <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.75)", lineHeight: 1.8 }}>
-                Bringing real attention back to the parts of the household that keep getting put off.
+              <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.78)", lineHeight: 1.8 }}>
+                And underneath all of it: the lifestyle transfer that's quietly happening alongside the wealth transfer. We don't live the way our parents lived. We have less space, more transitions, and a different relationship to objects. The Well Lived Citizen exists to be the one person who can handle the whole thing — who knows the value, the platforms, the timing, and the difference between something worth selling and something worth saving.
               </p>
             </div>
           </FadeUp>
