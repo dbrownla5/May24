@@ -70,7 +70,12 @@ export default function Nav() {
         <div className="container" style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
 
           {/* Logo wordmark */}
-          <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.6rem", textDecoration: "none" }}>
+            <img
+              src="/assets/wlc-hanger-logo-nobg.png"
+              alt="The Well Lived Citizen logo"
+              style={{ height: 38, width: "auto", display: "block", flexShrink: 0 }}
+            />
             <span style={{
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontSize: "0.72rem",

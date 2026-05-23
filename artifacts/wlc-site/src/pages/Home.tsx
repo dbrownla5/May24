@@ -255,6 +255,21 @@ export default function Home() {
                 I built this because there's a category of help nobody offers cleanly — too specific for a big company, too complex for a quick hire. The closet that needs editing, the parent who needs someone local to actually show up, the inherited furniture nobody knows what to do with. One person who can be all of it.
               </p>
             </FadeUp>
+            <FadeUp delay={140}>
+              <img
+                src="/assets/dayna-headshot-portrait.jpg"
+                alt="Dayna Brown, Founder"
+                style={{
+                  width: "100%",
+                  maxWidth: 420,
+                  aspectRatio: "3 / 4",
+                  objectFit: "cover",
+                  objectPosition: "top center",
+                  borderRadius: 0,
+                  display: "block",
+                }}
+              />
+            </FadeUp>
           </div>
         </div>
       </section>

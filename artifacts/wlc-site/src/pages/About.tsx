@@ -78,6 +78,19 @@ export default function About() {
             </FadeUp>
 
             <FadeUp delay={100}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
+                <img
+                  src="/assets/dayna-headshot-primary.jpg"
+                  alt="Dayna Brown, Founder of The Well Lived Citizen"
+                  style={{
+                    width: "100%",
+                    maxWidth: 480,
+                    aspectRatio: "1 / 1",
+                    objectFit: "cover",
+                    borderRadius: 0,
+                    display: "block",
+                  }}
+                />
               <div style={{ backgroundColor: "var(--parchment-mid)", padding: "3rem", boxShadow: "6px 6px 0px var(--sage)" }}>
                 <p style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--sage-dark)", marginBottom: "1.5rem" }}>
                   At a Glance
@@ -97,6 +110,7 @@ export default function About() {
                     </div>
                   ))}
                 </div>
+              </div>
               </div>
             </FadeUp>
 

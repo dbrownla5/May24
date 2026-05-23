@@ -21,9 +21,9 @@ function PoshmarkIcon() {
 
 const SOCIALS = [
   { href: "https://www.instagram.com/thewelllivedcitizen", label: "@thewelllivedcitizen", icon: <InstagramIcon /> },
-  { href: "https://www.instagram.com/thewelllivedcloset", label: "@thewelllivedcloset", icon: <InstagramIcon /> },
+  { href: "https://www.instagram.com/thewelllivedcloset", label: "@thewelllivedcloset", icon: <InstagramIcon />, closetLogo: true },
   { href: "https://posh.mk/wUAQhT0Qj3b", label: "Poshmark Closet", icon: <PoshmarkIcon /> },
-];
+] as { href: string; label: string; icon: React.ReactNode; closetLogo?: boolean }[];
 
 export default function Footer() {
   return (
@@ -37,6 +37,11 @@ export default function Footer() {
           borderBottom: "1px solid rgba(248,244,227,0.15)"
         }}>
           <div>
+            <img
+              src="/assets/wlc-hanger-logo-nobg.png"
+              alt="The Well Lived Citizen"
+              style={{ height: 56, width: "auto", display: "block", marginBottom: "0.75rem", filter: "invert(1) brightness(0.92)" }}
+            />
             <div style={{
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontSize: "0.9rem",
@@ -64,7 +69,10 @@ export default function Footer() {
                   onMouseEnter={(e) => (e.currentTarget.style.color = "var(--parchment)")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(248,244,227,0.55)")}
                 >
-                  {s.icon}{s.label}
+                  {s.closetLogo
+                    ? <img src="/assets/wlc-closet-logo.png" alt="" style={{ height: 16, width: "auto", opacity: 0.55, filter: "brightness(10)" }} />
+                    : s.icon}
+                  {s.label}
                 </a>
               ))}
             </div>
