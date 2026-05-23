@@ -51,8 +51,8 @@ const SOCIALS = [
   { href: "https://posh.mk/wUAQhT0Qj3b", label: "Poshmark Closet", icon: <PoshmarkIcon /> },
   { href: "https://www.ebay.com/usr/thewelllivedcitizencocloset", label: "eBay Store", icon: <EbayIcon /> },
   { href: "https://www.facebook.com/share/18TrVmjopK/?mibextid=wwXIfr", label: "Facebook", icon: <FacebookIcon /> },
-  { href: "https://yelp.to/HCiJqkGwO9", label: "Yelp", icon: <YelpIcon /> },
-] as { href: string; label: string; icon: React.ReactNode; closetLogo?: boolean; placeholder?: boolean }[];
+  { href: "https://www.yelp.com/biz/the-well-lived-citizen-san-fernando-valley", label: "Yelp", icon: <YelpIcon /> },
+] as { href: string; label: string; icon: React.ReactNode; closetLogo?: boolean }[];
 
 export default function Footer() {
   return (
