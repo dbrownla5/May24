@@ -37,6 +37,18 @@ _Populate as you build — non-obvious choices a reader couldn't infer from the 
 
 _Describe the high-level user-facing capabilities of this app once they exist._
 
+## Google Search Console Setup
+
+The site has `sitemap.xml` and `robots.txt` in place. To complete Google Search Console verification:
+
+1. Go to [search.google.com/search-console](https://search.google.com/search-console) and add `https://www.thewelllivedcitizen.com` as a URL-prefix property.
+2. **Verify ownership** — two options:
+   - **HTML meta tag (easiest):** Google gives you a `<meta name="google-site-verification" content="..." />` tag. Uncomment the placeholder already in `artifacts/wlc-site/index.html` and paste in your code, then redeploy. Return to Search Console and click Verify.
+   - **DNS TXT record:** Add a TXT record at your domain registrar with the value Google provides (e.g. `google-site-verification=...`). Wait up to an hour for DNS to propagate, then click Verify.
+3. **Submit the sitemap:** In the Search Console sidebar → Sitemaps → enter `sitemap.xml` → Submit.
+
+Pages take 1–4 weeks to appear in Google results after submission.
+
 ## User preferences
 
 _Populate as you build — explicit user instructions worth remembering across sessions._
