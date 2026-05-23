@@ -51,8 +51,7 @@ const SOCIALS = [
   { href: "https://posh.mk/wUAQhT0Qj3b", label: "Poshmark Closet", icon: <PoshmarkIcon /> },
   { href: "https://www.ebay.com/usr/thewelllivedcitizencocloset", label: "eBay Store", icon: <EbayIcon /> },
   { href: "https://www.facebook.com/share/18TrVmjopK/?mibextid=wwXIfr", label: "Facebook", icon: <FacebookIcon /> },
-  // TODO: Dayna to confirm exact Yelp business URL and replace placeholder below
-  { href: "https://www.yelp.com/biz/the-well-lived-citizen", label: "Yelp", icon: <YelpIcon />, placeholder: true },
+  { href: "https://yelp.to/HCiJqkGwO9", label: "Yelp", icon: <YelpIcon /> },
 ] as { href: string; label: string; icon: React.ReactNode; closetLogo?: boolean; placeholder?: boolean }[];
 
 export default function Footer() {
