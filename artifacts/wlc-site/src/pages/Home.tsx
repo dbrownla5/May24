@@ -198,13 +198,13 @@ export default function Home() {
             <FadeUp>
               <span className="eyebrow" style={{ color: "var(--sage-dark)" }}>Dayna Brown · Founder</span>
               <h2 className="display-sm" style={{ color: "var(--ink)", marginBottom: "1.25rem", lineHeight: 1.2 }}>
-                My career was built seeing the whole picture, from the warehouse floor to the executive suite.
+                15+ years in retail and operations. My whole career was about knowing where things go.
               </h2>
               <Link href="/about" className="btn btn-ink">About Dayna</Link>
             </FadeUp>
             <FadeUp delay={80}>
               <p style={{ fontSize: "1rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.85, opacity: 0.85 }}>
-                This taught me to build elegant, real-world solutions for the operational friction people learn to accept. I approach every household with that same capable, observant perspective — ready to tend to the practical realities of a life in motion.
+                I built this because there's a category of help nobody offers cleanly — too specific for a big company, too complex for a quick hire. The closet that needs editing, the parent who needs someone local to actually show up, the inherited furniture nobody knows what to do with. One person who can be all of it.
               </p>
             </FadeUp>
           </div>

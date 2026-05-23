@@ -105,10 +105,10 @@ export default function HouseCallsPillar() {
               <span className="eyebrow eyebrow-sage">The Generational Gap</span>
               <h2 className="display-md" style={{ color: "var(--ink)", marginBottom: "2rem" }}>It's not about capability. It's about bandwidth.</h2>
               <p className="body-lg" style={{ marginBottom: "1.5rem" }}>
-                Consider the fiercely independent parent who still cooks every meal, walks every day, and manages their own life perfectly — but whose adult children live in another city. The friction isn't their capability. It is the modern, operational layer of the home nobody was prepped for.
+                Consider the fiercely independent parent who still cooks every meal, walks every day, and manages their own life perfectly — but whose adult children live in another city. The challenge isn't their capability. It's the modern layer of the home nobody was taught to navigate.
               </p>
               <p className="body-lg" style={{ marginBottom: "1.5rem" }}>
-                When the Wi-Fi repeater drops. When the telecom company quietly changes an emergency landline to Wi-Fi and suddenly charges $300 for extra channels. The issue isn't intelligence — it is a generational gap in operational friction. Supportive adult children cannot always get in the weeds with a tech rep on a Tuesday afternoon.
+                When the Wi-Fi repeater drops. When the telecom company quietly changes an emergency landline to Wi-Fi and suddenly charges $300 for extra channels. The issue isn't intelligence — it's a generational gap in technology and systems. And supportive adult children cannot always get in the weeds with a tech rep on a Tuesday afternoon.
               </p>
               <p className="body-lg" style={{ fontWeight: 500, color: "var(--ink)" }}>
                 That is exactly where House Calls steps in.

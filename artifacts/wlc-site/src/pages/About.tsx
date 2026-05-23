@@ -39,7 +39,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── FOUNDER PHOTO + STATEMENT ── */}
+      {/* ── FOUNDER ── */}
       <section style={{ backgroundColor: "var(--parchment)", padding: "6rem 0" }}>
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "5rem", alignItems: "start" }}>
@@ -52,10 +52,7 @@ export default function About() {
                 I spent 15+ years in retail — luxury, outdoor, men's, mass-market. I've designed and built product lines. I ran operations across categories. But the through-line in all of it is resale and the human side of how things actually move through a household. I know where to send things. I know what they're worth. I know who's buying. My apartment is set up to receive, photograph, list, and ship. I've been doing this for clients for years.
               </p>
               <p className="body-lg" style={{ marginBottom: "1.5rem" }}>
-                I built The Well Lived Citizen because there's a category of help nobody offers cleanly. When you're moving in a hurry and not ready to make decisions, you need someone to hold things, sell what you want sold, and ship the rest once you have a place to put it. When your closet has become something you can't face alone, you need a person you actually trust to be in there with you. When your mom is in LA and you're in Ohio for work, you need someone local who'll change the smoke detector batteries, fix the Wi-Fi, take the donations, and tell you honestly whether she should still be driving.
-              </p>
-              <p className="body-lg" style={{ marginBottom: "1.5rem" }}>
-                Everyone's talking about the wealth transfer. Nobody's talking about the lifestyle transfer happening alongside it. We don't all live in big houses. We live in apartments. We're divorced, single, blended. We don't always want the chandelier or the three sets of china. The inheritance can feel more like an inconvenience than a gift. It doesn't have to. The gift is one person who can handle all of it — who knows the value, the platforms, the timing, and what's actually worth keeping. That's the work.
+                I built The Well Lived Citizen because there's a category of help nobody offers cleanly — too specific for a big company, too complex for a quick hire. One person who can be all of it.
               </p>
               <p style={{
                 fontSize: "1rem", fontWeight: 600, color: "var(--ink)", lineHeight: 1.5,
@@ -65,15 +62,17 @@ export default function About() {
 
             <FadeUp delay={100}>
               <div style={{ backgroundColor: "var(--parchment-mid)", padding: "3rem", boxShadow: "6px 6px 0px var(--sage)" }}>
-                <p style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--sage-dark)", marginBottom: "1.5rem" }}>Background</p>
+                <p style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--sage-dark)", marginBottom: "1.5rem" }}>
+                  At a Glance
+                </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                   {[
-                    "15+ years retail operations, logistics, and financial planning",
-                    "Experience across luxury, outdoor, men's, and mass-market retail",
-                    "Resale market expertise: Poshmark, ThredUp, eBay, direct buyer networks",
-                    "Home organization, vendor coordination, and estate support",
-                    "Based in Los Angeles · Serving greater LA and surrounding areas",
-                    "Est. 2020 · A Well Dressed Citizen Company",
+                    "15+ years in retail operations and logistics",
+                    "Resale active on 10+ platforms — Poshmark Ambassador, eBay, Vestiaire, Chairish, Grailed, and more",
+                    "Apartment set up for intake, staging, photography, and fulfillment",
+                    "Home organization, move support, vendor coordination",
+                    "Based in Los Angeles · Serving greater LA",
+                    "Est. 2020 · By appointment only",
                   ].map((item, i) => (
                     <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", paddingBottom: "0.75rem", borderBottom: i < 5 ? "1px solid var(--warm-gray-lt)" : "none" }}>
                       <span style={{ color: "var(--sage)", flexShrink: 0, marginTop: "0.2rem", fontSize: "0.7rem" }}>—</span>
@@ -87,7 +86,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── THE WORK ── */}
+      {/* ── HOW IT ACTUALLY SHOWS UP ── */}
       <section style={{ backgroundColor: "var(--ink)", padding: "6rem 0" }}>
         <div className="container">
           <FadeUp>
@@ -97,13 +96,13 @@ export default function About() {
                 The kinds of calls I get.
               </h2>
               <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.78)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
-                The person who's tried to clean out the closet four times. They know there's value sitting there — the handbags, the clothes, the gifts that never got used. They don't know where to send it, who to send it to, or how to deal with the people. I do. I have the eye, the apartment set up for intake, and accounts on every platform that matters.
+                The person who's tried to clean out the closet four times. They know there's value in there — the handbags, the clothes, the gifts that never got used. They don't know where to send it, who to send it to, or how to deal with the people. I do. I have the eye, the apartment set up for intake, and accounts on every platform that matters.
               </p>
               <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.78)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
-                The family in a hurried move who isn't ready to make decisions about everything. The adult child in another city whose parent in LA needs someone to actually show up — to fix the smoke detectors, handle the donations, flag the things nobody else will. The kinds of problems that don't fit a single service category.
+                The family in a hurried move who isn't ready to make decisions about everything. The adult child who moved to Ohio for work while their mom is still in LA — and they need someone local to actually show up. To change the smoke detector batteries. To fix the Wi-Fi. To take the donations. To flag the things nobody else will say out loud.
               </p>
               <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.78)", lineHeight: 1.8 }}>
-                And underneath all of it: the lifestyle transfer that's quietly happening alongside the wealth transfer. We don't live the way our parents lived. We have less space, more transitions, and a different relationship to objects. The Well Lived Citizen exists to be the one person who can handle the whole thing — who knows the value, the platforms, the timing, and the difference between something worth selling and something worth saving.
+                And underneath all of it: the lifestyle transfer that's quietly happening alongside the wealth transfer. We don't live the way our parents lived. We have less space, more transitions, and a different relationship to objects. The inheritance can feel more like an inconvenience than a gift. It doesn't have to. The gift is one person who can handle all of it — who knows the value, the platforms, the timing, and what's worth keeping. That's the work.
               </p>
             </div>
           </FadeUp>
@@ -114,19 +113,19 @@ export default function About() {
       <section style={{ backgroundColor: "var(--parchment-mid)", padding: "6rem 0" }}>
         <div className="container">
           <FadeUp>
-            <span className="eyebrow eyebrow-sage">Why This Work Exists</span>
+            <span className="eyebrow eyebrow-sage">Why This Exists</span>
             <h2 className="display-md" style={{ color: "var(--ink)", marginBottom: "3rem", maxWidth: 560 }}>
-              People deserve to age, transition, and part with belongings without losing dignity, value, or story.
+              Everyone deserves to have that person.
             </h2>
           </FadeUp>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.5rem" }}>
             {[
-              { label: "Autonomy", text: "The right to make decisions about your own space and belongings, on your own terms, without urgency forcing the outcome." },
-              { label: "Memory", text: "The things people have lived with carry stories. Those stories deserve to be captured, not discarded." },
-              { label: "Practical Safety", text: "Small household friction points — the smoke detector, the unreachable shelf, the outdated technology — quietly accumulate into real risk." },
-              { label: "Family Harmony", text: "When households are documented and organized proactively, the people who love each other don't have to become project managers during grief." },
-              { label: "Preserved Options", text: "Thoughtful stewardship now means more choices later — for you, and for the people who come after you." },
-              { label: "Reducing Burden", text: "Competence does not eliminate the need to be cared for. Thoughtful support should not require a crisis first." },
+              { label: "Your call", text: "You get to make decisions about your own stuff, on your own terms, without someone else's urgency rushing you." },
+              { label: "The story stays", text: "The things people have lived with carry meaning. That meaning deserves to be captured, not tossed because nobody had time." },
+              { label: "Small things add up", text: "The smoke detector, the unreachable shelf, the tech that stopped working — they're not a big deal until they are." },
+              { label: "No crisis required", text: "Good support shouldn't have to wait for a bad moment. The best time to get ahead of things is before you need to." },
+              { label: "More choices later", text: "Dealing with things thoughtfully now keeps your options open — for you and for the people who come after you." },
+              { label: "One person, not five", text: "You shouldn't have to hire a different person for every category of problem. That's the whole point." },
             ].map((item, i) => (
               <FadeUp key={i} delay={i * 40}>
                 <div style={{ backgroundColor: "var(--parchment)", padding: "2rem", borderTop: "3px solid var(--sage)" }}>
@@ -147,7 +146,7 @@ export default function About() {
               <div>
                 <span className="eyebrow eyebrow-sage">What This Is Not</span>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginTop: "1rem" }}>
-                  {["Caregiving", "Medical", "Financial", "Therapy", "Cleaning", "Handyman work", "Estate law", "Minimalism", "Declutter culture"].map((item) => (
+                  {["Caregiving", "Medical advice", "Financial advice", "Therapy", "Cleaning", "Handyman work", "Estate law", "Forced minimalism", "The KonMari method"].map((item) => (
                     <div key={item} style={{ display: "flex", alignItems: "center", gap: "0.75rem", padding: "0.6rem 0", borderBottom: "1px solid var(--warm-gray-lt)" }}>
                       <span style={{ width: 6, height: 6, backgroundColor: "var(--warm-gray-md)", flexShrink: 0 }} />
                       <span style={{ fontSize: "0.9rem", fontWeight: 300, color: "var(--ink-soft)" }}>{item}</span>
@@ -158,7 +157,17 @@ export default function About() {
               <div>
                 <span className="eyebrow eyebrow-sage">What This Is</span>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginTop: "1rem" }}>
-                  {["Continuity", "Stewardship", "Practical foresight", "Household functionality", "Operational intelligence", "Emotional intelligence", "Resale discernment", "Systems thinking", "Relationship-driven service"].map((item) => (
+                  {[
+                    "A consistent presence",
+                    "Actually taking care of it",
+                    "Seeing things before they become a problem",
+                    "A home that works",
+                    "Getting things done efficiently",
+                    "Reading a room and a person",
+                    "An eye for what sells and where",
+                    "Seeing the whole picture",
+                    "One person, not a company",
+                  ].map((item) => (
                     <div key={item} style={{ display: "flex", alignItems: "center", gap: "0.75rem", padding: "0.6rem 0", borderBottom: "1px solid var(--warm-gray-lt)" }}>
                       <span style={{ width: 6, height: 6, backgroundColor: "var(--sage)", flexShrink: 0 }} />
                       <span style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--ink)" }}>{item}</span>

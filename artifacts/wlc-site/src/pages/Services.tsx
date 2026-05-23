@@ -50,7 +50,7 @@ const pillars = [
   {
     num: "04",
     name: "Curated Resale & Consignment",
-    tagline: "Trust-forward thoughtful curation.",
+    tagline: "Your good things deserve a good second life.",
     description: "Full-service resale for items with real second-market potential. Pickup, evaluation, platform matching, buyer communication, and proceeds sharing — without asking you to become a part-time reseller.",
     includes: ["Complimentary pickup within service area", "Platform matching by item category", "Buyer communication and management", "Monthly reporting and payouts", "Donation rerouting for unsold items", "Designer, furniture, art, and clothing accepted"],
     quickBook: { label: "Fast Bag Fill", href: "/fast-bag-fill" },
