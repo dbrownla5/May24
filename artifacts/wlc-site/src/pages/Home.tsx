@@ -66,7 +66,7 @@ export default function Home() {
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
                   <Link href="/the-reset" className="btn btn-ink">Book a Reset</Link>
-                  <span style={{ fontSize: "0.8rem", color: "var(--sage-dark)", fontWeight: 500 }}>$150/hr · 3-hr min</span>
+                  <span style={{ fontSize: "0.8rem", color: "var(--sage-dark)", fontWeight: 500 }}>$495 flat rate</span>
                 </div>
               </div>
             </FadeUp>

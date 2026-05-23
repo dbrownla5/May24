@@ -40,9 +40,9 @@ export default function TheReset() {
             <p style={{ fontSize: "1.15rem", fontWeight: 300, color: "rgba(248,244,227,0.75)", lineHeight: 1.75, marginBottom: "2.5rem" }}>
               The Reset is a focused, uninterrupted four-hour working session for exactly that space. One space, four hours, real results. I arrive prepared. I start immediately. I work until it's done.
             </p>
-            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center" }}>
+            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               <Link href="/contact" className="btn btn-sage">Book a Reset</Link>
-              <span style={{ fontSize: "0.8rem", fontWeight: 300, color: "rgba(248,244,227,0.45)" }}>$150/hr · 3-hour minimum</span>
+              <Link href="/pricing" className="btn btn-outline-light">View Pricing</Link>
             </div>
           </div>
         </div>
@@ -127,9 +127,9 @@ export default function TheReset() {
                 <span className="eyebrow eyebrow-sage">Pricing</span>
                 <div style={{ marginTop: "1rem" }}>
                   {[
-                    { label: "Rate", value: "$150/hr" },
-                    { label: "Minimum", value: "3 hours" },
-                    { label: "Typical session", value: "4–5 hours" },
+                    { label: "Session rate", value: "$495 flat" },
+                    { label: "Additional time", value: "$125/hr" },
+                    { label: "Session length", value: "4 hours" },
                     { label: "Travel", value: "Included within LA" },
                     { label: "Supplies and tools", value: "Included" },
                     { label: "Cancellation", value: "48-hour notice" },
