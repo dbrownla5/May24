@@ -198,12 +198,12 @@ export default function HouseCalls() {
           <FadeUp>
             <div style={{ maxWidth: 640 }}>
               <p style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--sage-dark)", marginBottom: "1.5rem" }}>Client Story</p>
-              <p style={{ fontSize: "clamp(1.2rem, 3vw, 1.6rem)", fontWeight: 700, color: "var(--ink)", lineHeight: 1.4, marginBottom: "1.5rem" }}>
-                "You made my TV work better, and my clicker is right there next to the bed, and all my lights turn on. It's great. It's amazing. I love you."
+              <p style={{ fontSize: "clamp(1rem, 2.5vw, 1.35rem)", fontWeight: 700, color: "var(--ink)", lineHeight: 1.55, marginBottom: "1.5rem" }}>
+                "I wake up and my clicker for all my lamps is on my bedside table. I get up and move it to the dresser by the door so every time I come back in I can turn any lamp from the doorway. My clothes are arranged by item and color, my purses on two long shelves and two short ones — I can see what I have and choose accordingly. My shoes are on four shelves where I can easily see them. The heat is set perfectly. The TV is set up with only one clicker to get to all the channels I want. Thank you for making life easier for me."
               </p>
-              <p style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--ink)", opacity: 0.65, letterSpacing: "0.08em", marginBottom: "2.5rem" }}>— Gayle · Los Angeles</p>
+              <p style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--ink)", opacity: 0.65, letterSpacing: "0.08em", marginBottom: "2.5rem" }}>— Gayle · Seattle · House Calls</p>
               <p style={{ fontSize: "0.95rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.8, opacity: 0.8 }}>
-                This is what House Calls looks like in real life. Not a transformation, not a project — just someone who came in, figured out the TV remote situation, got the lights set up properly, and made the bedroom easier to live in. The small stuff matters.
+                This is what House Calls looks like in real life. Not a transformation, not a project — just someone who came in, got the TV working, set up the lamps, arranged the closet so everything is visible and reachable. The small stuff matters because the small stuff is daily life.
               </p>
             </div>
           </FadeUp>

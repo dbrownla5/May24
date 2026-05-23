@@ -328,15 +328,25 @@ export default function Pricing() {
                   Legacy Planning
                 </p>
                 <p style={{ fontSize: "0.88rem", fontWeight: 300, color: "rgba(248,244,227,0.65)", lineHeight: 1.7, marginBottom: "2rem" }}>
-                  Pre-purchased hour blocks for legacy catalog work, inventory sessions, and estate prep. Applied across multiple focused visits — not continuous daily presence. Ask about pricing during your intake call.
+                  Pre-purchased hour blocks for legacy catalog work, inventory sessions, and estate prep. Applied across multiple focused visits — not continuous daily presence. Flex blocks never expire.
                 </p>
-                <div style={{ padding: "1rem 0", borderBottom: "1px solid rgba(248,244,227,0.1)" }}>
-                  <p style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--parchment)", marginBottom: "0.2rem" }}>10- and 25-Hour Blocks</p>
-                  <p style={{ fontSize: "0.72rem", fontWeight: 300, color: "rgba(248,244,227,0.4)" }}>Pricing quoted during intake</p>
+                <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+                  {[
+                    { label: "10-Hour Block", price: "$1,500", note: "vs. $1,750 at full rate" },
+                    { label: "25-Hour Block", price: "$3,650", note: "vs. $4,375 at full rate" },
+                  ].map((row, i) => (
+                    <div key={i} style={{
+                      display: "flex", justifyContent: "space-between", alignItems: "center",
+                      padding: "1rem 0", borderBottom: "1px solid rgba(248,244,227,0.1)",
+                    }}>
+                      <div>
+                        <p style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--parchment)", marginBottom: "0.2rem" }}>{row.label}</p>
+                        <p style={{ fontSize: "0.72rem", fontWeight: 300, color: "rgba(248,244,227,0.4)" }}>{row.note}</p>
+                      </div>
+                      <p style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--sage)" }}>{row.price}</p>
+                    </div>
+                  ))}
                 </div>
-                <Link href="/contact" style={{ display: "inline-block", marginTop: "1.5rem", fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--sage)", textDecoration: "none" }}>
-                  Ask about Legacy blocks →
-                </Link>
               </div>
             </FadeUp>
 

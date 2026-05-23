@@ -185,8 +185,8 @@ export default function FastBagFill() {
               </div>
               <div>
                 {[
-                  { label: "Clothing & Accessories", value: "55% client / 45% WLC", note: "Standard resale items" },
-                  { label: "Designer & Luxury", value: "50% client / 50% WLC", note: "Designer handbags, luxury clothing" },
+                  { label: "Clothing & Accessories", value: "45% to you / 55% WLC", note: "Standard resale items" },
+                  { label: "Designer & Luxury", value: "50% to you / 50% WLC", note: "Designer handbags, luxury clothing" },
                   { label: "Pickup fee", value: "Complimentary", note: "Within service area" },
                   { label: "Monthly report", value: "By the 1st", note: "Every month" },
                   { label: "Payout", value: "By the 5th", note: "Venmo, Zelle, or check" },

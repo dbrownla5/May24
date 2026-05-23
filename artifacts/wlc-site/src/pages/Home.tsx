@@ -125,7 +125,7 @@ export default function Home() {
                 <p style={{ fontSize: "1.2rem", fontWeight: 700, color: "var(--ink)", lineHeight: 1.4, marginBottom: "1.5rem" }}>
                   "You made my TV work better, and my clicker is right there next to the bed, and all my lights turn on. It's great. It's amazing. I love you."
                 </p>
-                <p style={{ fontSize: "0.8rem", fontWeight: 600, color: "var(--ink)", opacity: 0.6, letterSpacing: "0.08em" }}>— Gayle · Los Angeles</p>
+                <p style={{ fontSize: "0.8rem", fontWeight: 600, color: "var(--ink)", opacity: 0.6, letterSpacing: "0.08em" }}>— Gayle · Seattle · House Calls</p>
                 <div style={{ borderTop: "1px solid rgba(56,48,46,0.2)", paddingTop: "1.5rem", marginTop: "2rem" }}>
                   <p style={{ fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink)", opacity: 0.65, marginBottom: "1rem" }}>
                     A House Call might include

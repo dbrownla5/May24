@@ -206,9 +206,9 @@ export default function CuratedResalePillar() {
               </div>
               <div>
                 {[
-                  { category: "Clothing & Accessories", split: "55% client / 45% WLC", note: "Standard items, shoes, bags, jewelry" },
-                  { category: "Designer & Luxury", split: "50% client / 50% WLC", note: "Designer handbags, luxury clothing, fine jewelry" },
-                  { category: "Furniture & Home Decor", split: "50% client / 50% WLC", note: "Furniture, art, significant home pieces" },
+                  { category: "Clothing & Accessories", split: "45% to you / 55% WLC", note: "Standard items, shoes, bags, jewelry" },
+                  { category: "Designer & Luxury", split: "50% to you / 50% WLC", note: "Designer handbags, luxury clothing, fine jewelry" },
+                  { category: "Furniture & Home Decor", split: "50% to you / 50% WLC", note: "Furniture, art, significant home pieces" },
                 ].map((row, i) => (
                   <div key={i} style={{ padding: "1.25rem 0", borderBottom: "1px solid rgba(56,48,46,0.15)" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem", marginBottom: "0.35rem" }}>
