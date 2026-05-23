@@ -89,9 +89,9 @@ export default function Services() {
           </FadeUp>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1px", backgroundColor: "var(--warm-gray-lt)" }}>
             {[
-              { href: "/the-reset", num: "QB01", name: "The 4-Hour Reset", price: "$495 flat rate", desc: "Four focused hours in the one space you keep meaning to fix. I show up, we get it done." },
+              { href: "/the-reset", num: "QB01", name: "The 4-Hour Reset", price: "$495 flat rate", desc: "Four focused hours in the one space you keep meaning to fix. I show up and get it done." },
               { href: "/house-calls", num: "QB02", name: "The 2-Hour House Call", price: "$175/hr · 2-hr min", desc: "Practical help for the things life accumulates faster than anyone has time to address. Technology, safety, organization, transitions." },
-              { href: "/fast-bag-fill", num: "QB03", name: "The Fast Bag Fill", price: "Complimentary pickup", desc: "Fill a bag with clothing and accessories you're ready to part with. Pickup is complimentary — we handle evaluation, routing, and resale." },
+              { href: "/fast-bag-fill", num: "QB03", name: "The Fast Bag Fill", price: "Complimentary pickup", desc: "Fill a bag with clothing and accessories you're ready to part with. Pickup is complimentary — I handle evaluation, routing, and resale." },
             ].map((qb, i) => (
               <FadeUp key={i} delay={i * 60}>
                 <Link href={qb.href}>

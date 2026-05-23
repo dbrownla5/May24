@@ -433,7 +433,7 @@ export default function Pricing() {
               },
               {
                 title: "Payment",
-                body: "Payment is due at the time of service unless otherwise arranged. I accept Venmo, Zelle, Cash App, check, and major credit cards (via Square). Retainer clients are invoiced and billed monthly. I'll always confirm the method that works best for you before we begin.",
+                body: "Payment is due at the time of service unless otherwise arranged. I accept Venmo, Zelle, Cash App, check, and major credit cards (via Square). Retainer clients are invoiced and billed monthly. I'll always confirm the method that works best for you before I arrive.",
               },
               {
                 title: "Travel",
@@ -441,7 +441,7 @@ export default function Pricing() {
               },
               {
                 title: "Rescheduling",
-                body: "I'd rather you tell me you're overwhelmed and we reschedule than ghost the appointment — I genuinely won't be weird about it. Just let me know.",
+                body: "I'd rather you tell me you're overwhelmed and need to reschedule than ghost the appointment — I genuinely won't be weird about it. Just let me know.",
               },
             ].map((item, i) => (
               <FadeUp key={i} delay={i * 50}>

@@ -19,28 +19,73 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
   return <div ref={ref} className={`fade-up ${className}`}>{children}</div>;
 }
 
-const HERO_IMG = "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1600&q=80&fit=crop";
-
 export default function Home() {
   return (
     <div style={{ backgroundColor: "var(--parchment)", minHeight: "100vh" }}>
       <Nav />
 
       {/* ── HERO ── */}
-      <section style={{ position: "relative", minHeight: "92vh", display: "flex", alignItems: "flex-end", paddingBottom: "5rem", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${HERO_IMG})`, backgroundSize: "cover", backgroundPosition: "center 30%" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(56,48,46,0.90) 0%, rgba(56,48,46,0.48) 45%, rgba(56,48,46,0.1) 100%)" }} />
-        <div className="container" style={{ position: "relative", zIndex: 2 }}>
-          <span className="eyebrow eyebrow-light" style={{ marginBottom: "1.25rem" }}>The Well Lived Citizen · Los Angeles</span>
-          <h1 className="display-xl" style={{ color: "var(--parchment)", maxWidth: 720, marginBottom: "1.5rem" }}>
-            Practical help for the parts of life that quietly pile up.
-          </h1>
-          <p style={{ fontSize: "1.1rem", fontWeight: 300, color: "rgba(248,244,227,0.82)", maxWidth: 580, lineHeight: 1.8, marginBottom: "2.5rem" }}>
-            Organization, resale, inventory, transitions, and thoughtful household support — handled with care and real follow-through.
-          </p>
-          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <Link href="/contact" className="btn btn-ink" style={{ backgroundColor: "var(--parchment)", color: "var(--ink)", borderColor: "var(--parchment)" }}>Schedule a Call</Link>
-            <Link href="/services" className="btn btn-outline-light">See All Services</Link>
+      <section style={{ backgroundColor: "var(--ink)", minHeight: "100vh", display: "flex", alignItems: "center", padding: "9rem 0 5rem" }}>
+        <div className="container" style={{ width: "100%" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "5rem", alignItems: "center" }}>
+
+            {/* Left — headline */}
+            <div>
+              <span className="eyebrow eyebrow-light" style={{ marginBottom: "2rem" }}>The Well Lived Citizen · Los Angeles</span>
+              <h1 style={{
+                color: "var(--parchment)",
+                fontSize: "clamp(2.6rem, 6vw, 5rem)",
+                fontWeight: 800,
+                lineHeight: 1.08,
+                letterSpacing: "-0.02em",
+                marginBottom: "2.5rem",
+              }}>
+                The closet<br />
+                you keep meaning<br />
+                to tackle.<br />
+                <br />
+                The parent<br />
+                in another city.<br />
+                <br />
+                The move that<br />
+                technically happened.<br />
+                <br />
+                <span style={{ color: "var(--sage)" }}>I handle this.</span>
+              </h1>
+              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+                <Link href="/contact" className="btn btn-sage">Schedule a Call</Link>
+                <Link href="/services" className="btn btn-outline-light">See All Services</Link>
+              </div>
+            </div>
+
+            {/* Right — service manifest */}
+            <div style={{ borderLeft: "1px solid rgba(248,244,227,0.12)", paddingLeft: "3rem" }}>
+              {[
+                { num: "01", name: "Home Reset & Move Support", price: "$495 flat · $150/hr ongoing", href: "/home-reset-move-support" },
+                { num: "02", name: "Legacy Planning & Inventory", price: "Scoped after walkthrough", href: "/legacy-planning" },
+                { num: "03", name: "House Calls", price: "$175/hr · 2-hr minimum", href: "/house-calls-pillar" },
+                { num: "04", name: "Curated Resale & Consignment", price: "Commission-based · free pickup", href: "/curated-resale-consignment" },
+              ].map((s, i) => (
+                <Link key={i} href={s.href} style={{ textDecoration: "none" }}>
+                  <div style={{
+                    display: "flex", justifyContent: "space-between", alignItems: "center",
+                    padding: "1.5rem 0", borderBottom: "1px solid rgba(248,244,227,0.08)",
+                    transition: "opacity 0.15s ease", cursor: "pointer",
+                  }}
+                    onMouseEnter={e => (e.currentTarget as HTMLElement).style.opacity = "0.65"}
+                    onMouseLeave={e => (e.currentTarget as HTMLElement).style.opacity = "1"}
+                  >
+                    <div>
+                      <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--sage)", marginBottom: "0.35rem" }}>{s.num}</p>
+                      <p style={{ fontSize: "1rem", fontWeight: 600, color: "var(--parchment)", marginBottom: "0.25rem" }}>{s.name}</p>
+                      <p style={{ fontSize: "0.78rem", fontWeight: 300, color: "rgba(248,244,227,0.45)" }}>{s.price}</p>
+                    </div>
+                    <span style={{ color: "var(--sage)", fontSize: "1rem", flexShrink: 0, marginLeft: "1rem" }}>→</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
           </div>
         </div>
       </section>
@@ -62,7 +107,7 @@ export default function Home() {
                 <div className="underlay-tag underlay-tag-sage" style={{ marginBottom: "1.5rem" }}>01 — The Reset</div>
                 <h3 className="display-sm" style={{ color: "var(--ink)", marginBottom: "1rem" }}>The 4-Hour Reset</h3>
                 <p style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.8, color: "var(--ink-soft)", marginBottom: "2rem" }}>
-                  A focused four-hour session for the one space you keep meaning to fix. Closets, kitchens, overflow rooms, post-move unpacking — whatever's been on the list longest. I show up, we get it done.
+                  A focused four-hour session for the one space you keep meaning to fix. Closets, kitchens, overflow rooms, post-move unpacking — whatever's been on the list longest. I show up and get it done.
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
                   <Link href="/the-reset" className="btn btn-ink">Book a Reset</Link>
@@ -76,7 +121,7 @@ export default function Home() {
                 <div className="underlay-tag" style={{ marginBottom: "1.5rem" }}>02 — Curated Resale</div>
                 <h3 className="display-sm" style={{ color: "var(--ink)", marginBottom: "1rem" }}>Fast Bag Fill</h3>
                 <p style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.8, color: "var(--ink-soft)", marginBottom: "2rem" }}>
-                  A simple way to start letting things leave the house. Fill a bag or pickup pile with items you no longer want to manage. Pickup is complimentary within our service area — we handle the evaluation, routing, and resale from there.
+                  A simple way to start letting things leave the house. Fill a bag or pickup pile with items you no longer want to manage. Pickup is complimentary within my service area — I handle the evaluation, routing, and resale from there.
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
                   <Link href="/fast-bag-fill" className="btn btn-ink">Schedule a Pickup</Link>
@@ -123,9 +168,9 @@ export default function Home() {
               <div style={{ backgroundColor: "var(--sage)", padding: "3rem", boxShadow: "6px 6px 0px rgba(248,244,227,0.15)" }}>
                 <p style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--ink)", opacity: 0.55, marginBottom: "1.5rem" }}>Client · House Calls</p>
                 <p style={{ fontSize: "1.2rem", fontWeight: 700, color: "var(--ink)", lineHeight: 1.4, marginBottom: "1.5rem" }}>
-                  "You made my TV work better, and my clicker is right there next to the bed, and all my lights turn on. It's great. It's amazing. I love you."
+                  "My clothes are arranged by item and color. The TV is set up with only one clicker. I wake up and everything is where it should be. Thank you for making life easier for me."
                 </p>
-                <p style={{ fontSize: "0.8rem", fontWeight: 600, color: "var(--ink)", opacity: 0.6, letterSpacing: "0.08em" }}>— Gayle · Seattle · House Calls</p>
+                <p style={{ fontSize: "0.8rem", fontWeight: 600, color: "var(--ink)", opacity: 0.6, letterSpacing: "0.08em" }}>— Gayle · Seattle</p>
                 <div style={{ borderTop: "1px solid rgba(56,48,46,0.2)", paddingTop: "1.5rem", marginTop: "2rem" }}>
                   <p style={{ fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink)", opacity: 0.65, marginBottom: "1rem" }}>
                     A House Call might include
@@ -159,7 +204,7 @@ export default function Home() {
               { num: "01", name: "Home Reset & Move Support", desc: "Organization, unpacking, room functionality, and post-move support. The 4-Hour Reset lives here.", href: "/the-reset" },
               { num: "02", name: "Legacy Planning & Inventory", desc: "Creating clarity around the belongings and stories families should not lose track of — before urgency forces the decisions.", href: "/legacy-planning" },
               { num: "03", name: "House Calls", desc: "Practical household help for busy professionals, independent adults, and families managing life from a distance.", href: "/house-calls" },
-              { num: "04", name: "Curated Resale & Consignment", desc: "Pickup or send your items. We identify the best resale route, manage listings, and recover value from the things you no longer need.", href: "/fast-bag-fill" },
+              { num: "04", name: "Curated Resale & Consignment", desc: "Pickup or send your items. I identify the best resale route, manage listings, and recover value from the things you no longer need.", href: "/fast-bag-fill" },
             ].map((s, i) => (
               <FadeUp key={s.num} delay={i * 40}>
                 <Link href={s.href}>

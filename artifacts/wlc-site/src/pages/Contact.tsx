@@ -228,10 +228,10 @@ export default function Contact() {
                     {step === 3 && "Almost done."}
                   </h2>
                   <p style={{ fontSize: "0.9rem", fontWeight: 300, color: "var(--sage-dark)", lineHeight: 1.75 }}>
-                    {step === 0 && "This helps me know how to best prepare for our call."}
+                    {step === 0 && "This helps me know how to best prepare for the call."}
                     {step === 1 && clientType === "returning" && "What do you need this time around?"}
                     {step === 1 && clientType === "new" && "Pick the one that sounds most like your situation. You can always change it on the call."}
-                    {step === 2 && "The more context you give me, the more useful our first conversation will be. Nothing here is binding."}
+                    {step === 2 && "The more context you give me, the more useful the first conversation will be. Nothing here is binding."}
                     {step === 3 && "Where should I reach you?"}
                   </p>
 

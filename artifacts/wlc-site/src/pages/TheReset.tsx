@@ -61,7 +61,7 @@ export default function TheReset() {
             {[
               { step: "01", title: "Tell me the space", body: "When you reach out, tell me what space you're working with and what's been happening there. A two-sentence description is enough — I'll ask any follow-up questions before I arrive." },
               { step: "02", title: "I arrive prepared", body: "I do any pre-planning on my own time. When I arrive, I'm ready to work — not to assess, consult, or discuss at length. I get oriented in the first few minutes and start immediately." },
-              { step: "03", title: "We work together or you step back", body: "You can be in the room or not. If you want to make the decisions, I walk you through them quickly. If you'd rather let me work, I'll send you photos and flag anything that genuinely needs your input." },
+              { step: "03", title: "Stay in the room or step back", body: "You can be present or not. If you want to make the decisions, I walk you through them quickly. If you'd rather let me work, I'll send you photos and flag anything that genuinely needs your input." },
               { step: "04", title: "The space works when I leave", body: "Four hours of uninterrupted, focused work. The goal is not a magazine-ready room — it's a room that functions the way your life actually works. You should feel the difference the moment I leave." },
             ].map((step, i) => (
               <FadeUp key={i} delay={i * 60}>
@@ -160,8 +160,8 @@ export default function TheReset() {
           <div style={{ maxWidth: 720 }}>
             {[
               { q: "What can realistically be accomplished in four hours?", a: "More than most people expect. A focused four-hour session can completely transform a closet, a kitchen, an office, or a single problem room. The key is that I'm working, not planning. I start when I arrive." },
-              { q: "Do I need to be home?", a: "You can be home or not — it's genuinely up to you. Some clients prefer to be present for the decision-making; others prefer to leave and come back to a finished space. We'll figure out what works best before I arrive." },
-              { q: "What if we don't finish in four hours?", a: "I'm not billing by the minute. If we're 15 minutes from something great, I finish it. If we're a full hour away, I'll have a quick conversation with you about what makes sense — extend at the hourly rate or schedule a follow-up." },
+              { q: "Do I need to be home?", a: "You can be home or not — it's genuinely up to you. Some clients prefer to be present for the decision-making; others prefer to leave and come back to a finished space. I'll confirm what works best before I arrive." },
+              { q: "What if four hours isn't enough?", a: "I'm not billing by the minute. If I'm 15 minutes from something great, I finish it. If it's a full hour away, I'll have a quick conversation about what makes sense — extend at the hourly rate or schedule a follow-up." },
               { q: "What about things I can't just throw away — electronics, batteries, old medications?", a: "There's a responsible process for everything. Electronics get wiped and routed to certified e-waste. Batteries, old devices, anything that can't go in the trash — I know where it goes and how to get it there. You don't have to figure that out." },
               { q: "Can I book this for someone else?", a: "Yes. Many clients book for a parent, sibling, or friend going through a transition. I also work with people navigating difficult situations — leaving a hard place, managing a move someone else can't face. These are handled with safety and discretion. No one who reaches out is left without support." },
             ].map((item, i) => (
