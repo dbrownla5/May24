@@ -27,37 +27,47 @@ export default function About() {
       {/* ── HERO ── */}
       <section style={{ backgroundColor: "var(--ink)", paddingTop: "10rem", paddingBottom: "7rem" }}>
         <div className="container">
-          <div style={{ maxWidth: 680 }}>
-            <span className="eyebrow eyebrow-light">About</span>
+          <div style={{ maxWidth: 720 }}>
+            <span className="eyebrow eyebrow-light">Meet Dayna</span>
             <h1 className="display-lg" style={{ color: "var(--parchment)", marginBottom: "2rem" }}>
-              There isn't really a service for this. That's exactly what I do.
+              I have always been drawn to the life that lives inside people's most treasured possessions.
             </h1>
-            <p style={{ fontSize: "1.1rem", fontWeight: 300, color: "rgba(248,244,227,0.75)", lineHeight: 1.8 }}>
-              My background is retail, operations, and resale. My skill is people, problem-solving, and knowing where things go. The Well Lived Citizen is built for the parts of life that don't fit neatly into one job description — the closet you can't face, the inherited furniture you don't know what to do with, the parent across the country who needs someone local to actually show up.
+            <p style={{ fontSize: "1.1rem", fontWeight: 300, color: "rgba(248,244,227,0.72)", lineHeight: 1.85 }}>
+              The objects around which identity is formed — whether subtly or boldly. A jacket is never just clothing when it carries the memory of the woman who wore it. A record is never just vinyl when it still holds the rebellion and the moment that brought it into the world. A closed closet door is never simply storage when it still tells the story of a marriage, a career, a season of confidence.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── FOUNDER ── */}
-      <section style={{ backgroundColor: "var(--parchment)", padding: "6rem 0" }}>
+      {/* ── FOUNDER NARRATIVE ── */}
+      <section style={{ backgroundColor: "var(--parchment)", padding: "7rem 0" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "5rem", alignItems: "start" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "6rem", alignItems: "start" }}>
+
             <FadeUp>
-              <span className="eyebrow eyebrow-sage">Dayna Brown · Founder</span>
-              <h2 className="display-md" style={{ color: "var(--ink)", marginBottom: "2rem" }}>
-                My skill is operations, efficiency, and people. This is just how I see the world.
-              </h2>
-              <p className="body-lg" style={{ marginBottom: "1.5rem" }}>
-                I spent 15+ years in retail — luxury, outdoor, men's, mass-market. I've designed and built product lines. I ran operations across categories. But the through-line in all of it is resale and the human side of how things actually move through a household. I know where to send things. I know what they're worth. I know who's buying. My apartment is set up to receive, photograph, list, and ship. I've been doing this for clients for years.
-              </p>
-              <p className="body-lg" style={{ marginBottom: "1.5rem" }}>
-                I built The Well Lived Citizen because there's a category of help nobody offers cleanly — too specific for a big company, too complex for a quick hire. One person who can be all of it.
-              </p>
-              <p style={{
-                fontSize: "1rem", fontWeight: 600, color: "var(--ink)", lineHeight: 1.5,
-                borderLeft: "3px solid var(--sage)", paddingLeft: "1.25rem", marginTop: "2rem",
-              }}>— Dayna Brown, Founder</p>
+              <div>
+                <span className="eyebrow eyebrow-sage">Dayna Brown · Founder</span>
+
+                <p className="body-lg" style={{ marginBottom: "2rem" }}>
+                  Some of my earliest memories are of sitting on the floor with records spread around me, replaying Lionel Richie, Billy Joel, and Aerosmith until the stories behind the music felt as important as the songs themselves. I always felt the lyrics were telling stories so personal that I wanted to know the people behind them. The mystery of the music — and the lives we couldn't hear through the turntable — always felt like part of the journey.
+                </p>
+
+                <p className="body-lg" style={{ marginBottom: "2rem" }}>
+                  Years later, standing in Seattle looking through museum glass at Steven Tyler's scarves, I felt that same truth again: the profound human residue objects can hold. And more recently, watching Stevie Nicks pull her iconic capes from decades-old performances back onto the stage — she said she hadn't seen some of them since the original songs were recorded, and that wearing them changed her for those few minutes. I watched memory alter the way she moved, turned, and became the person from those moments again in real time.
+                </p>
+
+                <p className="body-lg" style={{ marginBottom: "2rem" }}>
+                  That is the heart of this work.
+                </p>
+
+                <p className="body-lg" style={{ marginBottom: "2rem" }}>
+                  I don't believe people simply need help getting rid of things. I believe they need help understanding what those things mean, what they are worth, what they still have left to do, and where the next chapter of those belongings belongs.
+                </p>
+
+                <p style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--ink)", borderLeft: "3px solid var(--sage)", paddingLeft: "1.25rem", lineHeight: 1.5, marginTop: "2.5rem" }}>
+                  — Dayna Brown, Founder
+                </p>
+              </div>
             </FadeUp>
 
             <FadeUp delay={100}>
@@ -82,59 +92,72 @@ export default function About() {
                 </div>
               </div>
             </FadeUp>
+
           </div>
         </div>
       </section>
 
-      {/* ── HOW IT ACTUALLY SHOWS UP ── */}
-      <section style={{ backgroundColor: "var(--ink)", padding: "6rem 0" }}>
+      {/* ── THE FLOOD ── */}
+      <section style={{ backgroundColor: "var(--ink)", padding: "7rem 0" }}>
         <div className="container">
           <FadeUp>
-            <div style={{ maxWidth: 720 }}>
-              <span className="eyebrow eyebrow-light">How It Actually Shows Up</span>
-              <h2 className="display-md" style={{ color: "var(--parchment)", marginBottom: "2rem" }}>
-                The kinds of calls I get.
+            <div style={{ maxWidth: 740 }}>
+              <span className="eyebrow eyebrow-light">How This Work Changed</span>
+              <h2 className="display-md" style={{ color: "var(--parchment)", marginBottom: "2.5rem" }}>
+                When it was my life in pieces.
               </h2>
-              <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.78)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
-                The person who's tried to clean out the closet four times. They know there's value in there — the handbags, the clothes, the gifts that never got used. They don't know where to send it, who to send it to, or how to deal with the people. I do. I have the eye, the apartment set up for intake, and accounts on every platform that matters.
+              <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.78)", lineHeight: 1.85, marginBottom: "1.75rem" }}>
+                After an unforeseen flood, I found myself moving through 13 temporary homes and Airbnbs, carrying only fragments of the life I thought I'd always recognize. Years of belongings, valuables, and deeply personal objects were damaged or lost — many of them irreplaceable.
               </p>
-              <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.78)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
-                The family in a hurried move who isn't ready to make decisions about everything. The adult child who moved to Ohio for work while their mom is still in LA — and they need someone local to actually show up. To change the smoke detector batteries. To fix the Wi-Fi. To take the donations. To flag the things nobody else will say out loud.
+              <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.78)", lineHeight: 1.85, marginBottom: "1.75rem" }}>
+                What surprised me most was not only the grief of the loss, but the disorientation of living without the things that quietly reflect you back to yourself each day. The art you're used to seeing on your walls. The clothes that belong in your closet. The objects that make a place feel like the life you built. When those things are suddenly gone, the experience is profoundly destabilizing — even for someone as deeply self-sufficient as I have always been.
               </p>
-              <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.78)", lineHeight: 1.8 }}>
-                And underneath all of it: the lifestyle transfer that's quietly happening alongside the wealth transfer. We don't live the way our parents lived. We have less space, more transitions, and a different relationship to objects. The inheritance can feel more like an inconvenience than a gift. It doesn't have to. The gift is one person who can handle all of it — who knows the value, the platforms, the timing, and what's worth keeping. That's the work.
+              <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.78)", lineHeight: 1.85, marginBottom: "1.75rem" }}>
+                During that season, I was introduced to someone who, on paper, might have simply been called a home organizer. But what she offered was something far deeper. She stepped into the moments I couldn't hold alone. The decisions I was too depleted to make. The logistics I normally would have solved in seconds. She was not organizing. She was relief. She became calm in the middle of disruption, clarity in the middle of grief, and movement in a moment when everything in my life had stopped.
+              </p>
+              <p style={{ fontSize: "1.05rem", fontWeight: 300, color: "rgba(248,244,227,0.78)", lineHeight: 1.85 }}>
+                That experience changed the way I understand this work. Because when it is your own life in pieces, even the most capable person can lose access to their usual clarity. What matters most in those moments is not simply having someone who knows where things go. It is having someone who can step into the weight of transition and quietly help carry it with you.
               </p>
             </div>
           </FadeUp>
         </div>
       </section>
 
-      {/* ── WHY THIS WORK EXISTS ── */}
-      <section style={{ backgroundColor: "var(--parchment-mid)", padding: "6rem 0" }}>
+      {/* ── THE NEIGHBOR ── */}
+      <section style={{ backgroundColor: "var(--parchment-mid)", padding: "7rem 0" }}>
         <div className="container">
           <FadeUp>
-            <span className="eyebrow eyebrow-sage">Why This Exists</span>
-            <h2 className="display-md" style={{ color: "var(--ink)", marginBottom: "3rem", maxWidth: 560 }}>
-              Everyone deserves to have that person.
-            </h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "5rem", alignItems: "center" }}>
+              <div>
+                <span className="eyebrow eyebrow-sage">Why This Exists</span>
+                <h2 className="display-md" style={{ color: "var(--ink)", marginBottom: "2rem" }}>
+                  Everyone deserves to have that person.
+                </h2>
+                <p className="body-lg" style={{ marginBottom: "1.75rem" }}>
+                  A woman who once lived across the hall from me began as someone I simply greeted in passing. Over time, she became a close friend. She is one of the most independent, self-sufficient, quietly powerful women I have ever known.
+                </p>
+                <p className="body-lg" style={{ marginBottom: "1.75rem" }}>
+                  At 84, after hip surgery and countless chapters of life behind her, she kept moving forward — not because life had become easy, but because she met it with fullness, curiosity, and grace. I found myself setting up new televisions. Making smart-home systems work. Adjusting thermostats. Quietly removing friction so her life could remain as comfortable and effortless as possible.
+                </p>
+                <p className="body-lg">
+                  What stayed with me was not that she needed anyone. It was the realization that everyone deserves to have that person. The one who knows what to do. The one who steps in before inconvenience becomes overwhelm. Because not everyone has the network. Not everyone knows who to call.
+                </p>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "1px", backgroundColor: "var(--warm-gray-lt)" }}>
+                {[
+                  { label: "Your call", text: "You get to make decisions about your own things, on your own terms, without someone else's urgency rushing you." },
+                  { label: "The story stays", text: "The things people have lived with carry meaning. That meaning deserves to be captured, not lost because nobody had time." },
+                  { label: "Small things add up", text: "The smoke detector, the unreachable shelf, the tech that stopped working — they're not a big deal until they are." },
+                  { label: "No crisis required", text: "Good support shouldn't have to wait for a bad moment. The best time to get ahead of things is before you need to." },
+                ].map((item, i) => (
+                  <div key={i} style={{ backgroundColor: "var(--parchment)", padding: "1.5rem 2rem" }}>
+                    <p style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--sage-dark)", marginBottom: "0.5rem" }}>{item.label}</p>
+                    <p style={{ fontSize: "0.88rem", fontWeight: 300, color: "var(--ink-soft)", lineHeight: 1.7 }}>{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </FadeUp>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.5rem" }}>
-            {[
-              { label: "Your call", text: "You get to make decisions about your own stuff, on your own terms, without someone else's urgency rushing you." },
-              { label: "The story stays", text: "The things people have lived with carry meaning. That meaning deserves to be captured, not tossed because nobody had time." },
-              { label: "Small things add up", text: "The smoke detector, the unreachable shelf, the tech that stopped working — they're not a big deal until they are." },
-              { label: "No crisis required", text: "Good support shouldn't have to wait for a bad moment. The best time to get ahead of things is before you need to." },
-              { label: "More choices later", text: "Dealing with things thoughtfully now keeps your options open — for you and for the people who come after you." },
-              { label: "One person, not five", text: "You shouldn't have to hire a different person for every category of problem. That's the whole point." },
-            ].map((item, i) => (
-              <FadeUp key={i} delay={i * 40}>
-                <div style={{ backgroundColor: "var(--parchment)", padding: "2rem", borderTop: "3px solid var(--sage)" }}>
-                  <p style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--sage-dark)", marginBottom: "0.75rem" }}>{item.label}</p>
-                  <p style={{ fontSize: "0.9rem", fontWeight: 300, color: "var(--ink-soft)", lineHeight: 1.7 }}>{item.text}</p>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -185,11 +208,11 @@ export default function About() {
         <div className="container">
           <FadeUp>
             <div style={{ maxWidth: 680 }}>
-              <p style={{ fontSize: "clamp(1.3rem, 3vw, 2rem)", fontWeight: 700, color: "var(--ink)", lineHeight: 1.3, marginBottom: "2rem" }}>
+              <p style={{ fontSize: "clamp(1.3rem, 3vw, 2rem)", fontWeight: 700, color: "var(--ink)", lineHeight: 1.35, marginBottom: "2rem" }}>
                 "Someone thoughtful is finally paying attention to the things that quietly matter."
               </p>
-              <p style={{ fontSize: "0.9rem", fontWeight: 300, color: "var(--ink)", opacity: 0.75, lineHeight: 1.75, marginBottom: "2.5rem" }}>
-                That's the promise. The shift is from quietly overwhelmed to genuinely taken care of. That's the work.
+              <p style={{ fontSize: "0.95rem", fontWeight: 300, color: "var(--ink)", opacity: 0.75, lineHeight: 1.8, marginBottom: "2.5rem" }}>
+                The work is never really about the object. It is about protecting the life it represents.
               </p>
               <Link href="/contact" className="btn btn-ink">Schedule a Call</Link>
             </div>

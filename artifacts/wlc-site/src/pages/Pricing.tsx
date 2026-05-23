@@ -278,6 +278,94 @@ export default function Pricing() {
         </div>
       </section>
 
+      {/* ── FLEX BLOCKS ── */}
+      <section style={{ backgroundColor: "var(--ink)", padding: "5rem 0" }}>
+        <div className="container">
+          <FadeUp>
+            <span className="eyebrow" style={{ color: "rgba(248,244,227,0.45)" }}>Flex Blocks</span>
+            <h2 className="display-md" style={{ color: "var(--parchment)", marginBottom: "0.75rem", maxWidth: 520 }}>
+              Pre-purchase hours. Use them when you need them.
+            </h2>
+            <p style={{ fontSize: "0.95rem", fontWeight: 300, color: "rgba(248,244,227,0.65)", lineHeight: 1.8, marginBottom: "3rem", maxWidth: 560 }}>
+              Flex Blocks are reserved hours you can use for The Reset, House Calls, continuity work, or the things that come up between bigger projects. Your hours never expire. The point is simple: your time is already there when life needs it.
+            </p>
+          </FadeUp>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
+
+            {/* Reset + House Calls */}
+            <FadeUp>
+              <div style={{ backgroundColor: "rgba(248,244,227,0.05)", border: "1px solid rgba(248,244,227,0.12)", padding: "2.5rem" }}>
+                <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--sage)", marginBottom: "0.75rem" }}>
+                  The Reset · House Calls
+                </p>
+                <p style={{ fontSize: "0.88rem", fontWeight: 300, color: "rgba(248,244,227,0.65)", lineHeight: 1.7, marginBottom: "2rem" }}>
+                  Pre-purchased hours for resets, practical home support, continuity tasks, and the here-and-there asks that build up between sessions.
+                </p>
+                <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+                  {[
+                    { label: "10-Hour Block", price: "$1,250", note: "vs. $1,750 at full rate" },
+                    { label: "25-Hour Block", price: "$3,150", note: "vs. $4,375 at full rate" },
+                  ].map((row, i) => (
+                    <div key={i} style={{
+                      display: "flex", justifyContent: "space-between", alignItems: "center",
+                      padding: "1rem 0", borderBottom: "1px solid rgba(248,244,227,0.1)",
+                    }}>
+                      <div>
+                        <p style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--parchment)", marginBottom: "0.2rem" }}>{row.label}</p>
+                        <p style={{ fontSize: "0.72rem", fontWeight: 300, color: "rgba(248,244,227,0.4)" }}>{row.note}</p>
+                      </div>
+                      <p style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--sage)" }}>{row.price}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeUp>
+
+            {/* Legacy */}
+            <FadeUp delay={80}>
+              <div style={{ backgroundColor: "rgba(248,244,227,0.05)", border: "1px solid rgba(248,244,227,0.12)", padding: "2.5rem" }}>
+                <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--sage)", marginBottom: "0.75rem" }}>
+                  Legacy Planning
+                </p>
+                <p style={{ fontSize: "0.88rem", fontWeight: 300, color: "rgba(248,244,227,0.65)", lineHeight: 1.7, marginBottom: "2rem" }}>
+                  Pre-purchased hour blocks for legacy catalog work, inventory sessions, and estate prep. Applied across multiple focused visits — not continuous daily presence. Ask about pricing during your intake call.
+                </p>
+                <div style={{ padding: "1rem 0", borderBottom: "1px solid rgba(248,244,227,0.1)" }}>
+                  <p style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--parchment)", marginBottom: "0.2rem" }}>10- and 25-Hour Blocks</p>
+                  <p style={{ fontSize: "0.72rem", fontWeight: 300, color: "rgba(248,244,227,0.4)" }}>Pricing quoted during intake</p>
+                </div>
+                <Link href="/contact" style={{ display: "inline-block", marginTop: "1.5rem", fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--sage)", textDecoration: "none" }}>
+                  Ask about Legacy blocks →
+                </Link>
+              </div>
+            </FadeUp>
+
+            {/* How blocks work */}
+            <FadeUp delay={160}>
+              <div style={{ backgroundColor: "var(--sage)", padding: "2.5rem" }}>
+                <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--sage-dark)", marginBottom: "0.75rem" }}>
+                  How it works
+                </p>
+                <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                  {[
+                    "Hours never expire — use them on your schedule.",
+                    "Apply across sessions in 2, 4, or 6-hour blocks.",
+                    "Works for any mix of Reset, House Calls, and continuity work.",
+                    "Same rate applies whether you use them fast or over six months.",
+                    "Not applicable to project-scoped Legacy catalog or move work.",
+                  ].map((line, i) => (
+                    <div key={i} style={{ display: "flex", gap: "0.75rem", fontSize: "0.85rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.65 }}>
+                      <span style={{ color: "var(--ink)", opacity: 0.45, flexShrink: 0 }}>—</span>{line}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeUp>
+
+          </div>
+        </div>
+      </section>
+
       {/* ── MONTHLY RETAINER ── */}
       <section style={{ backgroundColor: "var(--sage)", padding: "5rem 0" }}>
         <div className="container">
