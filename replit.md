@@ -1,6 +1,11 @@
-# [Project name]
+# The Well Lived Citizen
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+The website and brand operating system for The Well Lived Citizen — a private household stewardship business in Los Angeles, founded by Dayna Brown. The brand is **The Well Lived Citizen** (never "Co.").
+
+## Brand OS Skill (read before writing any WLC copy)
+
+- `.local/skills/wlc-brand-os/SKILL.md` — voice, tone, language rules, two-layer brand model, service architecture, locked pricing, drift detection. Load this BEFORE touching any client-facing copy.
+- `.local/skills/wlc-brand-os/content-generation.md` — workflow for converting raw founder input (voice memos, notes, brainstorms) into on-brand copy.
 
 ## Run & Operate
 
