@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import YelpBadge from "@/components/YelpBadge";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -56,6 +57,9 @@ export default function Home() {
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
                 <Link href="/contact" className="btn btn-sage">Schedule a Call</Link>
                 <Link href="/services" className="btn btn-outline-light">See All Services</Link>
+              </div>
+              <div style={{ marginTop: "1.5rem" }}>
+                <YelpBadge variant="dark" />
               </div>
             </div>
 
