@@ -4,8 +4,13 @@ The website and brand operating system for The Well Lived Citizen — a private 
 
 ## Brand OS Skill (read before writing any WLC copy)
 
-- `.local/skills/wlc-brand-os/SKILL.md` — voice, tone, language rules, two-layer brand model, service architecture, locked pricing, drift detection. Load this BEFORE touching any client-facing copy.
-- `.local/skills/wlc-brand-os/content-generation.md` — workflow for converting raw founder input (voice memos, notes, brainstorms) into on-brand copy.
+Load all three files BEFORE touching any client-facing copy or AI generation prompts:
+
+- `.local/skills/wlc-brand-os/LOCKED_DECISIONS.md` — binding decisions from Dayna. Overrides every PDF in `attached_assets/`. Read first.
+- `.local/skills/wlc-brand-os/HANDOFF.md` — operating rules derived from past mistakes. Follow them.
+- `.local/skills/wlc-brand-os/SKILL.md` — voice, tone, audiences, content framework, platform and post-type guidance.
+
+If any of these files are missing when you arrive, recreate them from the references in this `replit.md` and the live site. Do not assume "missing" means "deleted on purpose."
 
 ## Run & Operate
 
@@ -51,11 +56,17 @@ Pages take 1–4 weeks to appear in Google results after submission.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- **Do not author copy from memory.** Search the live site and the Brand OS skill files first. Reuse existing canonical phrasing verbatim.
+- **Do not audit unless asked.** Dayna does not want unsolicited reviews of her copy or business; fix what's requested.
+- **When she corrects something verbally, write it down.** Append the correction to `.local/skills/wlc-brand-os/LOCKED_DECISIONS.md` with a date before touching any site surface.
+- **Report only what was actually changed.** List the files. Don't claim "fixed across the site" unless every surface was updated.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Older PDFs in `attached_assets/` contain stale branding (e.g. "Co." suffix, `thewelllivedcitizenco.com`, Yelp references, "decor/household overflow" in Fast Bag Fill). `LOCKED_DECISIONS.md` overrides them on every point.
+- The frontend copy and `artifacts/api-server/src/routes/generate.ts` prompts must agree. Update both in the same pass.
+- The brand-OS files (`SKILL.md`, `LOCKED_DECISIONS.md`, `HANDOFF.md`) live in `.local/skills/wlc-brand-os/` only. If a `wlc-brand-voice/` directory ever appears, consolidate it back into `wlc-brand-os/`.
+- Fast Bag Fill is clothing and accessories only. Never list decor, furniture, art, books, kitchen items, lamps, garage items, or collectibles as Fast Bag categories.
 
 ## Pointers
 
