@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useCreatePost, useGenerateContent, getListPostsQueryKey, getGetPostStatsQueryKey } from "@workspace/api-client-react";
 import { customFetch } from "@workspace/api-client-react";
 import { useQueryClient } from "@tanstack/react-query";
+import { useGenerationHistory, type HistoryItem } from "@/hooks/use-generation-history";
 
 // ─── Shared constants ────────────────────────────────────────────────────────
 
@@ -49,8 +50,31 @@ const INPUT_BORDER = "hsl(40, 20%, 82%)";
 
 // ─── Main component ───────────────────────────────────────────────────────────
 
+type LoadedEntry = {
+  platform: string;
+  postType: string;
+  tone: string;
+  context: string;
+  result: { caption: string; hashtags: string; alternates: string[] };
+};
+
 export default function Generate() {
-  const [tab, setTab] = useState<"single" | "plan">("single");
+  const [tab, setTab] = useState<"single" | "plan" | "history">("single");
+  const [loadedEntry, setLoadedEntry] = useState<LoadedEntry | null>(null);
+  const { history, addItem, removeItem, clearHistory } = useGenerationHistory();
+
+  function handleLoadFromHistory(item: HistoryItem) {
+    setLoadedEntry({
+      platform: item.platform,
+      postType: item.postType,
+      tone: item.tone,
+      context: item.context ?? "",
+      result: { caption: item.caption, hashtags: item.hashtags, alternates: item.alternates },
+    });
+    setTab("single");
+  }
+
+  const historyCount = history.length;
 
   return (
     <div className="px-5 py-8 md:px-10 md:py-10 max-w-3xl">
@@ -65,36 +89,77 @@ export default function Generate() {
 
       {/* Tab switcher */}
       <div className="flex gap-0 mb-6 border-b" style={{ borderColor: SAGE_BORDER }}>
-        {(["single", "plan"] as const).map(t => (
-          <button key={t} onClick={() => setTab(t)}
+        {([
+          { id: "single", label: "Single Post" },
+          { id: "plan", label: "Content Plan" },
+          { id: "history", label: historyCount > 0 ? `History (${historyCount})` : "History" },
+        ] as const).map(t => (
+          <button key={t.id} onClick={() => setTab(t.id)}
             className="px-4 py-2.5 text-sm transition-colors relative"
-            style={{ color: tab === t ? INK : MUTED, fontWeight: tab === t ? 600 : 400 }}
+            style={{ color: tab === t.id ? INK : MUTED, fontWeight: tab === t.id ? 600 : 400 }}
           >
-            {t === "single" ? "Single Post" : "Content Plan"}
-            {tab === t && (
+            {t.label}
+            {tab === t.id && (
               <span className="absolute bottom-0 left-0 right-0" style={{ height: "2px", backgroundColor: INK }} />
             )}
           </button>
         ))}
       </div>
 
-      {tab === "single" ? <SinglePost /> : <ContentPlan />}
+      {tab === "single" && (
+        <SinglePost
+          onGenerated={addItem}
+          loadedEntry={loadedEntry}
+          onLoadedEntryConsumed={() => setLoadedEntry(null)}
+        />
+      )}
+      {tab === "plan" && <ContentPlan />}
+      {tab === "history" && (
+        <GenerationHistory
+          history={history}
+          onLoad={handleLoadFromHistory}
+          onRemove={removeItem}
+          onClear={clearHistory}
+        />
+      )}
     </div>
   );
 }
 
 // ─── Single Post tab ──────────────────────────────────────────────────────────
 
-function SinglePost() {
+type SinglePostProps = {
+  onGenerated: (item: Omit<HistoryItem, "id" | "timestamp">) => void;
+  loadedEntry: LoadedEntry | null;
+  onLoadedEntryConsumed: () => void;
+};
+
+function SinglePost({ onGenerated, loadedEntry, onLoadedEntryConsumed }: SinglePostProps) {
   const queryClient = useQueryClient();
-  const [platform, setPlatform] = useState("");
-  const [postType, setPostType] = useState("");
-  const [tone, setTone] = useState("Direct");
-  const [context, setContext] = useState("");
-  const [result, setResult] = useState<{ caption: string; hashtags: string; alternates: string[] } | null>(null);
+  const [platform, setPlatform] = useState(loadedEntry?.platform ?? "");
+  const [postType, setPostType] = useState(loadedEntry?.postType ?? "");
+  const [tone, setTone] = useState(loadedEntry?.tone ?? "Direct");
+  const [context, setContext] = useState(loadedEntry?.context ?? "");
+  const [result, setResult] = useState<{ caption: string; hashtags: string; alternates: string[] } | null>(
+    loadedEntry?.result ?? null
+  );
   const [savedId, setSavedId] = useState<number | null>(null);
   const [copied, setCopied] = useState(false);
-  const [activeCaption, setActiveCaption] = useState("");
+  const [activeCaption, setActiveCaption] = useState(loadedEntry?.result.caption ?? "");
+  const [isRestored, setIsRestored] = useState(!!loadedEntry);
+
+  // When a new entry is loaded from history, apply it
+  if (loadedEntry && !isRestored) {
+    setPlatform(loadedEntry.platform);
+    setPostType(loadedEntry.postType);
+    setTone(loadedEntry.tone);
+    setContext(loadedEntry.context);
+    setResult(loadedEntry.result);
+    setActiveCaption(loadedEntry.result.caption);
+    setSavedId(null);
+    setIsRestored(true);
+    onLoadedEntryConsumed();
+  }
 
   const generate = useGenerateContent();
   const save = useCreatePost();
@@ -103,9 +168,20 @@ function SinglePost() {
     if (!platform || !postType) return;
     setResult(null);
     setSavedId(null);
+    setIsRestored(false);
     const data = await generate.mutateAsync({ data: { platform, postType, context: context || undefined, tone } });
-    setResult(data as { caption: string; hashtags: string; alternates: string[] });
-    setActiveCaption((data as { caption: string }).caption);
+    const typed = data as { caption: string; hashtags: string; alternates: string[] };
+    setResult(typed);
+    setActiveCaption(typed.caption);
+    onGenerated({
+      platform,
+      postType,
+      tone,
+      context: context || undefined,
+      caption: typed.caption,
+      hashtags: typed.hashtags,
+      alternates: typed.alternates,
+    });
   }
 
   async function handleSave() {
@@ -129,6 +205,12 @@ function SinglePost() {
 
   return (
     <>
+      {isRestored && (
+        <div className="mb-4 px-4 py-2.5 flex items-center gap-2" style={{ backgroundColor: "hsl(40, 30%, 93%)", borderLeft: `3px solid ${INK}` }}>
+          <span style={{ fontSize: "0.78rem", color: INK }}>Loaded from history — edit and regenerate, or copy as-is.</span>
+        </div>
+      )}
+
       <div className="border p-5 md:p-6 mb-6" style={{ borderColor: SAGE_BORDER, backgroundColor: PARCHMENT }}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           <div>
@@ -236,6 +318,219 @@ function SinglePost() {
         </div>
       )}
     </>
+  );
+}
+
+// ─── Generation History tab ───────────────────────────────────────────────────
+
+type GenerationHistoryProps = {
+  history: HistoryItem[];
+  onLoad: (item: HistoryItem) => void;
+  onRemove: (id: string) => void;
+  onClear: () => void;
+};
+
+function GenerationHistory({ history, onLoad, onRemove, onClear }: GenerationHistoryProps) {
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [confirmClear, setConfirmClear] = useState(false);
+
+  async function handleCopy(item: HistoryItem) {
+    const text = item.caption + (item.hashtags ? `\n\n${item.hashtags.split(",").map(h => `#${h.trim()}`).join(" ")}` : "");
+    await navigator.clipboard.writeText(text);
+    setCopiedId(item.id);
+    setTimeout(() => setCopiedId(null), 2000);
+  }
+
+  function formatTimestamp(ts: number): string {
+    const d = new Date(ts);
+    const now = new Date();
+    const diffMs = now.getTime() - ts;
+    const diffMins = Math.floor(diffMs / 60000);
+    const diffHours = Math.floor(diffMs / 3600000);
+    const diffDays = Math.floor(diffMs / 86400000);
+
+    if (diffMins < 1) return "Just now";
+    if (diffMins < 60) return `${diffMins}m ago`;
+    if (diffHours < 24) return `${diffHours}h ago`;
+    if (diffDays < 7) return `${diffDays}d ago`;
+    return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  }
+
+  if (history.length === 0) {
+    return (
+      <div className="border px-8 py-12 text-center" style={{ borderColor: SAGE_BORDER, borderStyle: "dashed" }}>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1rem", color: MUTED, marginBottom: "8px" }}>
+          No generations yet
+        </div>
+        <div style={{ fontSize: "0.82rem", color: MUTED }}>
+          Every caption you generate on the Single Post tab is saved here automatically.
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      {/* Header row */}
+      <div className="flex items-center justify-between mb-5">
+        <div style={{ fontSize: "0.8rem", color: MUTED }}>
+          {history.length} generation{history.length !== 1 ? "s" : ""} saved
+        </div>
+        <div className="flex items-center gap-2">
+          {confirmClear ? (
+            <>
+              <span style={{ fontSize: "0.78rem", color: MUTED }}>Clear all?</span>
+              <button
+                onClick={() => { onClear(); setConfirmClear(false); }}
+                className="px-3 py-1.5 text-xs border"
+                style={{ borderColor: "hsl(0, 55%, 60%)", color: "hsl(0, 55%, 45%)" }}>
+                Yes, clear
+              </button>
+              <button
+                onClick={() => setConfirmClear(false)}
+                className="px-3 py-1.5 text-xs border"
+                style={{ borderColor: INPUT_BORDER, color: MUTED }}>
+                Cancel
+              </button>
+            </>
+          ) : (
+            <button
+              onClick={() => setConfirmClear(true)}
+              className="px-3 py-1.5 text-xs border transition-colors hover:bg-black/5"
+              style={{ borderColor: INPUT_BORDER, color: MUTED }}>
+              Clear history
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* History items */}
+      <div className="flex flex-col gap-3">
+        {history.map(item => (
+          <HistoryCard
+            key={item.id}
+            item={item}
+            isCopied={copiedId === item.id}
+            onCopy={() => handleCopy(item)}
+            onLoad={() => onLoad(item)}
+            onRemove={() => onRemove(item.id)}
+            formatTimestamp={formatTimestamp}
+          />
+        ))}
+      </div>
+    </>
+  );
+}
+
+// ─── History card ─────────────────────────────────────────────────────────────
+
+type HistoryCardProps = {
+  item: HistoryItem;
+  isCopied: boolean;
+  onCopy: () => void;
+  onLoad: () => void;
+  onRemove: () => void;
+  formatTimestamp: (ts: number) => string;
+};
+
+function HistoryCard({ item, isCopied, onCopy, onLoad, onRemove, formatTimestamp }: HistoryCardProps) {
+  const [expanded, setExpanded] = useState(false);
+  const platformColor = PLATFORM_COLORS[item.platform] ?? "#A2A392";
+
+  return (
+    <div className="border overflow-hidden" style={{ borderColor: SAGE_BORDER, backgroundColor: PARCHMENT }}>
+      {/* Collapsed header */}
+      <div
+        className="flex items-start gap-3 px-4 py-3 cursor-pointer hover:bg-black/[0.015] transition-colors"
+        onClick={() => setExpanded(v => !v)}
+      >
+        <span className="mt-1 w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: platformColor }} />
+        <div className="flex-1 min-w-0">
+          <div className="flex items-baseline gap-2 flex-wrap">
+            <span style={{ fontSize: "0.82rem", fontWeight: 600, color: INK }}>{item.platform}</span>
+            <span style={{ fontSize: "0.75rem", color: MUTED }}>{item.postType}</span>
+            <span style={{ fontSize: "0.72rem", color: "hsl(25, 15%, 68%)", marginLeft: "auto" }}>{formatTimestamp(item.timestamp)}</span>
+          </div>
+          {!expanded && (
+            <div style={{ fontSize: "0.8rem", color: "hsl(20, 14%, 35%)", marginTop: "3px", lineHeight: 1.5 }}
+              className="line-clamp-2">
+              {item.caption}
+            </div>
+          )}
+        </div>
+        <span style={{ fontSize: "0.65rem", color: MUTED, flexShrink: 0, marginTop: "2px" }}>
+          {expanded ? "▲" : "▼"}
+        </span>
+      </div>
+
+      {/* Expanded body */}
+      {expanded && (
+        <div className="px-4 pb-4 border-t" style={{ borderColor: SAGE_BORDER }}>
+          {/* Meta row */}
+          <div className="flex items-center gap-3 pt-3 pb-3 flex-wrap">
+            <span className="px-2 py-0.5 text-xs" style={{ backgroundColor: "hsl(40, 25%, 90%)", color: INK }}>
+              {item.tone}
+            </span>
+            {item.context && (
+              <span style={{ fontSize: "0.75rem", color: MUTED, fontStyle: "italic" }} className="truncate max-w-xs">
+                "{item.context}"
+              </span>
+            )}
+          </div>
+
+          {/* Caption */}
+          <div style={{ fontSize: "0.84rem", color: "hsl(20, 14%, 20%)", lineHeight: 1.7, whiteSpace: "pre-wrap", marginBottom: "12px" }}>
+            {item.caption}
+          </div>
+
+          {/* Hashtags */}
+          {item.hashtags && (
+            <div className="mb-3 p-2.5" style={{ backgroundColor: "hsl(40, 25%, 93%)" }}>
+              <div style={{ fontSize: "0.72rem", color: MUTED, marginBottom: "3px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Hashtags</div>
+              <div style={{ fontSize: "0.78rem", color: "hsl(20, 14%, 35%)" }}>
+                {item.hashtags.split(",").map(h => `#${h.trim()}`).join(" ")}
+              </div>
+            </div>
+          )}
+
+          {/* Alternates */}
+          {item.alternates && item.alternates.length > 0 && (
+            <div className="mb-4">
+              <div style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.08em", color: MUTED, marginBottom: "6px" }}>Alternates</div>
+              <div className="flex flex-col gap-1.5">
+                {item.alternates.map((alt, i) => (
+                  <div key={i} className="px-3 py-2 border" style={{ borderColor: "hsl(40, 20%, 87%)", fontSize: "0.8rem", color: "hsl(20, 14%, 30%)", lineHeight: 1.5 }}>
+                    {alt}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Actions */}
+          <div className="flex gap-2 flex-wrap">
+            <button
+              onClick={onCopy}
+              className="px-4 py-2 text-sm border transition-colors hover:bg-black/5"
+              style={{ borderColor: INPUT_BORDER, color: "hsl(20, 14%, 25%)" }}>
+              {isCopied ? "Copied!" : "Copy caption"}
+            </button>
+            <button
+              onClick={onLoad}
+              className="px-4 py-2 text-sm font-semibold transition-opacity hover:opacity-80"
+              style={{ backgroundColor: INK, color: PARCHMENT }}>
+              Load into editor
+            </button>
+            <button
+              onClick={onRemove}
+              className="ml-auto px-3 py-2 text-xs border transition-colors hover:bg-black/5"
+              style={{ borderColor: INPUT_BORDER, color: MUTED }}>
+              Remove
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -513,40 +808,43 @@ function PlanPostCard({ post, isSaved, onSave }: { post: PlanPost; isSaved: bool
       <div className="flex items-center gap-2 px-4 py-3 cursor-pointer hover:bg-black/[0.015] transition-colors"
         onClick={() => setExpanded(v => !v)}>
         <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: PLATFORM_COLORS[post.platform] ?? "#A2A392" }} />
-        <span className="text-xs shrink-0 hidden sm:block" style={{ color: MUTED, minWidth: "130px" }}>{post.platform}</span>
-        <span className="text-xs shrink-0" style={{ color: "hsl(25, 15%, 65%)", backgroundColor: "hsl(40, 25%, 92%)", padding: "2px 8px" }}>{post.postType}</span>
-        <p className="flex-1 text-sm overflow-hidden text-ellipsis whitespace-nowrap" style={{ color: "hsl(20, 14%, 22%)" }}>{editedCaption}</p>
-        {isSaved && <span className="shrink-0 text-xs" style={{ color: "hsl(140, 30%, 42%)" }}>✓ saved</span>}
-        <span style={{ color: MUTED, fontSize: "0.7rem" }}>{expanded ? "▲" : "▼"}</span>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-baseline gap-2">
+            <span style={{ fontSize: "0.82rem", fontWeight: 600, color: INK }}>{post.platform}</span>
+            <span style={{ fontSize: "0.75rem", color: MUTED }}>{post.postType}</span>
+          </div>
+          {!expanded && (
+            <div style={{ fontSize: "0.78rem", color: "hsl(20, 14%, 40%)", marginTop: "2px" }} className="truncate">
+              {post.caption.slice(0, 80)}…
+            </div>
+          )}
+        </div>
+        {isSaved && <span style={{ fontSize: "0.7rem", color: "hsl(140, 20%, 40%)", flexShrink: 0 }}>Saved ✓</span>}
+        <span style={{ fontSize: "0.65rem", color: MUTED }}>{expanded ? "▲" : "▼"}</span>
       </div>
 
       {/* Expanded */}
       {expanded && (
-        <div className="px-4 pb-4 border-t" style={{ borderColor: "hsl(40, 20%, 90%)" }}>
-          {/* Platform on mobile */}
-          <div className="sm:hidden flex items-center gap-2 pt-3 mb-2">
-            <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: PLATFORM_COLORS[post.platform] ?? "#A2A392" }} />
-            <span className="text-xs" style={{ color: MUTED }}>{post.platform}</span>
-          </div>
-          <div className="pt-3 mb-3">
-            <textarea value={editedCaption} onChange={e => setEditedCaption(e.target.value)} rows={7}
-              className="w-full border px-3 py-3 text-sm resize-none outline-none"
-              style={{ borderColor: INPUT_BORDER, backgroundColor: "hsl(40, 25%, 95%)", color: "hsl(20, 14%, 18%)", lineHeight: 1.7 }} />
-          </div>
+        <div className="px-4 pb-4 border-t" style={{ borderColor: SAGE_BORDER }}>
+          <textarea value={editedCaption} onChange={e => setEditedCaption(e.target.value)} rows={6}
+            className="w-full border px-3 py-3 text-sm resize-none outline-none mt-3 mb-3"
+            style={{ borderColor: INPUT_BORDER, backgroundColor: "hsl(40, 25%, 95%)", color: "hsl(20, 14%, 18%)", lineHeight: 1.7 }} />
           {post.hashtags && (
-            <div className="mb-3 p-2.5" style={{ backgroundColor: "hsl(40, 25%, 93%)", fontSize: "0.78rem", color: "hsl(20, 14%, 35%)" }}>
-              {post.hashtags.split(",").map((h: string) => `#${h.trim()}`).join(" ")}
+            <div className="mb-3 p-2.5" style={{ backgroundColor: "hsl(40, 25%, 93%)" }}>
+              <div style={{ fontSize: "0.7rem", color: MUTED, marginBottom: "3px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Hashtags</div>
+              <div style={{ fontSize: "0.78rem", color: "hsl(20, 14%, 35%)" }}>
+                {post.hashtags.split(",").map(h => `#${h.trim()}`).join(" ")}
+              </div>
             </div>
           )}
-          <div className="flex gap-2 flex-wrap">
-            <button onClick={handleCopy} className="px-3 py-2 text-xs border transition-colors hover:bg-black/5"
-              style={{ borderColor: INPUT_BORDER, color: "hsl(20, 14%, 30%)" }}>
+          <div className="flex gap-2">
+            <button onClick={handleCopy} className="px-4 py-2 text-sm border transition-colors hover:bg-black/5"
+              style={{ borderColor: INPUT_BORDER, color: "hsl(20, 14%, 25%)" }}>
               {copied ? "Copied!" : "Copy"}
             </button>
-            <button onClick={onSave} disabled={isSaved}
-              className="px-3 py-2 text-xs font-semibold"
+            <button onClick={onSave} disabled={isSaved} className="px-4 py-2 text-sm font-semibold"
               style={{ backgroundColor: isSaved ? "hsl(140, 20%, 45%)" : INK, color: PARCHMENT }}>
-              {isSaved ? "Saved ✓" : "Save to Library"}
+              {isSaved ? "Saved" : "Save to Library"}
             </button>
           </div>
         </div>
