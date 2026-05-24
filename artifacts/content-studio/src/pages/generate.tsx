@@ -27,7 +27,7 @@ const POST_TYPES = [
   "Launch Announcement",
   "Service Spotlight",
   "Behind the Scenes",
-  "Client Transformation",
+  "Client Story",
   "Resale Drop",
   "Brand Transition",
   "Seasonal",
