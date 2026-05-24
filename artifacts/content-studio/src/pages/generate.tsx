@@ -33,6 +33,13 @@ const POST_TYPES = [
   "Seasonal",
 ];
 
+const TONES = [
+  { value: "Direct", label: "Direct", description: "Short declarative sentences. No softening." },
+  { value: "Warm", label: "Warm", description: "Personal and grounded — still capable, not soft." },
+  { value: "Story-driven", label: "Story-driven", description: "Lead with a real situation or moment." },
+  { value: "Practical", label: "Practical", description: "Operational clarity — what it is, what you get." },
+];
+
 const INK = "hsl(20, 14%, 15%)";
 const PARCHMENT = "hsl(40, 33%, 98%)";
 const SAGE_BORDER = "hsl(40, 20%, 88%)";
@@ -82,6 +89,7 @@ function SinglePost() {
   const queryClient = useQueryClient();
   const [platform, setPlatform] = useState("");
   const [postType, setPostType] = useState("");
+  const [tone, setTone] = useState("Direct");
   const [context, setContext] = useState("");
   const [result, setResult] = useState<{ caption: string; hashtags: string; alternates: string[] } | null>(null);
   const [savedId, setSavedId] = useState<number | null>(null);
@@ -95,7 +103,7 @@ function SinglePost() {
     if (!platform || !postType) return;
     setResult(null);
     setSavedId(null);
-    const data = await generate.mutateAsync({ data: { platform, postType, context: context || undefined } });
+    const data = await generate.mutateAsync({ data: { platform, postType, context: context || undefined, tone } });
     setResult(data as { caption: string; hashtags: string; alternates: string[] });
     setActiveCaption((data as { caption: string }).caption);
   }
@@ -142,6 +150,27 @@ function SinglePost() {
             </select>
           </div>
         </div>
+        {/* Tone */}
+        <div className="mb-4">
+          <label style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.1em", color: MUTED, display: "block", marginBottom: "10px" }}>Tone</label>
+          <div className="flex flex-wrap gap-2">
+            {TONES.map(t => (
+              <button key={t.value} onClick={() => setTone(t.value)} title={t.description}
+                className="px-3 py-1.5 text-xs border transition-colors"
+                style={{
+                  backgroundColor: tone === t.value ? INK : INPUT_BG,
+                  borderColor: tone === t.value ? INK : INPUT_BORDER,
+                  color: tone === t.value ? PARCHMENT : "hsl(20, 14%, 30%)",
+                }}>
+                {t.label}
+              </button>
+            ))}
+          </div>
+          <div style={{ fontSize: "0.72rem", color: MUTED, marginTop: "6px" }}>
+            {TONES.find(t => t.value === tone)?.description}
+          </div>
+        </div>
+
         <div className="mb-4">
           <label style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.1em", color: MUTED, display: "block", marginBottom: "8px" }}>
             Context <span style={{ color: "hsl(25, 15%, 70%)", textTransform: "none", letterSpacing: 0 }}>(optional)</span>
@@ -225,6 +254,7 @@ function ContentPlan() {
   const [theme, setTheme] = useState("");
   const [selectedPlatforms, setSelectedPlatforms] = useState<string[]>(["@thewelllivedcitizen", "Facebook"]);
   const [duration, setDuration] = useState<7 | 14 | 30>(14);
+  const [tone, setTone] = useState("Direct");
   const [context, setContext] = useState("");
   const [plan, setPlan] = useState<PlanPost[] | null>(null);
   const [loading, setLoading] = useState(false);
@@ -252,7 +282,7 @@ function ContentPlan() {
     try {
       const data = await customFetch<{ plan: PlanPost[] }>("/api/content/plan", {
         method: "POST",
-        body: JSON.stringify({ theme: theme.trim(), platforms: selectedPlatforms, duration, context: context || undefined }),
+        body: JSON.stringify({ theme: theme.trim(), platforms: selectedPlatforms, duration, tone, context: context || undefined }),
         headers: { "Content-Type": "application/json" },
       });
       setPlan(data.plan ?? []);
@@ -357,13 +387,34 @@ function ContentPlan() {
           </div>
         </div>
 
+        {/* Tone */}
+        <div className="mb-4">
+          <label style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.1em", color: MUTED, display: "block", marginBottom: "10px" }}>Tone</label>
+          <div className="flex flex-wrap gap-2">
+            {TONES.map(t => (
+              <button key={t.value} onClick={() => setTone(t.value)} title={t.description}
+                className="px-3 py-1.5 text-xs border transition-colors"
+                style={{
+                  backgroundColor: tone === t.value ? INK : INPUT_BG,
+                  borderColor: tone === t.value ? INK : INPUT_BORDER,
+                  color: tone === t.value ? PARCHMENT : "hsl(20, 14%, 30%)",
+                }}>
+                {t.label}
+              </button>
+            ))}
+          </div>
+          <div style={{ fontSize: "0.72rem", color: MUTED, marginTop: "6px" }}>
+            {TONES.find(t => t.value === tone)?.description}
+          </div>
+        </div>
+
         {/* Context */}
         <div className="mb-4">
           <label style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.1em", color: MUTED, display: "block", marginBottom: "8px" }}>
             Context <span style={{ color: "hsl(25, 15%, 70%)", textTransform: "none", letterSpacing: 0 }}>(optional)</span>
           </label>
           <textarea value={context} onChange={e => setContext(e.target.value)}
-            placeholder="Any specifics — services to highlight, dates to work around, tone direction, items to feature…"
+            placeholder="Any specifics — services to highlight, dates to work around, items to feature…"
             rows={2} className="w-full border px-3 py-2.5 text-sm resize-none outline-none"
             style={{ borderColor: INPUT_BORDER, backgroundColor: INPUT_BG, color: INK }} />
         </div>

@@ -116,10 +116,11 @@ const PLAN_DURATIONS: Record<number, string> = {
 };
 
 router.post("/content/plan", async (req: Request, res: Response) => {
-  const { theme, platforms, duration, context } = req.body as {
+  const { theme, platforms, duration, tone, context } = req.body as {
     theme: string;
     platforms: string[];
     duration: 7 | 14 | 30;
+    tone?: string;
     context?: string;
   };
 
@@ -139,6 +140,7 @@ router.post("/content/plan", async (req: Request, res: Response) => {
   const userPrompt = `You are planning a social media content calendar for The Well Lived Citizen.
 
 Campaign theme: ${theme}
+${tone ? `Tone direction: ${tone}` : ""}
 ${context ? `Additional context: ${context}` : ""}
 Duration: ${PLAN_DURATIONS[duration] ?? `${duration} days`}
 Start date: ${startDate}
