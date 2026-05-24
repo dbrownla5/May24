@@ -37,7 +37,10 @@ export default function FastBagFill() {
             </div>
             <h1 className="display-lg" style={{ color: "var(--ink)", marginBottom: "1.5rem" }}>Fast Bag Fill</h1>
             <p style={{ fontSize: "1.15rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.75, marginBottom: "1.5rem", opacity: 0.85 }}>
-              Fill a bag with what you're ready to let go of. I come pick it up and handle the rest — resell what's worth selling, donate what isn't, and send you a summary of where everything went.
+              Fill a bag with clothing and accessories you're ready to let go of. I come pick it up and handle the rest — resell what's worth selling, donate what isn't, and send you a summary of where everything went.
+            </p>
+            <p style={{ fontSize: "0.85rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.7, marginBottom: "1.5rem", opacity: 0.7, fontStyle: "italic" }}>
+              Clothing and accessories only. Furniture, home decor, art, and delicate valuables are handled through a local consultation — not the Fast Bag Fill.
             </p>
             <p style={{ fontSize: "1.15rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.75, marginBottom: "2.5rem", opacity: 0.85 }}>
               Complimentary pickup within my LA service area. No appointment, no prep work, no decisions to make before I arrive.
