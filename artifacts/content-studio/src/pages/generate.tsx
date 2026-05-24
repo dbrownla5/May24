@@ -11,6 +11,9 @@ const PLATFORMS = [
   "@thewelllivedcloset",
   "@welldressedcitizen",
   "Facebook",
+  "Pinterest",
+  "Nextdoor",
+  "Google Business Posts",
   "Poshmark",
   "eBay",
 ];
@@ -20,11 +23,17 @@ const PLATFORM_COLORS: Record<string, string> = {
   "@thewelllivedcloset": "#C9A87C",
   "@welldressedcitizen": "#8B9B8E",
   "Facebook": "#6B7DB3",
+  "Pinterest": "#B95A5A",
+  "Nextdoor": "#5E8B6B",
+  "Google Business Posts": "#7A8FA8",
   "Poshmark": "#C06262",
   "eBay": "#6BA3BE",
 };
 
 const POST_TYPES = [
+  "Problem Post",
+  "Object Post",
+  "Process Post",
   "Launch Announcement",
   "Service Spotlight",
   "Behind the Scenes",

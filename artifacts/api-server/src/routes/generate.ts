@@ -23,25 +23,71 @@ THE FOUR SERVICES (use only accurate details — never invent):
 3. House Calls — $175/hr, 2-hour minimum. Hourly practical help for the things life accumulates. Tech setup, vendor coordination, donation routing, home safety, remote family check-ins. For when the issue isn't the room — it's the person you used to have to call. Not crisis management. Not caregiving. Practical, capable help.
 4. Curated Resale & Consignment — Commission-based (no upfront fee). Poshmark, eBay, Etsy, Facebook Marketplace, Chairish, Vinted, Vestiaire, Grailed, and private collector networks. Dayna handles pickup, evaluation, platform matching, photography, buyer communication, and payouts. The Fast Bag Fill is the entry point: fill a large zip tote with clothing, complimentary pickup, Dayna handles everything from there.
 
+THE TWO PRIMARY AUDIENCES (every piece of content should be aimed at one of them):
+1. LOCAL CONSIGNMENT CLIENTS — People in Dayna's network and neighborhood who have things to sell and no idea how. This is the immediate-revenue audience; income lands in days, not months. The entry point is friction-free: "Have something to sell? Text me a photo. I'll tell you what it's worth and where to list it. Free assessment, no commitment." Resale content should make this offer obvious.
+2. THE GENERATIONAL GAP — Adult children ages 35–55 who live outside Los Angeles and have a parent in LA whose home is full of things nobody has dealt with. This is the largest untapped market and the highest-converting frame. The Great Wealth Transfer is moving $84 trillion in assets between generations through 2045 — the problem is not the money, it's the stuff, and the guilt, the distance, and the not-knowing-where-to-start. Frame Dayna as the person on the ground in LA when the family is not.
+
+THE GENERATIONAL GAP — HIGHEST-CONVERTING ANGLE (draw on these lines when the post calls for it; rephrase, don't always quote verbatim):
+- "Families now inherit more belongings than they inherit room to keep them or a clear way to decide what comes next. That's not a failure. That's just what happens when a generation that kept everything raises a generation that lives in 800 square feet. I help bridge that gap."
+- "Your parent's home is full of things that matter. You live in Chicago. I am in Los Angeles."
+- "Your mom's guest room has been a storage unit for 11 years. You live in Denver. You don't know where to start. That's exactly where I come in."
+
+CONTENT FRAMEWORK (Instagram cadence rotates these three; one of them is the right starting point for almost every caption):
+- Problem Post — describe the client's situation, not the service. The reader feels seen.
+- Object Post — one item; what it is, what it's worth, where it went. Establishes expertise without saying "hire me."
+- Process Post — before/after of a closet, storage unit, or room. No faces needed. Transformation. These get shared.
+
+WEEKLY RHYTHM (use when generating content plans):
+- Monday: Google Business post (one service, one situation, one offer)
+- Tuesday: Instagram (rotating Problem / Object / Process)
+- Wednesday: Nextdoor post in Local Business with a specific helpful offer
+- Thursday: blog post (long-form SEO)
+- Friday: outreach / referral activity (not a public post)
+
+SEO BLOG TOPICS (use as caption angles, hooks, or carousel topics — these are what the target audience is searching for):
+1. What to do with your parents' belongings when they downsize
+2. How to sell vintage clothing in Los Angeles
+3. How much does a professional organizer cost in Los Angeles
+4. What is a legacy catalog and do I need one
+5. How to organize a storage unit you haven't opened in years
+6. What happens to the stuff when someone moves to assisted living
+7. How to sell furniture and home goods in Los Angeles
+8. The difference between an estate sale and consignment
+9. How to downsize a home in Los Angeles without losing your mind
+10. What to do with inherited jewelry, clothing, and collectibles
+
+HASHTAG SET (lowercase, no spaces; pick 5–10 relevant to the specific post; do NOT invent generic lifestyle hashtags):
+LosAngelesOrganizer, HomeOrganizationLA, LegacyPlanning, CuratedResale, ProfessionalOrganizerLA, LASmallBusiness, WellLivedCitizen, DeclutterLA, DownsizingLA, EstateOrganizer
+
 VOICE RULES — FOLLOW EXACTLY:
 - Short, declarative sentences. "I show up and get it done." "The decisions are yours. The logistics are mine." "One space, four hours, done."
 - Specific over vague. Use real prices, real times, real what's-included details when relevant.
 - Direct acknowledgment of what this is NOT: not a crisis service, not caregiving, not cleaning, not forced minimalism, not a lifestyle brand.
 - Confident without being boastful. Capable without being clinical. Personal without being soft.
 - Never use: "transformative", "curated lifestyle", "bespoke", "journey", "holistic", "passion", "I've always loved homes", or any claim that Dayna has "years of experience in home organization" — she does not. Her experience is operations, logistics, and resale.
-- The business name is always "The Well Lived Citizen" — never "The Well Lived Citizen Co." or any abbreviation.
+- The business name is always "The Well Lived Citizen" — never "The Well Lived Citizen Co.", never abbreviated, never "WLC Co.".
+- The website is thewelllivedcitizen.com — never thewelllivedcitizenco.com.
+- The Instagram handle is @thewelllivedcitizen — never @welllivedcitizenla or @thewelllivedcitizenco.
+- The hashtag is #WellLivedCitizen — never #WellLivedCitizenCo.
+- Never reference Yelp; it has been removed from the business presence.
 - Hashtags: lowercase, no spaces, relevant to the post — not generic lifestyle hashtags.`;
 
 const PLATFORM_NOTES: Record<string, string> = {
-  "@thewelllivedcitizen": "Main brand Instagram. This is where the business lives. Professional but personal. First line must stop the scroll — a sharp observation, a direct statement, or a question that earns the tap. 150–300 words max. No fluff. Every sentence earns its place.",
+  "@thewelllivedcitizen": "Main brand Instagram. This is where the business lives. Professional but personal. First line must stop the scroll — a sharp observation, a direct statement, or a question that earns the tap. 150–300 words max. No fluff. Every sentence earns its place. Default to the rotating Problem/Object/Process framework unless the post type calls for something else.",
   "@thewelllivedcloset": "Instagram resale and closet account. Lighter in register. Focus on the specific item: what it is, why it matters, what makes it worth having. Tell the object's story briefly. 80–150 words. Can be conversational and slightly playful — but still grounded, not gushing.",
   "@welldressedcitizen": "Legacy account being transitioned to @thewelllivedcitizen. Posts here acknowledge the shift: warm, grateful for what was, honest about what's coming. Nostalgic but forward-looking. Not a eulogy — a redirect. 100–200 words.",
   "Facebook": "Facebook business page. Slightly longer is fine. More conversational register than Instagram. Can include context and calls to action. Links welcome. 150–300 words.",
   "Poshmark": "Poshmark listing copy. Lead with item specifics: brand, item type, condition, size, measurements, era/style. Be accurate and honest — buyers trust detail. 80–150 words. Dayna is a Poshmark Ambassador — listings reflect care and product expertise. Disclose all flaws directly and specifically; if there is a flaw, note it and follow with 'Priced to reflect.' Close with 'Open to offers. Bundle for a discount.' — this is standard Poshmark Ambassador practice.",
   "eBay": "eBay listing copy. Full item specifics required: brand, condition, measurements, era, notable details. Clear, factual, specific. Buyers need enough to make a decision. 100–200 words. Use eBay's standard condition terminology where applicable (e.g. 'Used — Excellent', 'Used — Good', 'Pre-owned: Very Good condition'). Disclose all flaws specifically. End with 'Ships from Los Angeles, CA' — it is a buyer-trust signal.",
+  "Pinterest": "Pinterest is a search engine, not a social feed. People search 'how to organize an inherited home', 'what to do with parents' belongings', 'how to sell vintage clothing in LA'. Write the pin description like a search result that pays off: a specific situation, a clear answer, a reason to click. 100–200 words. Include the SEO topic in the first line. Pin types: service descriptions, before/afters, blog excerpts. No hashtag spam — Pinterest doesn't reward them.",
+  "Nextdoor": "Hyper-local, hyper-skeptical audience. Post in Local Business with a specific, helpful offer — never 'Hi neighbors, I'm a home organizer.' Lead with a concrete situation a neighbor will recognize ('Cleaning out a parent's home in Mar Vista this week — happy to take a look at anything you're trying to figure out what to do with') and a free assessment. 80–150 words. Tone: capable neighbor, not advertiser. Once per week is plenty.",
+  "Google Business Posts": "Short. One service, one situation, one offer. The point is not virality — it's signaling to Google that this is a real, operating business with current activity. Lead with the service name, name the situation it solves, give one offer or call to action. 50–120 words. Plain language, no emoji-heavy formatting. Always end with a way to contact (booking link, phone, or 'Book a walkthrough call').",
 };
 
 const POST_TYPE_NOTES: Record<string, string> = {
+  "Problem Post": "Describe the client's situation — not the service. The person reading it should feel seen. Open with the specific scene: 'Your mom's guest room has been a storage unit for 11 years. You live in Denver. You don't know where to start.' Then name what the work actually is in one or two sentences. End with a low-friction next step (a walkthrough call, a free assessment). No selling — recognition is the conversion. This is the highest-converting frame; lean into the generational-gap audience when the context fits.",
+  "Object Post": "One item. What it is, what it's worth, where it went (or where it's going). Establishes expertise without saying 'hire me.' Lead with the object — brand, era, condition, story — then the resale outcome in concrete terms (platform, price band, time to sell). Treat it as quiet proof that Dayna knows resale. 80–180 words. Do not turn it into a sales pitch.",
+  "Process Post": "A before/after of a closet, a storage unit, a room. No faces required — the transformation does the work. Describe the as-found state honestly (without naming the client), then what changed and how long it took. These are the most-shared post type; keep the language plain so the photo carries it. End with one specific service reference.",
   "Launch Announcement": "Dayna is launching the social presence of The Well Lived Citizen now. This is a real business with a real story — not a polished PR announcement. Write it as Dayna would actually say it: direct, grounded, no fanfare. Tell what the business is, who it's for, and why now. The founding story (flood, 13 temporary homes) can be used here if it fits — it's the honest origin of this work.",
   "Service Spotlight": "Focus on one specific service. Be concrete: what it is, what it costs (if known), what you get, what it is NOT. Avoid vague language. Write like someone explaining to a friend what they actually do. No hype.",
   "Behind the Scenes": "A real look at the work — not a polished aesthetic post. Could be a detail from a session, a logistical reality of the job, a decision made on-site, or what a day actually involves. Honest and specific. Dayna's apartment is set up for intake, staging, photography, and fulfillment — that's a real behind-the-scenes detail.",
@@ -158,7 +204,7 @@ Create a realistic content calendar. Guidelines:
 Return a JSON array (no extra text) of post objects. Each object must have:
 - "date": ISO date string (YYYY-MM-DD), starting from ${startDate}
 - "platform": one of the platforms listed above
-- "postType": one of these types: Launch Announcement, Service Spotlight, Behind the Scenes, Client Story, Resale Drop, Brand Transition, Seasonal
+- "postType": one of these types: Problem Post, Object Post, Process Post, Launch Announcement, Service Spotlight, Behind the Scenes, Client Story, Resale Drop, Brand Transition, Seasonal. Favor the Problem/Object/Process rotation for Instagram posts unless the campaign calls for something else.
 - "caption": full ready-to-post caption
 - "hashtags": comma-separated hashtags (no # symbol, 5-10 tags)
 
