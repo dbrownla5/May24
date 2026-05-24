@@ -85,4 +85,85 @@ Only return valid JSON. No extra text.`;
   }
 });
 
+const PLAN_DURATIONS: Record<number, string> = {
+  7: "one week (7 days)",
+  14: "two weeks (14 days)",
+  30: "one month (30 days)",
+};
+
+router.post("/content/plan", async (req: Request, res: Response) => {
+  const { theme, platforms, duration, context } = req.body as {
+    theme: string;
+    platforms: string[];
+    duration: 7 | 14 | 30;
+    context?: string;
+  };
+
+  if (!theme || !platforms?.length || !duration) {
+    res.status(400).json({ error: "theme, platforms, and duration are required" });
+    return;
+  }
+
+  const today = new Date();
+  const startDate = today.toISOString().slice(0, 10);
+
+  const platformList = platforms.map(p => {
+    const note = PLATFORM_NOTES[p] ?? `Platform: ${p}`;
+    return `- ${p}: ${note}`;
+  }).join("\n");
+
+  const userPrompt = `You are planning a social media content calendar for The Well Lived Citizen.
+
+Campaign theme: ${theme}
+${context ? `Additional context: ${context}` : ""}
+Duration: ${PLAN_DURATIONS[duration] ?? `${duration} days`}
+Start date: ${startDate}
+Platforms to include: ${platforms.join(", ")}
+
+Platform notes:
+${platformList}
+
+Create a realistic content calendar. Guidelines:
+- Spread posts across the duration — don't post on every platform every day. A realistic cadence is every 2-4 days per platform.
+- Vary post types meaningfully. Build a narrative arc: start with awareness/announcement, then deepen with service spotlights and behind-the-scenes, end with urgency or client stories.
+- Each caption should be platform-appropriate and ready to copy-paste. No placeholder text.
+- For Poshmark and eBay, only include if they are in the platform list and tie the content to the campaign theme (e.g. a resale drop related to the campaign).
+
+Return a JSON array (no extra text) of post objects. Each object must have:
+- "date": ISO date string (YYYY-MM-DD), starting from ${startDate}
+- "platform": one of the platforms listed above
+- "postType": one of these types: Launch Announcement, Service Spotlight, Behind the Scenes, Client Transformation, Resale Drop, Brand Transition, Seasonal
+- "caption": full ready-to-post caption
+- "hashtags": comma-separated hashtags (no # symbol, 5-10 tags)
+
+Aim for ${Math.round(duration * platforms.length * 0.35)} posts total, distributed across the ${duration} days.
+
+Only return the JSON array. No markdown, no extra text.`;
+
+  try {
+    const response = await openai.chat.completions.create({
+      model: "gpt-5.4",
+      max_completion_tokens: 4096,
+      messages: [
+        { role: "system", content: BRAND_VOICE },
+        { role: "user", content: userPrompt },
+      ],
+    });
+
+    const raw = response.choices[0]?.message?.content ?? "[]";
+    let plan: Array<{ date: string; platform: string; postType: string; caption: string; hashtags: string }>;
+    try {
+      plan = JSON.parse(raw);
+    } catch {
+      const jsonMatch = raw.match(/\[[\s\S]*\]/);
+      plan = jsonMatch ? JSON.parse(jsonMatch[0]) : [];
+    }
+
+    res.json({ plan, theme, duration, platforms });
+  } catch (err) {
+    console.error("AI plan generation error:", err);
+    res.status(503).json({ error: "AI generation unavailable. Please try again." });
+  }
+});
+
 export default router;
