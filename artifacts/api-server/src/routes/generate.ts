@@ -1,3 +1,6 @@
+// Brand voice source of truth: .local/skills/wlc-brand-voice/SKILL.md
+// Update BRAND_VOICE, PLATFORM_NOTES, and POST_TYPE_NOTES below AND that skill
+// file whenever Dayna's story, pricing, services, or positioning changes.
 import { Router, type IRouter, type Request, type Response } from "express";
 import { GenerateContentBody } from "@workspace/api-zod";
 import { openai } from "@workspace/integrations-openai-ai-server";
@@ -153,7 +156,7 @@ Create a realistic content calendar. Guidelines:
 Return a JSON array (no extra text) of post objects. Each object must have:
 - "date": ISO date string (YYYY-MM-DD), starting from ${startDate}
 - "platform": one of the platforms listed above
-- "postType": one of these types: Launch Announcement, Service Spotlight, Behind the Scenes, Client Transformation, Resale Drop, Brand Transition, Seasonal
+- "postType": one of these types: Launch Announcement, Service Spotlight, Behind the Scenes, Client Story, Resale Drop, Brand Transition, Seasonal
 - "caption": full ready-to-post caption
 - "hashtags": comma-separated hashtags (no # symbol, 5-10 tags)
 
