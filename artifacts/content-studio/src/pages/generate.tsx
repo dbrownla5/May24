@@ -63,9 +63,9 @@ export default function Generate() {
   const canGenerate = platform && postType && !generate.isPending;
 
   return (
-    <div className="px-10 py-10 max-w-3xl">
+    <div className="px-5 py-8 md:px-10 md:py-10 max-w-3xl">
       <div className="mb-8">
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.75rem", fontWeight: 700, color: "hsl(20, 14%, 15%)", marginBottom: "6px" }}>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(1.4rem, 5vw, 1.75rem)", fontWeight: 700, color: "hsl(20, 14%, 15%)", marginBottom: "6px" }}>
           Generate
         </div>
         <div style={{ fontSize: "0.875rem", color: "hsl(25, 15%, 50%)" }}>
@@ -73,8 +73,9 @@ export default function Generate() {
         </div>
       </div>
 
-      <div className="border rounded-lg p-6 mb-6" style={{ borderColor: "hsl(40, 20%, 88%)", backgroundColor: "hsl(40, 33%, 98%)" }}>
-        <div className="grid grid-cols-2 gap-4 mb-4">
+      <div className="border p-5 md:p-6 mb-6" style={{ borderColor: "hsl(40, 20%, 88%)", backgroundColor: "hsl(40, 33%, 98%)" }}>
+        {/* Platform + Post Type — stacked on mobile, side by side on md+ */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           <div>
             <label style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "hsl(25, 15%, 55%)", display: "block", marginBottom: "8px" }}>
               Platform
@@ -82,7 +83,7 @@ export default function Generate() {
             <select
               value={platform}
               onChange={e => setPlatform(e.target.value)}
-              className="w-full border rounded px-3 py-2 text-sm outline-none"
+              className="w-full border px-3 py-2.5 text-sm outline-none"
               style={{ borderColor: "hsl(40, 20%, 82%)", backgroundColor: "hsl(40, 25%, 96%)", color: "hsl(20, 14%, 20%)" }}
             >
               <option value="">Select platform…</option>
@@ -96,7 +97,7 @@ export default function Generate() {
             <select
               value={postType}
               onChange={e => setPostType(e.target.value)}
-              className="w-full border rounded px-3 py-2 text-sm outline-none"
+              className="w-full border px-3 py-2.5 text-sm outline-none"
               style={{ borderColor: "hsl(40, 20%, 82%)", backgroundColor: "hsl(40, 25%, 96%)", color: "hsl(20, 14%, 20%)" }}
             >
               <option value="">Select type…</option>
@@ -113,14 +114,14 @@ export default function Generate() {
             onChange={e => setContext(e.target.value)}
             placeholder="Add details — service name, client situation, specific angle, items to mention…"
             rows={3}
-            className="w-full border rounded px-3 py-2 text-sm resize-none outline-none"
+            className="w-full border px-3 py-2.5 text-sm resize-none outline-none"
             style={{ borderColor: "hsl(40, 20%, 82%)", backgroundColor: "hsl(40, 25%, 96%)", color: "hsl(20, 14%, 20%)" }}
           />
         </div>
         <button
           onClick={handleGenerate}
           disabled={!canGenerate}
-          className="px-6 py-2.5 rounded text-sm font-semibold transition-opacity"
+          className="w-full md:w-auto px-6 py-3 text-sm font-semibold transition-opacity"
           style={{
             backgroundColor: canGenerate ? "hsl(20, 14%, 15%)" : "hsl(20, 14%, 75%)",
             color: "hsl(40, 33%, 98%)",
@@ -137,7 +138,7 @@ export default function Generate() {
       </div>
 
       {result && (
-        <div className="border rounded-lg p-6" style={{ borderColor: "hsl(40, 20%, 88%)", backgroundColor: "hsl(40, 33%, 98%)" }}>
+        <div className="border p-5 md:p-6" style={{ borderColor: "hsl(40, 20%, 88%)", backgroundColor: "hsl(40, 33%, 98%)" }}>
           <div style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "hsl(25, 15%, 55%)", marginBottom: "12px" }}>
             Caption
           </div>
@@ -145,12 +146,12 @@ export default function Generate() {
             value={activeCaption}
             onChange={e => setActiveCaption(e.target.value)}
             rows={8}
-            className="w-full border rounded px-3 py-3 text-sm resize-none outline-none mb-4"
+            className="w-full border px-3 py-3 text-sm resize-none outline-none mb-4"
             style={{ borderColor: "hsl(40, 20%, 82%)", backgroundColor: "hsl(40, 25%, 95%)", color: "hsl(20, 14%, 18%)", lineHeight: 1.7 }}
           />
 
           {result.hashtags && (
-            <div className="mb-4 p-3 rounded" style={{ backgroundColor: "hsl(40, 25%, 93%)" }}>
+            <div className="mb-4 p-3" style={{ backgroundColor: "hsl(40, 25%, 93%)" }}>
               <div style={{ fontSize: "0.7rem", color: "hsl(25, 15%, 55%)", marginBottom: "4px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Hashtags</div>
               <div style={{ fontSize: "0.8rem", color: "hsl(20, 14%, 30%)" }}>
                 {result.hashtags.split(",").map((h: string) => `#${h.trim()}`).join(" ")}
@@ -161,11 +162,11 @@ export default function Generate() {
           {result.alternates && result.alternates.length > 0 && (
             <div className="mb-5">
               <div style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "hsl(25, 15%, 55%)", marginBottom: "10px" }}>
-                Alternates — click to use
+                Alternates — tap to use
               </div>
               <div className="flex flex-col gap-2">
                 {result.alternates.map((alt: string, i: number) => (
-                  <button key={i} onClick={() => setActiveCaption(alt)} className="text-left border rounded px-4 py-3 text-sm transition-colors hover:bg-black/[0.03]"
+                  <button key={i} onClick={() => setActiveCaption(alt)} className="text-left border px-4 py-3 text-sm transition-colors hover:bg-black/[0.03]"
                     style={{ borderColor: "hsl(40, 20%, 85%)", color: "hsl(20, 14%, 25%)", lineHeight: 1.6 }}>
                     {alt}
                   </button>
@@ -174,20 +175,21 @@ export default function Generate() {
             </div>
           )}
 
-          <div className="flex gap-3 flex-wrap">
-            <button onClick={handleCopy} className="px-4 py-2 rounded text-sm border transition-colors hover:bg-black/5"
+          {/* Action buttons — full width on mobile */}
+          <div className="grid grid-cols-2 gap-2 md:flex md:gap-3">
+            <button onClick={handleCopy} className="px-4 py-2.5 text-sm border transition-colors hover:bg-black/5"
               style={{ borderColor: "hsl(40, 20%, 82%)", color: "hsl(20, 14%, 25%)" }}>
               {copied ? "Copied!" : "Copy"}
             </button>
             <button
               onClick={handleSave}
               disabled={save.isPending || !!savedId}
-              className="px-4 py-2 rounded text-sm font-semibold"
+              className="px-4 py-2.5 text-sm font-semibold"
               style={{ backgroundColor: savedId ? "hsl(140, 20%, 45%)" : "hsl(20, 14%, 15%)", color: "hsl(40, 33%, 98%)" }}
             >
-              {savedId ? "Saved to Library" : save.isPending ? "Saving…" : "Save to Library"}
+              {savedId ? "Saved" : save.isPending ? "Saving…" : "Save to Library"}
             </button>
-            <button onClick={handleGenerate} className="px-4 py-2 rounded text-sm border transition-colors hover:bg-black/5 ml-auto"
+            <button onClick={handleGenerate} className="col-span-2 md:col-span-1 md:ml-auto px-4 py-2.5 text-sm border transition-colors hover:bg-black/5"
               style={{ borderColor: "hsl(40, 20%, 82%)", color: "hsl(25, 15%, 50%)" }}>
               Regenerate
             </button>
