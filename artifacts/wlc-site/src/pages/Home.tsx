@@ -136,7 +136,7 @@ export default function Home() {
                 <div className="underlay-tag" style={{ marginBottom: "1.5rem" }}>03 — Curated Resale</div>
                 <h3 className="display-sm" style={{ color: "var(--ink)", marginBottom: "1rem" }}>Fast Bag Fill</h3>
                 <p style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.8, color: "var(--ink-soft)", marginBottom: "2rem" }}>
-                  Fill a bag — or a pile — with things you're done managing. I pick up, evaluate, route, and list. You stop tripping over it. Free pickup in the service area.
+                  Fill a bag with clothing and accessories you're done managing. I pick up, evaluate, route, and list. You stop tripping over it. Free pickup in the service area.
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
                   <Link href="/fast-bag-fill" className="btn btn-ink">Schedule a Pickup</Link>

@@ -37,13 +37,13 @@ export default function FastBagFill() {
             </div>
             <h1 className="display-lg" style={{ color: "var(--ink)", marginBottom: "1.5rem" }}>Fast Bag Fill</h1>
             <p style={{ fontSize: "1.15rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.75, marginBottom: "1.5rem", opacity: 0.85 }}>
-              Fill a bag with clothing and accessories you're ready to let go of. I come pick it up and handle the rest — resell what's worth selling, donate what isn't, and send you a summary of where everything went.
+              A simple way to start letting clothing leave the house. The bags I send are large zip totes — they hold anywhere from three king-size pillows to three dresser drawers' worth of clothing. What you put in them is up to you.
             </p>
-            <p style={{ fontSize: "0.85rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.7, marginBottom: "1.5rem", opacity: 0.7, fontStyle: "italic" }}>
-              Clothing and accessories only. Furniture, home decor, art, and delicate valuables are handled through a local consultation — not the Fast Bag Fill.
-            </p>
-            <p style={{ fontSize: "1.15rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.75, marginBottom: "2.5rem", opacity: 0.85 }}>
+            <p style={{ fontSize: "1.15rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.75, marginBottom: "1.5rem", opacity: 0.85 }}>
               Complimentary pickup within my LA service area. No appointment, no prep work, no decisions to make before I arrive.
+            </p>
+            <p style={{ fontSize: "0.9rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.7, marginBottom: "2.5rem", opacity: 0.7, fontStyle: "italic" }}>
+              Clothing and accessories only. Home decor, furniture, art, and delicate valuables require a local consultation.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center" }}>
               <Link href="/contact" className="btn btn-ink">Schedule a Pickup</Link>
@@ -66,7 +66,7 @@ export default function FastBagFill() {
                 Not everything belongs in a donation pile — but not everyone has the time, energy, or knowledge to research, photograph, list, ship, and coordinate resale themselves. Fast Bag Fill is the entry point.
               </p>
               <p style={{ fontSize: "1rem", fontWeight: 300, color: "var(--ink-soft)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
-                Fill a bag — or a pile — with things you're done managing. I pick up, evaluate, route, and list. Items are reviewed thoughtfully based on category, condition, resale potential, and overall fit. You could see things start selling within 10 days.
+                Fill a bag with clothing and accessories you're done managing. I pick up, evaluate, route, and list. Items are reviewed thoughtfully based on category, condition, resale potential, and overall fit. You could see things start selling within 10 days.
               </p>
               <p style={{ fontSize: "1rem", fontWeight: 300, color: "var(--ink-soft)", lineHeight: 1.8 }}>
                 No marketplace burnout. No figuring it all out alone. No piles sitting in limbo for another two years. Just practical help getting things moving again.
@@ -78,7 +78,7 @@ export default function FastBagFill() {
                   How it typically goes
                 </h3>
                 {[
-                  "You fill a bag, box, or pile",
+                  "You fill a bag with clothing and accessories",
                   "I schedule a pickup — often within a few days",
                   "I evaluate and sort everything",
                   "Resale items are listed; donations are routed",
@@ -108,26 +108,25 @@ export default function FastBagFill() {
           <FadeUp>
             <span className="eyebrow" style={{ color: "rgba(248,244,227,0.45)" }}>What to Fill It With</span>
             <h2 className="display-md" style={{ color: "var(--parchment)", marginBottom: "1.5rem", maxWidth: 500 }}>
-              If you've been meaning to deal with it, it probably belongs in the bag.
+              Clothing and accessories you've been meaning to let go of.
             </h2>
-            <p style={{ fontSize: "1rem", fontWeight: 300, color: "rgba(248,244,227,0.65)", lineHeight: 1.75, maxWidth: 560, marginBottom: "3rem" }}>
-              Fast Bag Fill is not just for clothes. It's for anything you've mentally released but haven't physically moved out of the house yet.
+            <p style={{ fontSize: "1rem", fontWeight: 300, color: "rgba(248,244,227,0.65)", lineHeight: 1.75, maxWidth: 560, marginBottom: "1rem" }}>
+              The Fast Bag Fill is clothing and accessories only. Home decor, furniture, art, and delicate valuables are handled separately through a local consultation.
+            </p>
+            <p style={{ fontSize: "0.95rem", fontWeight: 300, color: "rgba(248,244,227,0.5)", lineHeight: 1.75, maxWidth: 560, marginBottom: "3rem", fontStyle: "italic" }}>
+              Items you took care of and know deserve another life. Please do not send dirty clothing or bio-risk textiles.
             </p>
           </FadeUp>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1px", backgroundColor: "rgba(248,244,227,0.1)" }}>
             {[
-              "Clothing & shoes",
-              "Handbags & accessories",
-              "Jewelry & watches",
-              "Books & media",
-              "Small decor & ceramics",
-              "Lamps & lighting",
-              "Vintage & collectibles",
-              "Kitchen items",
-              "Linens & textiles",
-              "Anything from the garage",
-              "Inherited items",
-              "Whatever's been by the door",
+              "Clothing",
+              "Shoes",
+              "Handbags",
+              "Belts & small leather goods",
+              "Scarves & wraps",
+              "Hats",
+              "Jewelry",
+              "Watches",
             ].map((item, i) => (
               <FadeUp key={i} delay={i * 30}>
                 <div style={{ backgroundColor: "rgba(248,244,227,0.04)", padding: "1.5rem", fontSize: "0.88rem", fontWeight: 300, color: "rgba(248,244,227,0.7)", lineHeight: 1.5 }}>

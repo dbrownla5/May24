@@ -51,7 +51,7 @@ const faqSections = [
   {
     title: "Resale & Fast Bag Fill",
     items: [
-      { q: "What's the difference between Fast Bag Fill and full resale consignment?", a: "Fast Bag Fill is the easy way in — fill a bag with what you're ready to let go of, I come pick it up, I handle everything from there. Full resale consignment is a more deliberate process for items with significant value — designer pieces, collections, estate items. Both can result in resale proceeds for you." },
+      { q: "What's the difference between Fast Bag Fill and full resale consignment?", a: "Fast Bag Fill is the easy way in for clothing and accessories — fill a bag, I come pick it up, I handle everything from there. Full resale consignment is a more deliberate process for items with significant value — designer pieces, collections, estate items, furniture, and home decor. Both can result in resale proceeds for you." },
       { q: "How quickly can items start selling?", a: "For standard items, listings can go live within 5–7 days of pickup. You could see items start selling within 10 days. Timelines vary by item and platform." },
       { q: "What if something doesn't sell?", a: "Items that don't sell within an agreed timeframe are returned to you or donated at your direction. I discuss this before I accept items so there are no surprises." },
       { q: "Do I need to clean or prep items before pickup?", a: "No. I handle the prep. Items should be in the condition they're in — I'll assess and handle what's needed." },
