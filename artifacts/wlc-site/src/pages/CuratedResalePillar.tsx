@@ -207,19 +207,7 @@ export default function CuratedResalePillar() {
                 </p>
                 <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
                   <Link href="/contact" className="btn btn-ink">Schedule a Pickup</Link>
-                  {/* TODO: Dayna to supply hosted commission agreement URL (Google Doc, PDF, or DocuSign) and replace the href below */}
-                  <a
-                    href="#commission-agreement-url-pending"
-                    className="btn btn-outline-ink"
-                    style={{ opacity: 0.7 }}
-                    title="Commission agreement document — URL to be confirmed"
-                  >
-                    View Commission Agreement
-                  </a>
                 </div>
-                <p style={{ fontSize: "0.72rem", fontWeight: 300, color: "var(--ink)", opacity: 0.5, marginTop: "0.75rem", fontStyle: "italic" }}>
-                  Agreement link pending — Dayna to supply document URL.
-                </p>
               </div>
               <div>
                 {[

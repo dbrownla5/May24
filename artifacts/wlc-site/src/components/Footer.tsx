@@ -36,22 +36,14 @@ function FacebookIcon() {
   );
 }
 
-function YelpIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="10"/>
-      <path d="M12 8v4l3 3"/>
-    </svg>
-  );
-}
-
 const SOCIALS = [
   { href: "https://www.instagram.com/thewelllivedcitizen", label: "@thewelllivedcitizen", icon: <InstagramIcon /> },
   { href: "https://www.instagram.com/thewelllivedcloset", label: "@thewelllivedcloset", icon: <InstagramIcon />, closetLogo: true },
+  { href: "https://www.instagram.com/daynabr0wn", label: "@daynabr0wn", icon: <InstagramIcon /> },
+  { href: "https://www.instagram.com/dayna_br0wn", label: "@dayna_br0wn", icon: <InstagramIcon /> },
   { href: "https://posh.mk/wUAQhT0Qj3b", label: "Poshmark Closet", icon: <PoshmarkIcon /> },
   { href: "https://www.ebay.com/usr/thewelllivedcitizencocloset", label: "eBay Store", icon: <EbayIcon /> },
   { href: "https://www.facebook.com/share/18TrVmjopK/?mibextid=wwXIfr", label: "Facebook", icon: <FacebookIcon /> },
-  { href: "https://www.yelp.com/biz/the-well-lived-citizen-san-fernando-valley", label: "Yelp", icon: <YelpIcon /> },
 ] as { href: string; label: string; icon: React.ReactNode; closetLogo?: boolean }[];
 
 export default function Footer() {
