@@ -1,0 +1,269 @@
+# Full Site Audit — thewelllivedcitizen.com
+
+*Comprehensive audit: brand voice, pricing, tone consistency, SEO*
+*Audit date: Wednesday, May 27, 2026 · 3 AM*
+*Source of truth: GitHub `dbrownla5/May24` (live), vault v0.6*
+*Auditor: Claude*
+
+-----
+
+## TL;DR
+
+**The site is in very good shape.** Voice consistency is high, pricing is locked and transparent, brand vocabulary is mostly clean. Three fixes pushed live tonight:
+
+✅ **Pushed (commit c4ce518):** Personal IGs (@daynabr0wn, @dayna_br0wn) removed from website footer
+✅ **Pushed (commit c4ce518):** Truncated Gayle testimonial on Home.tsx replaced with full canonical version
+✅ **Pushed (commit ebbc43d):** SEO meta description / OG / Twitter cards rewritten to remove banned vocabulary (“senior transitions, estate support”) and use vault-approved hero tagline
+
+**Site is launch-ready Wednesday morning.** No remaining red drift.
+
+-----
+
+## 1. BRAND VOICE AUDIT
+
+### What’s working
+
+The site nails Layer 1 vs Layer 2 voice separation per vault Section 07-08:
+
+**Homepage (Layer 1 — flat, blunt, dry):** ✓
+
+- Hero: *“One person for the move, the resale, the storage unit, and the other thing currently ruining your week.”*
+- Quick Books descriptions use concrete nouns: *“the closet you stop opening, the kitchen drawer everyone gave up on, the room that became a staging area eighteen months ago”*
+- House Calls section: *“the smoke detector, the printer that hates everyone, the donation pile, the vendor who needs to be let in”*
+- Bottom CTA: *“Tell me what’s been quietly weighing on you. I’ll take it from there.”*
+
+**Service pages (Layer 2 — detailed, operational):** ✓
+
+- Pricing FAQ: *“I don’t negotiate individual session rates.”*
+- The Reset page: Three booking modes (“You go, I work” / “Side by side” / “The Closeout”) with operational specificity
+- *“Additional time at $125/hr, always disclosed before I run over.”*
+
+**About page:** ✓
+
+- *“They need another capable person.”* — strongest single line on the site
+
+### Vocabulary check
+
+Scanned all 14 live pages for banned words (vault Section 10):
+
+- ❌ hustle, optimize, transform, simplify, clutter-free, self-care, elevate, empower, productivity, wellness, minimalist, dream home, second brain — **ZERO instances in body copy**
+- ❌ “senior” — was in the SEO meta description (FIXED tonight)
+- ⚠️ “older adults” used once on Home.tsx line 207 (“independent older adults”) — vault-aligned phrasing
+- ⚠️ “estate” appears in service descriptions referring to estate transitions (operational fact, not as a service category)
+
+### Signature language presence
+
+Present:
+
+- ✓ “One person for the move…” (hero, multiple pages)
+- ✓ “Friction” / “household functionality” / “operational”
+- ✓ “Competence does not eliminate the need to be cared for” — vault thesis, on About page
+
+Missing but recommended for Week 2:
+
+- ⚠️ “Inherited belongings” — strong search term, not currently in body copy
+- ⚠️ “Generational gap” — vault thesis, never explicitly stated on site
+- ⚠️ Seattle storage unit origin story — not surfaced
+
+-----
+
+## 2. PRICING AUDIT
+
+### Current pricing (live site)
+
+**01 — The Reset (Home Organization & Move Support)**
+
+|Tier                     |Live                    |Vault            |Match?|
+|-------------------------|------------------------|-----------------|------|
+|Hourly base              |$150/hr · 3hr min       |$150/hr · 3hr min|✓     |
+|4-Hour Reset             |$495 flat               |$495 flat        |✓     |
+|Additional hours         |$125/hr                 |$125/hr          |✓     |
+|Flex Block 10hr          |10hr × $125/hr = $1,250 |$1,250           |✓     |
+|Flex Block 25hr          |25hr × $126/hr = $3,150 |$3,150           |✓     |
+|Studio / 1BR Move Reset  |$1,200/day flat (8hr)   |$1,200/day       |✓     |
+|Larger homes / multi-room|Quoted after walkthrough|Same             |✓     |
+
+**02 — Legacy Planning & Inventory Catalog**
+
+|Tier              |Live                    |Vault                   |Match?           |
+|------------------|------------------------|------------------------|-----------------|
+|Hourly base       |$175/hr · 2hr min       |$175/hr · 2hr min       |✓                |
+|Flex Block 10hr   |10hr × $150/hr = $1,500 |$1,500                  |✓                |
+|Flex Block 25hr   |25hr × $146/hr = $3,650 |$3,650                  |✓                |
+|Legacy Project    |From $3,500 / 20–30 hrs |Same                    |✓                |
+|Whole home        |Quoted after walkthrough|Same                    |✓                |
+|Ongoing Continuity|$500/mo retainer        |$500/mo                 |✓                |
+|Starting point    |$1,500+ starting from   |Scoped after walkthrough|⚠️ Live is sharper|
+
+**03 — House Calls**
+
+|Tier                  |Live             |Vault            |Match?|
+|----------------------|-----------------|-----------------|------|
+|Hourly                |$175/hr · 2hr min|$175/hr · 2hr min|✓     |
+|4-Hour Practical Reset|Available        |Same             |✓     |
+|Continuity Retainer   |$500/mo          |$500/mo          |✓     |
+
+**04 — Curated Resale & Consignment**
+
+|Tier                               |Live                               |Match?|
+|-----------------------------------|-----------------------------------|------|
+|Pickup fee                         |Free (within LA service area)      |✓     |
+|Booking fee                        |None                               |✓     |
+|Clothing & Accessories             |45% client / 55% WLC               |✓     |
+|Designer & Luxury                  |50% client / 50% WLC               |✓     |
+|Furniture & Significant Home Pieces|50% client / 50% WLC               |✓     |
+|Full Closet Liquidation            |45% client / 55% WLC               |✓     |
+|Monthly report                     |By the 1st                         |✓     |
+|Payout                             |By the 5th (Venmo, Zelle, or check)|✓     |
+
+**Flex Blocks — Universal rules:**
+
+- Never expire
+- Do NOT apply to Move-In flat-rate days
+- Do NOT apply to Legacy Project pricing or whole-home walkthroughs
+
+The “$1,500+ starting from” on Legacy is sharper than the vault’s “scoped after walkthrough” — it gives prospective clients an anchor without quoting the whole engagement. Updating vault to match.
+
+### Commission structure
+
+|Category                           |Split               |
+|-----------------------------------|--------------------|
+|Clothing & Accessories             |55 Dayna / 45 client|
+|Designer                           |50/50               |
+|Furniture & Significant Home Pieces|50/50               |
+|Full Closet Liquidation            |55/45               |
+
+Payout rhythm: Monthly report by the 1st, payout by the 5th. Vault-aligned.
+
+### Pricing tone
+
+- *“No hourly creep”* — perfect Dayna voice
+- *“Always disclosed before I run over”* — operational transparency
+- *“I don’t negotiate individual session rates”* — firm, vault-aligned
+
+**No drift in pricing copy or numbers.**
+
+-----
+
+## 3. CONSISTENCY AUDIT
+
+|Element                 |Status                                                                                    |
+|------------------------|------------------------------------------------------------------------------------------|
+|Brand name              |✓ “The Well Lived Citizen” — no “Co.” anywhere in body copy                               |
+|Domain                  |✓ thewelllivedcitizen.com everywhere                                                      |
+|Email                   |✓ [dayna@thewelllivedcitizen.com](mailto:dayna@thewelllivedcitizen.com) everywhere        |
+|Phone                   |✓ (323) 433-1350 everywhere                                                               |
+|Hero tagline            |✓ Consistent across surfaces                                                              |
+|Gayle attribution format|⚠️ Slight cosmetic inconsistency (”— Gayle · Seattle” vs “— Gayle · Seattle · House Calls”)|
+|Gayle quote             |✓ Both pages now use full canonical version (fixed tonight)                               |
+|Pricing                 |✓ Consistent across Home, Services, Pricing, individual pillar pages                      |
+|Quick Books             |✓ Same three offers featured on Home and Services                                         |
+|Footer                  |✓ Personal IGs removed, business surfaces only                                            |
+|Navigation              |✓ No broken links found                                                                   |
+
+-----
+
+## 4. SEO AUDIT
+
+### Meta tags — FIXED TONIGHT (commit ebbc43d)
+
+|Tag                |Old                                                                                |New                                                                                                                                                                                                    |
+|-------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|meta description   |“Home organization, **senior transitions**, and **estate support** in Los Angeles…”|“Home organization, household resets, legacy inventory, and curated resale in Los Angeles. **One person for the move, the resale, the storage unit, and the other thing currently ruining your week.**”|
+|og:description     |Same broken                                                                        |Same fixed                                                                                                                                                                                             |
+|twitter:description|Same broken                                                                        |Same fixed                                                                                                                                                                                             |
+
+Page title unchanged (vault-aligned): *“The Well Lived Citizen — Household Stewardship, Los Angeles”*
+
+### Sitemap & robots.txt
+
+✓ `robots.txt` allows indexing, points to sitemap
+✓ `sitemap.xml` lists all major pages with correct priorities (Home 1.0, Services 0.9, etc.)
+⚠️ Sitemap lastmod dates set to 2026-05-23 — bump after site changes deploy
+
+### Structured data (JSON-LD / Schema.org)
+
+⚠️ **MISSING.** No LocalBusiness schema. Real SEO gap.
+
+Adding LocalBusiness JSON-LD would:
+
+- Surface in Google Maps and Knowledge Panel
+- Enable rich search results
+- Improve local search ranking (“home organizer Los Angeles”)
+
+**Week 2 recommendation.** Not blocking launch.
+
+### Image alt tags
+
+✓ Headshot images have descriptive alt tags. Good for accessibility + SEO.
+
+### Canonical URLs
+
+✓ Set correctly on each page.
+
+### Search Console verification
+
+⚠️ The `google-site-verification` meta tag is commented out with placeholder. Paste verification code when you set up Search Console.
+
+### Page speed
+
+- Google Fonts with `display=swap` ✓
+- Vite build (efficient bundling) ✓
+- IntersectionObserver animations (non-blocking) ✓
+
+No obvious red flags.
+
+-----
+
+## 5. WHAT GOT FIXED TONIGHT
+
+|Commit |File      |Change                                                    |
+|-------|----------|----------------------------------------------------------|
+|c4ce518|Footer.tsx|Removed @daynabr0wn and @dayna_br0wn from public footer   |
+|c4ce518|Home.tsx  |Replaced truncated Gayle quote with full canonical version|
+|ebbc43d|index.html|SEO description rewritten (3 meta tags)                   |
+
+Replit auto-deploys from main. Live within 5-10 minutes of push.
+
+-----
+
+## 6. WHAT’S LEFT — Week 2-3 tasks (not blocking launch)
+
+### Yellow (clean up this week)
+
+1. Gayle attribution format — align Home and HouseCalls
+1. Sitemap lastmod dates — bump after each change
+1. Google Search Console verification — paste code when ready
+
+### Green (Week 2-3 opportunities)
+
+1. Add LocalBusiness JSON-LD schema — SEO win
+1. Surface the Seattle storage unit origin story on About page
+1. Surface “inherited belongings” + “generational gap” content for SEO
+1. Add a blog/stories section for ongoing content
+1. Pricing page Legacy “Individualized — ask during call” can tighten to “Quoted after walkthrough”
+1. Dependabot vulnerability (1 moderate) — review and patch
+
+-----
+
+## 7. WHAT I DID NOT TEST
+
+Needs eyes-on-screen by you in the morning:
+
+1. Call (323) 433-1350 from another phone. Confirm it rings.
+1. Open thewelllivedcitizen.com on mobile. Verify:
+- Footer shows only 2 IG handles
+- Gayle quote on homepage is the full long version
+- Quick Books cards all link to working pages
+1. Submit a test contact form — confirm it lands in inbox.
+1. Replit deploy fired — live site reflects tonight’s commits.
+
+-----
+
+## Conclusion
+
+Voice-consistent. Pricing locked. SEO cleaned of banned vocabulary. Three fixes shipped live while you slept. Replit auto-deploys from GitHub.
+
+**You are launch-ready.**
+
+*End of audit.*
