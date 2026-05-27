@@ -39,8 +39,6 @@ function FacebookIcon() {
 const SOCIALS = [
   { href: "https://www.instagram.com/thewelllivedcitizen", label: "@thewelllivedcitizen", icon: <InstagramIcon /> },
   { href: "https://www.instagram.com/thewelllivedcloset", label: "@thewelllivedcloset", icon: <InstagramIcon />, closetLogo: true },
-  { href: "https://www.instagram.com/daynabr0wn", label: "@daynabr0wn", icon: <InstagramIcon /> },
-  { href: "https://www.instagram.com/dayna_br0wn", label: "@dayna_br0wn", icon: <InstagramIcon /> },
   { href: "https://posh.mk/wUAQhT0Qj3b", label: "Poshmark Closet", icon: <PoshmarkIcon /> },
   { href: "https://www.ebay.com/usr/thewelllivedcitizencocloset", label: "eBay Store", icon: <EbayIcon /> },
   { href: "https://www.facebook.com/share/18TrVmjopK/?mibextid=wwXIfr", label: "Facebook", icon: <FacebookIcon /> },

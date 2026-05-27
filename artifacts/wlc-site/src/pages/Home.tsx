@@ -168,8 +168,8 @@ export default function Home() {
             <FadeUp delay={100}>
               <div style={{ backgroundColor: "var(--sage)", padding: "3rem", boxShadow: "6px 6px 0px rgba(248,244,227,0.15)" }}>
                 <p style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--ink)", opacity: 0.55, marginBottom: "1.5rem" }}>Client · House Calls</p>
-                <p style={{ fontSize: "1.2rem", fontWeight: 700, color: "var(--ink)", lineHeight: 1.4, marginBottom: "1.5rem" }}>
-                  "My clothes are arranged by item and color. The TV is set up with only one clicker. I wake up and everything is where it should be. Thank you for making life easier for me."
+                <p style={{ fontSize: "1.05rem", fontWeight: 600, color: "var(--ink)", lineHeight: 1.55, marginBottom: "1.5rem" }}>
+                  "I wake up and my clicker for all my lamps is on my bedside table. I get up and move it to the dresser by the door so every time I come back in I can turn any lamp from the doorway. My clothes are arranged by item and color, my purses on two long shelves and two short ones — I can see what I have and choose accordingly. My shoes are on four shelves where I can easily see them. The heat is set perfectly. The TV is set up with only one clicker to get to all the channels I want. Thank you for making life easier for me."
                 </p>
                 <p style={{ fontSize: "0.8rem", fontWeight: 600, color: "var(--ink)", opacity: 0.6, letterSpacing: "0.08em" }}>— Gayle · Seattle</p>
                 <div style={{ borderTop: "1px solid rgba(56,48,46,0.2)", paddingTop: "1.5rem", marginTop: "2rem" }}>
