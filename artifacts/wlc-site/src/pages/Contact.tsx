@@ -88,7 +88,7 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
-  const [form, setForm] = useState({ name: "", email: "", phone: "", neighborhood: "", situation: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", neighborhood: "", situation: "", bagsCount: "", urgency: "", pickupTime1: "", pickupTime2: "" });
 
   function pick<T>(setter: (v: T) => void, val: T, next: 0 | 1 | 2 | 3) {
     setter(val);
@@ -151,6 +151,10 @@ export default function Contact() {
           clientType,
           summary: summary || "General",
           situation: form.situation,
+          bagsCount: form.bagsCount,
+          urgency: form.urgency,
+          pickupTime1: form.pickupTime1,
+          pickupTime2: form.pickupTime2,
         }),
       });
       const data = await res.json() as { ok: boolean; error?: string };
@@ -408,6 +412,60 @@ export default function Contact() {
                             onBlur={e => (e.target as HTMLInputElement).style.borderColor = "var(--warm-gray-lt)"} />
                         </div>
                       </div>
+
+                      {/* BAG-FILL INTAKE — only shown when bag pickup is selected */}
+                      {(serviceChoice === "fast-bag" || returningNeed === "bag-pickup") && (
+                        <div style={{ backgroundColor: "var(--parchment-mid)", padding: "1.5rem", marginBottom: "2rem", borderLeft: "3px solid var(--sage)" }}>
+                          <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--sage-dark)", marginBottom: "1.25rem" }}>
+                            Pickup Details
+                          </p>
+                          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
+                            <div>
+                              <label style={labelStyle}>How many bags?</label>
+                              <select value={form.bagsCount} onChange={e => handleChange("bagsCount", e.target.value)} style={inputStyle}
+                                onFocus={e => (e.target as HTMLSelectElement).style.borderColor = "var(--sage)"}
+                                onBlur={e => (e.target as HTMLSelectElement).style.borderColor = "var(--warm-gray-lt)"}>
+                                <option value="">Select…</option>
+                                <option value="1">1 bag</option>
+                                <option value="2-3">2–3 bags</option>
+                                <option value="4-6">4–6 bags</option>
+                                <option value="closet">A full closet</option>
+                                <option value="more">More than that</option>
+                              </select>
+                            </div>
+                            <div>
+                              <label style={labelStyle}>Urgency</label>
+                              <select value={form.urgency} onChange={e => handleChange("urgency", e.target.value)} style={inputStyle}
+                                onFocus={e => (e.target as HTMLSelectElement).style.borderColor = "var(--sage)"}
+                                onBlur={e => (e.target as HTMLSelectElement).style.borderColor = "var(--warm-gray-lt)"}>
+                                <option value="">Select…</option>
+                                <option value="asap">ASAP — within 48 hours</option>
+                                <option value="this-week">This week</option>
+                                <option value="next-week">Next week</option>
+                                <option value="flexible">Flexible — whenever you can</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+                            <div>
+                              <label style={labelStyle}>Ideal pickup time #1</label>
+                              <input type="text" value={form.pickupTime1} onChange={e => handleChange("pickupTime1", e.target.value)} style={inputStyle} placeholder="e.g. Wed AM, Fri after 3pm"
+                                onFocus={e => (e.target as HTMLInputElement).style.borderColor = "var(--sage)"}
+                                onBlur={e => (e.target as HTMLInputElement).style.borderColor = "var(--warm-gray-lt)"} />
+                            </div>
+                            <div>
+                              <label style={labelStyle}>Ideal pickup time #2</label>
+                              <input type="text" value={form.pickupTime2} onChange={e => handleChange("pickupTime2", e.target.value)} style={inputStyle} placeholder="e.g. Sat morning, anytime Sunday"
+                                onFocus={e => (e.target as HTMLInputElement).style.borderColor = "var(--sage)"}
+                                onBlur={e => (e.target as HTMLInputElement).style.borderColor = "var(--warm-gray-lt)"} />
+                            </div>
+                          </div>
+                          <p style={{ fontSize: "0.72rem", color: "var(--sage-dark)", marginTop: "0.75rem", lineHeight: 1.5, opacity: 0.8 }}>
+                            Give me two windows that work. I'll confirm one and lock the time.
+                          </p>
+                        </div>
+                      )}
+
                       {submitError && (
                         <p style={{ fontSize: "0.85rem", color: "#b94a48", marginBottom: "1rem", lineHeight: 1.5 }}>
                           {submitError}
