@@ -102,19 +102,19 @@ export default function Pricing() {
               {
                 num: "04",
                 service: "Curated Resale & Consignment",
-                href: "/fast-bag-fill",
+                href: "/curated-resale-consignment",
                 price: "Free",
-                unit: "pickup",
-                description: "Complimentary pickup within my service area. Resale proceeds shared when items sell. Fast Bag Fill is the easiest way to start.",
+                unit: "pickup · commission-only",
+                description: "Free pickup. No payment up front. I evaluate, route, and list — you're paid from proceeds when items sell.",
                 details: [
-                  "Clothing, accessories, decor, collectibles",
-                  "Fill what you have — I make the call on what sells",
-                  "Pickup within 7 days on my route",
-                  "Resale proceeds shared per commission structure",
-                  "Consignment agreement required before pickup",
-                  "Items reviewed based on category, condition, and fit",
+                  "Clothing, accessories, designer, furniture, decor",
+                  "Fast Bag Fill is the easy start for clothing",
+                  "Resale agreement signed after evaluation",
+                  "eDoc release signed at pickup",
+                  "Commission split varies by category",
+                  "Monthly report by the 1st, payout by the 5th",
                 ],
-                cta: "Schedule a Pickup",
+                cta: "See Resale Details",
                 featured: false,
               },
             ].map((item, i) => (
@@ -303,8 +303,8 @@ export default function Pricing() {
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
                   {[
-                    { label: "10-Hour Block", price: "$1,250", note: "vs. $1,750 at full rate" },
-                    { label: "25-Hour Block", price: "$3,150", note: "vs. $4,375 at full rate" },
+                    { label: "10-Hour Block", price: "$1,250", note: "Effective $125/hr · Save vs. $150/hr base" },
+                    { label: "25-Hour Block", price: "$3,150", note: "Effective $126/hr · Save vs. $150/hr base" },
                   ].map((row, i) => (
                     <div key={i} style={{
                       display: "flex", justifyContent: "space-between", alignItems: "center",
@@ -332,8 +332,8 @@ export default function Pricing() {
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
                   {[
-                    { label: "10-Hour Block", price: "$1,500", note: "vs. $1,750 at full rate" },
-                    { label: "25-Hour Block", price: "$3,650", note: "vs. $4,375 at full rate" },
+                    { label: "10-Hour Block", price: "$1,500", note: "Effective $150/hr · Save vs. $175/hr base" },
+                    { label: "25-Hour Block", price: "$3,650", note: "Effective $146/hr · Save vs. $175/hr base" },
                   ].map((row, i) => (
                     <div key={i} style={{
                       display: "flex", justifyContent: "space-between", alignItems: "center",
@@ -433,7 +433,7 @@ export default function Pricing() {
               },
               {
                 title: "Payment",
-                body: "Payment is due at booking. I accept Venmo, Zelle, Cash App, check, and major credit cards (via Square). For larger accounts, a 50/50 split is available — ask during your consultation. Retainer clients are invoiced monthly. Payment handles will be provided at time of booking.",
+                body: "For services (The Reset, House Calls, Legacy), payment is due at the time of service. I accept Venmo, Zelle, and check. For Curated Resale and Fast Bag Fill, there is no upfront payment — you're paid from proceeds after items sell. Retainer clients are billed monthly. Payment handles are confirmed when we lock the booking.",
               },
               {
                 title: "Travel",

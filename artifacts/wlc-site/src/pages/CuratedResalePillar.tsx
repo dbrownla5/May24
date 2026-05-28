@@ -48,7 +48,7 @@ export default function CuratedResalePillar() {
               Curated Resale<br />&amp; Consignment
             </h1>
             <p style={{ fontSize: "1.1rem", fontWeight: 300, color: "rgba(248,244,227,0.75)", lineHeight: 1.8, marginBottom: "0.75rem" }}>
-              Thoughtful resale support for the things you no longer want to manage.
+              Resale for the things still worth something — handled by someone who knows where each thing actually sells.
             </p>
             <p style={{ fontSize: "1rem", fontWeight: 300, color: "rgba(248,244,227,0.6)", lineHeight: 1.8, marginBottom: "2.5rem" }}>
               Not everything belongs in a donation pile — but not everyone has the time, energy, or knowledge to research, photograph, list, ship, and coordinate resale themselves.
@@ -203,7 +203,7 @@ export default function CuratedResalePillar() {
                 <span className="eyebrow" style={{ color: "var(--sage-dark)" }}>Commission Structure</span>
                 <h2 className="display-md" style={{ color: "var(--ink)", marginBottom: "1.5rem" }}>Fair splits. Always disclosed before pickup.</h2>
                 <p style={{ fontSize: "0.95rem", fontWeight: 300, color: "var(--ink)", lineHeight: 1.75, opacity: 0.85, marginBottom: "1.5rem" }}>
-                  Proceeds are split after platform fees and shipping are deducted. Consignment agreement required for items with estimated value over $150.
+                  Proceeds are split after platform fees and shipping are deducted. Every listed item is covered by a resale agreement signed after evaluation. At pickup, you sign an eDoc release transferring possession until items sell or until the 6-month check-in.
                 </p>
                 <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
                   <Link href="/contact" className="btn btn-ink">Schedule a Pickup</Link>
@@ -213,7 +213,8 @@ export default function CuratedResalePillar() {
                 {[
                   { category: "Clothing & Accessories", split: "45% to you / 55% WLC", note: "Standard items, shoes, bags, jewelry" },
                   { category: "Designer & Luxury", split: "50% to you / 50% WLC", note: "Designer handbags, luxury clothing, fine jewelry" },
-                  { category: "Furniture & Home Decor", split: "50% to you / 50% WLC", note: "Furniture, art, significant home pieces" },
+                  { category: "Furniture & Significant Home Pieces", split: "50% to you / 50% WLC", note: "Furniture, art, significant home pieces" },
+                  { category: "Full Closet Liquidation", split: "45% to you / 55% WLC", note: "Whole-closet edits, multi-piece engagements" },
                 ].map((row, i) => (
                   <div key={i} style={{ padding: "1.25rem 0", borderBottom: "1px solid rgba(56,48,46,0.15)" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem", marginBottom: "0.35rem" }}>
